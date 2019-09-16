@@ -18,3 +18,11 @@ fun main() = runBlocking {
         }
     }
 }
+
+fun debug() {
+    println(BOT_TOKEN)
+}
+
+fun main(args: Array<String>) {
+    debug()
+}
