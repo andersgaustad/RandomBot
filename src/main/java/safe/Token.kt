@@ -1,5 +1,5 @@
 package safe
 
-private const val BOT_TOKEN = "Testing1"
+private const val BOT_TOKEN = "Testing2"
 
 fun getToken(): String = BOT_TOKEN
