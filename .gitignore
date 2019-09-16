@@ -1,2 +1,3 @@
-# Ignoring token storage
-/src/main/java/safe/
+# Default ignored files
+/workspace.xml
+**/safe
