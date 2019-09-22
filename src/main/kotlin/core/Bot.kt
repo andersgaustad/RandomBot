@@ -71,7 +71,13 @@ fun main() = runBlocking {
              */
 
              command("help") {
+                 reply(helper.help())
+                 delete()
 
+             }
+             command("h") {
+                 reply(helper.help())
+                 delete()
              }
 
         }
