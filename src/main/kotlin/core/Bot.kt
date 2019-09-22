@@ -20,9 +20,7 @@ private const val RANDOM_PREFIX = ""
 fun main() = runBlocking {
     // Initialize bot
      bot(BOT_TOKEN) {
-         var prefix = "!"
-
-         val randomBot = this
+         val prefix = "!"
 
 
          // Commands
