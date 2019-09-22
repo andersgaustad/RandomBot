@@ -1,4 +1,4 @@
-package helper
+package botcommands
 
 import java.io.File
 

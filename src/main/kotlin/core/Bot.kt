@@ -5,11 +5,8 @@ import com.jessecorbett.diskord.dsl.bot
 import com.jessecorbett.diskord.dsl.command
 import com.jessecorbett.diskord.dsl.commands
 import com.jessecorbett.diskord.util.isFromUser
-import com.jessecorbett.diskord.util.mention
-import com.jessecorbett.diskord.util.words
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.UnstableDefault
-import java.util.concurrent.ThreadLocalRandom
 
 
 const val BOT_NAME = "RandomBot"
@@ -38,12 +35,12 @@ fun main() = runBlocking {
 
              // Roll command:
              command("roll") {
-                 reply(helper.roll(this))
+                 reply(botcommands.roll(this))
                  delete()
 
              }
              command("r") {
-                 reply(helper.roll(this))
+                 reply(botcommands.roll(this))
                  delete()
 
              }
@@ -71,12 +68,12 @@ fun main() = runBlocking {
              */
 
              command("help") {
-                 reply(helper.help())
+                 reply(botcommands.help())
                  delete()
 
              }
              command("h") {
-                 reply(helper.help())
+                 reply(botcommands.help())
                  delete()
              }
 

@@ -1,4 +1,4 @@
-package helper
+package botcommands
 
 import com.jessecorbett.diskord.api.model.Message
 import com.jessecorbett.diskord.util.mention
