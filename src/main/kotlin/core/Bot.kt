@@ -53,6 +53,12 @@ fun main() = runBlocking {
 
              }
 
+             command(RANDOM_PREFIX + "commander") {
+                 reply(botcommands.getRandomMTGCommanderCard())
+                 delete()
+
+             }
+
 
             /*
             // Prefix command

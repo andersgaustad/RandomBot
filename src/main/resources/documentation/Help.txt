@@ -2,6 +2,7 @@
 Commands for RandomBot:
 
 Command:    Alias:      Description                         Format:             Ex:
+!commander              Gets a random commander from MTG
 !help:      !h          Displays the current message
 !ping                   Checks if the bot is online
 !roll       !r          Roll dice!                          !r NdX              !r 2d8

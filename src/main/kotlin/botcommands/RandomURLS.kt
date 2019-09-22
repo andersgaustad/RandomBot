@@ -1,6 +1,7 @@
 package botcommands
 
 import java.net.URL
+import javax.net.ssl.HttpsURLConnection
 
 fun getRandomWikiArticle(): String {
     val linkPrefix = "<link rel=\"canonical\" href=\"https://"
@@ -31,5 +32,34 @@ fun getRandomWikiArticle(): String {
     }
 
     return "Could not find a link to wikipedia article :("
+
+}
+
+fun getRandomMTGCommanderCard() : String {
+    val cardPrefix = "<img class=\"oneimage initial loaded\" src=\"https://img.scryfall.com/cards/normal/front/"
+    val linkPrefix = "<a class=\"edhrec2__panel-link-current\" href=\"/commanders/"
+
+    // Fetch the entire text
+    val redirect = URL("https://edhrec.com/random/").readText().split("\"")[1]
+
+    val secureRedirect = "https://" + redirect.split("://")[1]
+
+    // Find the image path
+    fun getMTGImagePath(address : String) : String {
+        val connection = URL(address).openConnection() as HttpsURLConnection
+        connection.requestMethod = "GET"
+
+        val br = connection.inputStream.bufferedReader()
+        for (line in br.lines()) {
+            if (line.trim().contains("oneimage")) {
+                return line.split("\"")[3]
+            }
+        }
+
+        return "Could not find image path?"
+    }
+
+    val imagePath = getMTGImagePath(secureRedirect)
+    return "$secureRedirect\n$imagePath"
 
 }
