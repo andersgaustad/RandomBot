@@ -10,8 +10,10 @@ import kotlinx.serialization.UnstableDefault
 
 
 const val BOT_NAME = "RandomBot"
-const val COOL_KID_NAME = "Cousland"
+private const val COOL_KID_NAME = "Cousland"
 val BOT_TOKEN = safe.getToken()
+
+private const val RANDOM_PREFIX = ""
 
 
 @UnstableDefault
@@ -45,6 +47,13 @@ fun main() = runBlocking {
 
              }
 
+             // RD-commands
+             // Random wiki article
+             command(RANDOM_PREFIX + "wiki") {
+                 reply(botcommands.getRandomWikiArticle())
+                 delete()
+
+             }
 
 
             /*

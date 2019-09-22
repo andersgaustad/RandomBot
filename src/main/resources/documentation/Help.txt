@@ -5,4 +5,5 @@ Command:    Alias:      Description                         Format:             
 !help:      !h          Displays the current message
 !ping                   Checks if the bot is online
 !roll       !r          Roll dice!                          !r NdX              !r 2d8
+!wiki                   Get a random wikipedia article!
 ```
