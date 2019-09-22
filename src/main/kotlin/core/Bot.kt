@@ -14,7 +14,7 @@ private const val COOL_KID_NAME = "Cousland"
 val BOT_TOKEN = safe.getToken()
 
 private const val RANDOM_PREFIX = ""
-val SPECIAL_NAMES = Array<String>(1) {"Fairylight18"}
+val FRENCH_PEOPLE = Array<String>(1) {"Fairylight18"}
 
 @UnstableDefault
 fun main() = runBlocking {
@@ -123,7 +123,7 @@ fun main() = runBlocking {
             }
 
             // Author:
-            if (message.author.username in SPECIAL_NAMES) {
+            if (message.author.username in FRENCH_PEOPLE) {
                 message.react("\uD83C\uDDEB\uD83C\uDDF7")
                 message.delete()
             }
