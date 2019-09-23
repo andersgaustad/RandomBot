@@ -1,4 +1,4 @@
-package botcommands
+package commandlogic
 
 import java.io.File
 

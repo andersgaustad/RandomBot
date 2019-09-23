@@ -1,4 +1,4 @@
-package botcommands
+package commandlogic
 
 import java.net.URL
 import javax.net.ssl.HttpsURLConnection

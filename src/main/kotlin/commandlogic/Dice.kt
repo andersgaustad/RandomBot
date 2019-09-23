@@ -1,4 +1,4 @@
-package botcommands
+package commandlogic
 
 import com.jessecorbett.diskord.api.model.Message
 import com.jessecorbett.diskord.util.mention

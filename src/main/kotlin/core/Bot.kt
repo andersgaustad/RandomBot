@@ -35,12 +35,12 @@ fun main() = runBlocking {
 
              // Roll command:
              command("roll") {
-                 reply(botcommands.roll(this))
+                 reply(commandlogic.roll(this))
                  delete()
 
              }
              command("r") {
-                 reply(botcommands.roll(this))
+                 reply(commandlogic.roll(this))
                  delete()
 
              }
@@ -48,13 +48,13 @@ fun main() = runBlocking {
              // RD-commands
              // Random wiki article
              command(RANDOM_PREFIX + "wiki") {
-                 reply(botcommands.getRandomWikiArticle())
+                 reply(commandlogic.getRandomWikiArticle())
                  delete()
 
              }
 
              command(RANDOM_PREFIX + "commander") {
-                 reply(botcommands.getRandomMTGCommanderCard())
+                 reply(commandlogic.getRandomMTGCommanderCard())
                  delete()
 
              }
@@ -81,12 +81,12 @@ fun main() = runBlocking {
              */
 
              command("help") {
-                 reply(botcommands.help())
+                 reply(commandlogic.help())
                  delete()
 
              }
              command("h") {
-                 reply(botcommands.help())
+                 reply(commandlogic.help())
                  delete()
              }
 
