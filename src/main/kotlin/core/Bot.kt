@@ -115,7 +115,7 @@ fun main() = runBlocking {
                     val username = it.username
 
                     if (username == BOT_NAME) {
-                        message.reply("Hello ${message.author.username}!")
+                        message.reply(commandlogic.getRandomGuardDialog())
                     }
 
                     if (username == COOL_KID_NAME) {
