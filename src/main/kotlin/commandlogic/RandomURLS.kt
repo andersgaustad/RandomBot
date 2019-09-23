@@ -36,9 +36,6 @@ fun getRandomWikiArticle(): String {
 }
 
 fun getRandomMTGCommanderCard() : String {
-    val cardPrefix = "<img class=\"oneimage initial loaded\" src=\"https://img.scryfall.com/cards/normal/front/"
-    val linkPrefix = "<a class=\"edhrec2__panel-link-current\" href=\"/commanders/"
-
     // Fetch the entire text
     val redirect = URL("https://edhrec.com/random/").readText().split("\"")[1]
 

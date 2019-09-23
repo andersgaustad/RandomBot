@@ -1,3 +1,5 @@
+@file:Suppress("EXPERIMENTAL_API_USAGE")
+
 package core
 
 // Imports work! :O
@@ -14,7 +16,7 @@ private const val COOL_KID_NAME = "Cousland"
 val BOT_TOKEN = safe.getToken()
 
 private const val RANDOM_PREFIX = ""
-val FRENCH_PEOPLE = Array<String>(1) {"Fairylight18"}
+val FRENCH_PEOPLE = Array(1) {"Fairylight18"}
 
 @UnstableDefault
 fun main() = runBlocking {

@@ -25,7 +25,7 @@ fun roll(message: Message) : String {
                     // Check sides on dice
                     if (diceSize > 0) {
                         // Create a list of dice
-                        val dice = Array<Int>(numberOfDice) {
+                        val dice = Array(numberOfDice) {
                             ThreadLocalRandom.current().nextInt(1, diceSize+1)
                         }
 
