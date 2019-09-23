@@ -7,6 +7,7 @@ import com.jessecorbett.diskord.dsl.bot
 import com.jessecorbett.diskord.dsl.command
 import com.jessecorbett.diskord.dsl.commands
 import com.jessecorbett.diskord.util.isFromUser
+import com.jessecorbett.diskord.util.words
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.UnstableDefault
 
@@ -57,6 +58,35 @@ fun main() = runBlocking {
 
              command(RANDOM_PREFIX + "commander") {
                  reply(commandlogic.getRandomMTGCommanderCard())
+                 delete()
+
+             }
+
+             command("nrktv") {
+                 val message = this.words
+                 // Three parameters means search term is present
+                 if (message.size >= 2) {
+                     val search = message[1]
+
+                     if (message.size >= 3) {
+                         val matches = message[2].toIntOrNull()
+
+                         if (matches != null) {
+                             reply(commandlogic.getNRKSearches(search, matches))
+
+                         } else {
+                             reply(commandlogic.getNRKSearches(search))
+                         }
+
+                     } else {
+                         // This should be the most command branching
+                         reply(commandlogic.getNRKSearches(search))
+                     }
+
+                 } else {
+                     reply("Uhm, what should i search for?")
+                 }
+
                  delete()
 
              }
