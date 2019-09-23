@@ -55,11 +55,28 @@ fun main() = runBlocking {
 
              }
 
+             // Random mtg commander card
              command(RANDOM_PREFIX + "commander") {
                  reply(commandlogic.getRandomMTGCommanderCard())
                  delete()
 
              }
+
+             // Random pokemon
+             command(RANDOM_PREFIX + "pokemon") {
+                 /**
+                  * URL cannot connect to bulbapedia
+                  * Stuck for the moment
+                  */
+
+                 println("Finding pokemon")
+                 println(commandlogic.getRandomPokemon())
+                 //reply(commandlogic.getRandomPokemon())
+                 delete()
+
+             }
+
+
 
 
             /*
