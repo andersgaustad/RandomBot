@@ -70,11 +70,16 @@ fun getRandomPokemon() : String {
     val pokelinks = ArrayList<String>()
 
     println("Connecting")
-    val raw = URL("view-source:https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number").readText()
-    println(raw)
+    //val url = URL("https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number")
+    //val raw = url.readText()
+    //println(raw)
 
     val connection = URL("https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number").openConnection() as HttpsURLConnection
     connection.requestMethod = "GET"
+    val rsc = connection.responseCode
+    val rsm = connection.responseMessage
+
+    println("$rsc: $rsm")
 
     // Construct list of all pokemons
     val br = connection.inputStream.bufferedReader()
