@@ -140,15 +140,11 @@ fun getNRKHeadlines(search : String = "", depth : Int = 1) : String {
                 val title = stripTags(line, titleTag.length).toLowerCase()
                 val description = text[i+2].toLowerCase().trim()
 
-                println("Title: $title")
-                println("Desc: $description")
-
                 // Look if search term is present
                 // It always contains the default search term ""
                 if (title.contains(search.toLowerCase()) || description.contains(search.toLowerCase())) {
                     val link = stripTags(text[i+1].trim(), linkTag.length)
                     results.add(link)
-                    println("Added link $link")
 
                     // Check if we found as many searches as desired:
                     if (results.size >= depth) {
