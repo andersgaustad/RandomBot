@@ -9,6 +9,7 @@ import com.jessecorbett.diskord.dsl.commands
 import com.jessecorbett.diskord.util.isFromUser
 import com.jessecorbett.diskord.util.words
 import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
 
 
@@ -19,6 +20,8 @@ val BOT_TOKEN = safe.getToken()
 private const val RANDOM_PREFIX = ""
 val FRENCH_PEOPLE = Array(1) {"Fairylight18"}
 
+// Added because of serializing over json for bacon command
+@ImplicitReflectionSerializer
 @UnstableDefault
 fun main() = runBlocking {
     // Initialize bot
@@ -98,6 +101,18 @@ fun main() = runBlocking {
                  reply(commandlogic.getRandomMTGCommanderCard())
                  delete()
 
+             }
+
+             command(RANDOM_PREFIX + "bacon") {
+                 // Get words, and parse optional argument
+                 val words = this.words
+                 if (words.size >= 2) {
+                     reply(commandlogic.getRandomBaconVideoLink(words[1]))
+                 } else {
+                     reply(commandlogic.getRandomBaconVideoLink())
+
+                 }
+                 delete()
              }
 
 
@@ -180,6 +195,7 @@ fun debug() {
     println("Bot is active")
 }
 
+@ImplicitReflectionSerializer
 @UnstableDefault
 fun main(args: Array<String>) {
     debug()
