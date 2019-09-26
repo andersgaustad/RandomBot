@@ -51,8 +51,8 @@ fun getRandomBaconVideoLink(search : String = "") : String {
     val listOfHits = getJsonMatches(search)
 
     return if (listOfHits.isNotEmpty()) {
-        // Return a random element in this list
-        utils.getRandomStringInArrayList(listOfHits)
+        // Return a random element in this list, and strip it so we don't autoplay videos from list
+        utils.getRandomStringInArrayList(listOfHits).substring(0, 43)
 
     } else {
         "Could not find any cool links!"
