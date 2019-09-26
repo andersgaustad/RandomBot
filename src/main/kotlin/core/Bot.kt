@@ -103,6 +103,12 @@ fun main() = runBlocking {
 
              }
 
+             /*
+             DISCLAIMER: I do not own any of the videos fetched by using this command
+             All videos fetched with the command !bacon are the property of youtuber Bacon_
+             Bacon_'s youtube channel may be accessed by following the link below:
+             https://www.youtube.com/channel/UCcybVOrBgpzUxm-mlBT0WTA
+             */
              command(RANDOM_PREFIX + "bacon") {
                  // Get words, and parse optional argument
                  val words = this.words

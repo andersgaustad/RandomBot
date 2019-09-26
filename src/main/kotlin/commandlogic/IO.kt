@@ -7,7 +7,16 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.parse
 import java.io.File
 
+// Serializing over json file
 @ImplicitReflectionSerializer
+
+/*
+ DISCLAIMER: I do not own any of the videos fetched by using this command
+ All videos fetched with the command !bacon are the property of youtuber Bacon_
+ Bacon_'s youtube channel may be accessed by following the link below:
+ https://www.youtube.com/channel/UCcybVOrBgpzUxm-mlBT0WTA
+ */
+// NOTE: These videos are up to date as of 26th of September 2019
 fun getRandomBaconVideoLink(search : String = "") : String {
     val path = "src/main/resources/json/BaconLinks.json"
 
