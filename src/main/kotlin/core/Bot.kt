@@ -53,38 +53,7 @@ fun main() = runBlocking {
 
              // NRK news
              command ("nrk") {
-                 val words = this.words
-
-                 if (words.size >= 2) {
-                     // One argument
-                     val arg1 = words[1]
-                     val depth1 = arg1.toIntOrNull()
-
-                     if (words.size >= 3) {
-                         val arg2 = words[2]
-                         val depth2 = arg2.toIntOrNull()
-
-                         if (depth2 != null) {
-                             reply(commandlogic.getNRKHeadlines(arg1, depth2))
-
-                         } else {
-                             reply(commandlogic.getNRKHeadlines(arg1))
-                         }
-
-                     } else {
-                         if (depth1 != null) {
-                             reply(commandlogic.getNRKHeadlines("", depth1))
-
-                         } else {
-                             reply(commandlogic.getNRKHeadlines(arg1))
-                         }
-                     }
-
-                 } else {
-                     reply(commandlogic.getNRKHeadlines())
-
-                 }
-
+                 reply(commandlogic.getNRKHeadlinesCommand(this.words))
                  delete()
 
              }

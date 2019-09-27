@@ -181,3 +181,36 @@ fun getNRKHeadlines(search : String = "", depth : Int = 1) : String {
 
 fun isConnected(connection : HttpURLConnection) : Boolean =
     connection.responseCode / 100 == 2
+
+fun getNRKHeadlinesCommand(words : List<String>) : String {
+
+    if (words.size >= 2) {
+        // One argument
+        val arg1 = words[1]
+        val depth1 = arg1.toIntOrNull()
+
+        if (words.size >= 3) {
+            val arg2 = words[2]
+            val depth2 = arg2.toIntOrNull()
+
+            return if (depth2 != null) {
+                getNRKHeadlines(arg1, depth2)
+
+            } else {
+                getNRKHeadlines(arg1)
+            }
+
+        } else {
+            return if (depth1 != null) {
+                getNRKHeadlines("", depth1)
+
+            } else {
+                getNRKHeadlines(arg1)
+            }
+        }
+
+    } else {
+        return getNRKHeadlines()
+
+    }
+}
