@@ -143,12 +143,12 @@ fun main() = runBlocking {
              */
 
              command("help") {
-                 reply(commandlogic.help())
+                 reply(commandlogic.helpCommand(this.words))
                  delete()
 
              }
              command("h") {
-                 reply(commandlogic.help())
+                 reply(commandlogic.helpCommand(this.words))
                  delete()
              }
 

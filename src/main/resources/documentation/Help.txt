@@ -1,12 +1,10 @@
-```
 Commands for RandomBot:
 
 Command:    Alias:      Description                         Format:             Ex:
 !bacon                  Get a link to one of Bacon_s videos !bacon [tag]        !bacon skyrim
 !commander              Gets a random commander from MTG
-!help:      !h          Displays the current message
+!help:      !h          Displays the current message        !help ["dev"]
 !nrk                    Gets latest news from nrk           !nrk [s] [n]        !nrk winter/!nrk 5/!nrk winter 5
 !ping                   Checks if the bot is online
 !roll       !r          Roll dice!                          !r NdX              !r 2d8
 !wiki                   Get a random wikipedia article!
-```

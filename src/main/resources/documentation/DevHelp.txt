@@ -1,0 +1,4 @@
+Developer commands for RandomBot
+
+Command:    Alias:      Description                         Format:             Ex:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
