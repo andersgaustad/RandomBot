@@ -123,19 +123,22 @@ fun main() = runBlocking {
              }
 
              // Dev commands
+             // Should clean up this later
              command("dev") {
                  val words = this.words
 
                  if (words.size >= 2) {
                      val arg = words[1]
 
-                     if (arg == "parsepokemon" || arg == "pp") {
+                     if (arg == "pokeparse" || arg == "pp") {
                          val root = "src/main/resources"
-                         println("Parsing...")
-                         PokemonFixedParser().parseRawFile(
+                         val parseMessage = PokemonFixedParser().parseRawFile(
                              "$root/raw/ListOfPokemonPageSource.txt",
-                             "$root/json/PokemonTest.json"
+                             "$root/json/Pokemon.json"
                          )
+
+                         reply(parseMessage)
+                         delete()
                      }
                  }
              }
