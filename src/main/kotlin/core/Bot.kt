@@ -11,6 +11,7 @@ import com.jessecorbett.diskord.util.words
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
+import utils.PokemonFixedParser
 
 
 const val BOT_NAME = "RandomBot"
@@ -119,6 +120,24 @@ fun main() = runBlocking {
              command("h") {
                  reply(commandlogic.helpCommand(this.words))
                  delete()
+             }
+
+             // Dev commands
+             command("dev") {
+                 val words = this.words
+
+                 if (words.size >= 2) {
+                     val arg = words[1]
+
+                     if (arg == "parsepokemon" || arg == "pp") {
+                         val root = "src/main/resources"
+                         println("Parsing...")
+                         PokemonFixedParser().parseRawFile(
+                             "$root/raw/ListOfPokemonPageSource.txt",
+                             "$root/json/PokemonTest.json"
+                         )
+                     }
+                 }
              }
 
         }
