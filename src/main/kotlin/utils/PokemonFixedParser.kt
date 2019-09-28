@@ -10,20 +10,24 @@ private const val pokePrefix = "<td> <a href=\"/wiki/"
 private const val generationPrefix = "id=\"Generation_"
 
 
-private val genAliases = mapOf(
-    1 to "gen1",
-    2 to "gen2",
-    3 to "gen3",
-    4 to "gen4",
-    5 to "gen5"
-)
-
 class PokemonFixedParser : Parsing {
     override fun parseRawFile(fromPath: String, toPath: String) : String {
         // Measure time spent
         val time = measureTimeMillis {
             // The primary map for looking up types
             val genMapping = LinkedHashMap<Int, LinkedHashMap<String, LinkedHashMap<String, ArrayList<String>>>>()
+
+            // Initializing genMapping to retain sorted relation
+            for (g in genAliases.keys) {
+                for (t1 in types) {
+                    for (t2 in types) {
+                        val genMap = genMapping.getOrPut(g){ LinkedHashMap() }
+                        val type1Map = genMap.getOrPut(t1){ LinkedHashMap() }
+                        type1Map.getOrPut(t2) { ArrayList() }
+                    }
+                }
+            }
+
 
             val raw = File(fromPath).readLines()
 
@@ -56,10 +60,10 @@ class PokemonFixedParser : Parsing {
                     }
 
                     // Type 1 is one of the valid types
-                    val type1 = getType(type1Line)
+                    val type1 = getType(type1Line).toLowerCase()
                     // Pokemon may only have one type.
-                    // When this happens set type2 = type1 (e.g. (Grass, Grass))
-                    val check = getType(type2Line)
+                    // When this happens set type2 = type1 (e.g. (grass, grass))
+                    val check = getType(type2Line).toLowerCase()
                     val type2 = if (check.isNotEmpty()) {
                         check
                     } else {

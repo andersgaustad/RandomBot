@@ -1,14 +1,14 @@
-package core
+package json
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class JSONParser(val skyrim : Array<String> = Array<String>(0){""}, val oblivion : Array<String> = Array<String>(0){""}) {
+data class JsonBaconParser(val skyrim : Array<String> = Array<String>(0){""}, val oblivion : Array<String> = Array<String>(0){""}) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as JSONParser
+        other as JsonBaconParser
 
         if (!skyrim.contentEquals(other.skyrim)) return false
         if (!oblivion.contentEquals(other.oblivion)) return false

@@ -98,6 +98,12 @@ fun main() = runBlocking {
                  delete()
              }
 
+             // Pokemon:
+             command(RANDOM_PREFIX + "pokemon") {
+                 reply(commandlogic.getRandomPokemon())
+                 delete()
+             }
+
 
             /*
             // Prefix command

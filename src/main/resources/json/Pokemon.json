@@ -1,30 +1,453 @@
 {
   "gen1": {
-    "Grass": {
-      "Poison": [
-        "/wiki/Bulbasaur_(Pok%C3%A9mon)",
-        "/wiki/Ivysaur_(Pok%C3%A9mon)",
-        "/wiki/Venusaur_(Pok%C3%A9mon)",
-        "/wiki/Oddish_(Pok%C3%A9mon)",
-        "/wiki/Gloom_(Pok%C3%A9mon)",
-        "/wiki/Vileplume_(Pok%C3%A9mon)",
-        "/wiki/Bellsprout_(Pok%C3%A9mon)",
-        "/wiki/Weepinbell_(Pok%C3%A9mon)",
-        "/wiki/Victreebel_(Pok%C3%A9mon)"
+    "normal": {
+      "normal": [
+        "/wiki/Rattata_(Pok%C3%A9mon)",
+        "/wiki/Raticate_(Pok%C3%A9mon)",
+        "/wiki/Meowth_(Pok%C3%A9mon)",
+        "/wiki/Persian_(Pok%C3%A9mon)",
+        "/wiki/Lickitung_(Pok%C3%A9mon)",
+        "/wiki/Chansey_(Pok%C3%A9mon)",
+        "/wiki/Kangaskhan_(Pok%C3%A9mon)",
+        "/wiki/Tauros_(Pok%C3%A9mon)",
+        "/wiki/Ditto_(Pok%C3%A9mon)",
+        "/wiki/Eevee_(Pok%C3%A9mon)",
+        "/wiki/Porygon_(Pok%C3%A9mon)",
+        "/wiki/Snorlax_(Pok%C3%A9mon)"
       ],
-      "Psychic": [
-        "/wiki/Exeggcute_(Pok%C3%A9mon)",
-        "/wiki/Exeggutor_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Dragon": [
-        "/wiki/Exeggutor_(Pok%C3%A9mon)"
+      "flying": [
+        "/wiki/Pidgey_(Pok%C3%A9mon)",
+        "/wiki/Pidgeotto_(Pok%C3%A9mon)",
+        "/wiki/Pidgeot_(Pok%C3%A9mon)",
+        "/wiki/Spearow_(Pok%C3%A9mon)",
+        "/wiki/Fearow_(Pok%C3%A9mon)",
+        "/wiki/Farfetch%27d_(Pok%C3%A9mon)",
+        "/wiki/Doduo_(Pok%C3%A9mon)",
+        "/wiki/Dodrio_(Pok%C3%A9mon)"
       ],
-      "Grass": [
-        "/wiki/Tangela_(Pok%C3%A9mon)"
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+        "/wiki/Jigglypuff_(Pok%C3%A9mon)",
+        "/wiki/Wigglytuff_(Pok%C3%A9mon)"
       ]
     },
-    "Fire": {
-      "Fire": [
+    "fighting": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Mankey_(Pok%C3%A9mon)",
+        "/wiki/Primeape_(Pok%C3%A9mon)",
+        "/wiki/Machop_(Pok%C3%A9mon)",
+        "/wiki/Machoke_(Pok%C3%A9mon)",
+        "/wiki/Machamp_(Pok%C3%A9mon)",
+        "/wiki/Hitmonlee_(Pok%C3%A9mon)",
+        "/wiki/Hitmonchan_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "flying": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "poison": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Zubat_(Pok%C3%A9mon)",
+        "/wiki/Golbat_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+        "/wiki/Ekans_(Pok%C3%A9mon)",
+        "/wiki/Arbok_(Pok%C3%A9mon)",
+        "/wiki/Nidoran%E2%99%80_(Pok%C3%A9mon)",
+        "/wiki/Nidorina_(Pok%C3%A9mon)",
+        "/wiki/Nidoran%E2%99%82_(Pok%C3%A9mon)",
+        "/wiki/Nidorino_(Pok%C3%A9mon)",
+        "/wiki/Grimer_(Pok%C3%A9mon)",
+        "/wiki/Muk_(Pok%C3%A9mon)",
+        "/wiki/Koffing_(Pok%C3%A9mon)",
+        "/wiki/Weezing_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+        "/wiki/Nidoqueen_(Pok%C3%A9mon)",
+        "/wiki/Nidoking_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Grimer_(Pok%C3%A9mon)",
+        "/wiki/Muk_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+        "/wiki/Weezing_(Pok%C3%A9mon)"
+      ]
+    },
+    "ground": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Sandshrew_(Pok%C3%A9mon)",
+        "/wiki/Sandslash_(Pok%C3%A9mon)",
+        "/wiki/Diglett_(Pok%C3%A9mon)",
+        "/wiki/Dugtrio_(Pok%C3%A9mon)",
+        "/wiki/Cubone_(Pok%C3%A9mon)",
+        "/wiki/Marowak_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+        "/wiki/Rhyhorn_(Pok%C3%A9mon)",
+        "/wiki/Rhydon_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Diglett_(Pok%C3%A9mon)",
+        "/wiki/Dugtrio_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "rock": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Aerodactyl_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Geodude_(Pok%C3%A9mon)",
+        "/wiki/Graveler_(Pok%C3%A9mon)",
+        "/wiki/Golem_(Pok%C3%A9mon)",
+        "/wiki/Onix_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+        "/wiki/Omanyte_(Pok%C3%A9mon)",
+        "/wiki/Omastar_(Pok%C3%A9mon)",
+        "/wiki/Kabuto_(Pok%C3%A9mon)",
+        "/wiki/Kabutops_(Pok%C3%A9mon)"
+      ],
+      "grass": [
+      ],
+      "electric": [
+        "/wiki/Geodude_(Pok%C3%A9mon)",
+        "/wiki/Graveler_(Pok%C3%A9mon)",
+        "/wiki/Golem_(Pok%C3%A9mon)"
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "bug": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Butterfree_(Pok%C3%A9mon)",
+        "/wiki/Scyther_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+        "/wiki/Weedle_(Pok%C3%A9mon)",
+        "/wiki/Kakuna_(Pok%C3%A9mon)",
+        "/wiki/Beedrill_(Pok%C3%A9mon)",
+        "/wiki/Venonat_(Pok%C3%A9mon)",
+        "/wiki/Venomoth_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+        "/wiki/Caterpie_(Pok%C3%A9mon)",
+        "/wiki/Metapod_(Pok%C3%A9mon)",
+        "/wiki/Pinsir_(Pok%C3%A9mon)"
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Paras_(Pok%C3%A9mon)",
+        "/wiki/Parasect_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "ghost": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+        "/wiki/Gastly_(Pok%C3%A9mon)",
+        "/wiki/Haunter_(Pok%C3%A9mon)",
+        "/wiki/Gengar_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "steel": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "fire": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Charizard_(Pok%C3%A9mon)",
+        "/wiki/Moltres_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Marowak_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+      ],
+      "fire": [
         "/wiki/Charmander_(Pok%C3%A9mon)",
         "/wiki/Charmeleon_(Pok%C3%A9mon)",
         "/wiki/Vulpix_(Pok%C3%A9mon)",
@@ -36,16 +459,49 @@
         "/wiki/Magmar_(Pok%C3%A9mon)",
         "/wiki/Flareon_(Pok%C3%A9mon)"
       ],
-      "Flying": [
-        "/wiki/Charizard_(Pok%C3%A9mon)",
-        "/wiki/Moltres_(Pok%C3%A9mon)"
+      "water": [
       ],
-      "Ghost": [
-        "/wiki/Marowak_(Pok%C3%A9mon)"
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Water": {
-      "Water": [
+    "water": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Poliwrath_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+        "/wiki/Gyarados_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+        "/wiki/Tentacool_(Pok%C3%A9mon)",
+        "/wiki/Tentacruel_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
         "/wiki/Squirtle_(Pok%C3%A9mon)",
         "/wiki/Wartortle_(Pok%C3%A9mon)",
         "/wiki/Blastoise_(Pok%C3%A9mon)",
@@ -65,120 +521,107 @@
         "/wiki/Magikarp_(Pok%C3%A9mon)",
         "/wiki/Vaporeon_(Pok%C3%A9mon)"
       ],
-      "Fighting": [
-        "/wiki/Poliwrath_(Pok%C3%A9mon)"
+      "grass": [
       ],
-      "Poison": [
-        "/wiki/Tentacool_(Pok%C3%A9mon)",
-        "/wiki/Tentacruel_(Pok%C3%A9mon)"
+      "electric": [
       ],
-      "Psychic": [
+      "psychic": [
         "/wiki/Slowpoke_(Pok%C3%A9mon)",
         "/wiki/Slowbro_(Pok%C3%A9mon)",
         "/wiki/Starmie_(Pok%C3%A9mon)"
       ],
-      "Ice": [
+      "ice": [
         "/wiki/Dewgong_(Pok%C3%A9mon)",
         "/wiki/Cloyster_(Pok%C3%A9mon)",
         "/wiki/Lapras_(Pok%C3%A9mon)"
       ],
-      "Flying": [
-        "/wiki/Gyarados_(Pok%C3%A9mon)"
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Bug": {
-      "Bug": [
-        "/wiki/Caterpie_(Pok%C3%A9mon)",
-        "/wiki/Metapod_(Pok%C3%A9mon)",
-        "/wiki/Pinsir_(Pok%C3%A9mon)"
+    "grass": {
+      "normal": [
       ],
-      "Flying": [
-        "/wiki/Butterfree_(Pok%C3%A9mon)",
-        "/wiki/Scyther_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Poison": [
-        "/wiki/Weedle_(Pok%C3%A9mon)",
-        "/wiki/Kakuna_(Pok%C3%A9mon)",
-        "/wiki/Beedrill_(Pok%C3%A9mon)",
-        "/wiki/Venonat_(Pok%C3%A9mon)",
-        "/wiki/Venomoth_(Pok%C3%A9mon)"
+      "flying": [
       ],
-      "Grass": [
-        "/wiki/Paras_(Pok%C3%A9mon)",
-        "/wiki/Parasect_(Pok%C3%A9mon)"
+      "poison": [
+        "/wiki/Bulbasaur_(Pok%C3%A9mon)",
+        "/wiki/Ivysaur_(Pok%C3%A9mon)",
+        "/wiki/Venusaur_(Pok%C3%A9mon)",
+        "/wiki/Oddish_(Pok%C3%A9mon)",
+        "/wiki/Gloom_(Pok%C3%A9mon)",
+        "/wiki/Vileplume_(Pok%C3%A9mon)",
+        "/wiki/Bellsprout_(Pok%C3%A9mon)",
+        "/wiki/Weepinbell_(Pok%C3%A9mon)",
+        "/wiki/Victreebel_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Tangela_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Exeggcute_(Pok%C3%A9mon)",
+        "/wiki/Exeggutor_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+        "/wiki/Exeggutor_(Pok%C3%A9mon)"
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Normal": {
-      "Flying": [
-        "/wiki/Pidgey_(Pok%C3%A9mon)",
-        "/wiki/Pidgeotto_(Pok%C3%A9mon)",
-        "/wiki/Pidgeot_(Pok%C3%A9mon)",
-        "/wiki/Spearow_(Pok%C3%A9mon)",
-        "/wiki/Fearow_(Pok%C3%A9mon)",
-        "/wiki/Farfetch%27d_(Pok%C3%A9mon)",
-        "/wiki/Doduo_(Pok%C3%A9mon)",
-        "/wiki/Dodrio_(Pok%C3%A9mon)"
+    "electric": {
+      "normal": [
       ],
-      "Normal": [
-        "/wiki/Rattata_(Pok%C3%A9mon)",
-        "/wiki/Raticate_(Pok%C3%A9mon)",
-        "/wiki/Meowth_(Pok%C3%A9mon)",
-        "/wiki/Persian_(Pok%C3%A9mon)",
-        "/wiki/Lickitung_(Pok%C3%A9mon)",
-        "/wiki/Chansey_(Pok%C3%A9mon)",
-        "/wiki/Kangaskhan_(Pok%C3%A9mon)",
-        "/wiki/Tauros_(Pok%C3%A9mon)",
-        "/wiki/Ditto_(Pok%C3%A9mon)",
-        "/wiki/Eevee_(Pok%C3%A9mon)",
-        "/wiki/Porygon_(Pok%C3%A9mon)",
-        "/wiki/Snorlax_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Fairy": [
-        "/wiki/Jigglypuff_(Pok%C3%A9mon)",
-        "/wiki/Wigglytuff_(Pok%C3%A9mon)"
-      ]
-    },
-    "Dark": {
-      "Normal": [
-        "/wiki/Rattata_(Pok%C3%A9mon)",
-        "/wiki/Raticate_(Pok%C3%A9mon)"
+      "flying": [
+        "/wiki/Zapdos_(Pok%C3%A9mon)"
       ],
-      "Dark": [
-        "/wiki/Meowth_(Pok%C3%A9mon)",
-        "/wiki/Persian_(Pok%C3%A9mon)"
-      ]
-    },
-    "Poison": {
-      "Poison": [
-        "/wiki/Ekans_(Pok%C3%A9mon)",
-        "/wiki/Arbok_(Pok%C3%A9mon)",
-        "/wiki/Nidoran%E2%99%80_(Pok%C3%A9mon)",
-        "/wiki/Nidorina_(Pok%C3%A9mon)",
-        "/wiki/Nidoran%E2%99%82_(Pok%C3%A9mon)",
-        "/wiki/Nidorino_(Pok%C3%A9mon)",
-        "/wiki/Grimer_(Pok%C3%A9mon)",
-        "/wiki/Muk_(Pok%C3%A9mon)",
-        "/wiki/Koffing_(Pok%C3%A9mon)",
-        "/wiki/Weezing_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Ground": [
-        "/wiki/Nidoqueen_(Pok%C3%A9mon)",
-        "/wiki/Nidoking_(Pok%C3%A9mon)"
+      "ground": [
       ],
-      "Flying": [
-        "/wiki/Zubat_(Pok%C3%A9mon)",
-        "/wiki/Golbat_(Pok%C3%A9mon)"
+      "rock": [
       ],
-      "Dark": [
-        "/wiki/Grimer_(Pok%C3%A9mon)",
-        "/wiki/Muk_(Pok%C3%A9mon)"
+      "bug": [
       ],
-      "Fairy": [
-        "/wiki/Weezing_(Pok%C3%A9mon)"
-      ]
-    },
-    "Electric": {
-      "Electric": [
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Magnemite_(Pok%C3%A9mon)",
+        "/wiki/Magneton_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
         "/wiki/Pikachu_(Pok%C3%A9mon)",
         "/wiki/Raichu_(Pok%C3%A9mon)",
         "/wiki/Voltorb_(Pok%C3%A9mon)",
@@ -186,72 +629,46 @@
         "/wiki/Electabuzz_(Pok%C3%A9mon)",
         "/wiki/Jolteon_(Pok%C3%A9mon)"
       ],
-      "Psychic": [
+      "psychic": [
         "/wiki/Raichu_(Pok%C3%A9mon)"
       ],
-      "Steel": [
-        "/wiki/Magnemite_(Pok%C3%A9mon)",
-        "/wiki/Magneton_(Pok%C3%A9mon)"
+      "ice": [
       ],
-      "Flying": [
-        "/wiki/Zapdos_(Pok%C3%A9mon)"
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Ground": {
-      "Ground": [
-        "/wiki/Sandshrew_(Pok%C3%A9mon)",
-        "/wiki/Sandslash_(Pok%C3%A9mon)",
-        "/wiki/Diglett_(Pok%C3%A9mon)",
-        "/wiki/Dugtrio_(Pok%C3%A9mon)",
-        "/wiki/Cubone_(Pok%C3%A9mon)",
-        "/wiki/Marowak_(Pok%C3%A9mon)"
+    "psychic": {
+      "normal": [
       ],
-      "Steel": [
-        "/wiki/Diglett_(Pok%C3%A9mon)",
-        "/wiki/Dugtrio_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Rock": [
-        "/wiki/Rhyhorn_(Pok%C3%A9mon)",
-        "/wiki/Rhydon_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ice": {
-      "Steel": [
-        "/wiki/Sandshrew_(Pok%C3%A9mon)",
-        "/wiki/Sandslash_(Pok%C3%A9mon)"
+      "flying": [
       ],
-      "Ice": [
-        "/wiki/Vulpix_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Fairy": [
-        "/wiki/Ninetales_(Pok%C3%A9mon)"
+      "ground": [
       ],
-      "Psychic": [
-        "/wiki/Jynx_(Pok%C3%A9mon)"
+      "rock": [
       ],
-      "Flying": [
-        "/wiki/Articuno_(Pok%C3%A9mon)"
-      ]
-    },
-    "Fairy": {
-      "Fairy": [
-        "/wiki/Clefairy_(Pok%C3%A9mon)",
-        "/wiki/Clefable_(Pok%C3%A9mon)"
-      ]
-    },
-    "Fighting": {
-      "Fighting": [
-        "/wiki/Mankey_(Pok%C3%A9mon)",
-        "/wiki/Primeape_(Pok%C3%A9mon)",
-        "/wiki/Machop_(Pok%C3%A9mon)",
-        "/wiki/Machoke_(Pok%C3%A9mon)",
-        "/wiki/Machamp_(Pok%C3%A9mon)",
-        "/wiki/Hitmonlee_(Pok%C3%A9mon)",
-        "/wiki/Hitmonchan_(Pok%C3%A9mon)"
-      ]
-    },
-    "Psychic": {
-      "Psychic": [
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
         "/wiki/Abra_(Pok%C3%A9mon)",
         "/wiki/Kadabra_(Pok%C3%A9mon)",
         "/wiki/Alakazam_(Pok%C3%A9mon)",
@@ -260,121 +677,187 @@
         "/wiki/Mewtwo_(Pok%C3%A9mon)",
         "/wiki/Mew_(Pok%C3%A9mon)"
       ],
-      "Fairy": [
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
         "/wiki/Mr._Mime_(Pok%C3%A9mon)"
       ]
     },
-    "Rock": {
-      "Ground": [
-        "/wiki/Geodude_(Pok%C3%A9mon)",
-        "/wiki/Graveler_(Pok%C3%A9mon)",
-        "/wiki/Golem_(Pok%C3%A9mon)",
-        "/wiki/Onix_(Pok%C3%A9mon)"
+    "ice": {
+      "normal": [
       ],
-      "Electric": [
-        "/wiki/Geodude_(Pok%C3%A9mon)",
-        "/wiki/Graveler_(Pok%C3%A9mon)",
-        "/wiki/Golem_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Water": [
-        "/wiki/Omanyte_(Pok%C3%A9mon)",
-        "/wiki/Omastar_(Pok%C3%A9mon)",
-        "/wiki/Kabuto_(Pok%C3%A9mon)",
-        "/wiki/Kabutops_(Pok%C3%A9mon)"
+      "flying": [
+        "/wiki/Articuno_(Pok%C3%A9mon)"
       ],
-      "Flying": [
-        "/wiki/Aerodactyl_(Pok%C3%A9mon)"
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Sandshrew_(Pok%C3%A9mon)",
+        "/wiki/Sandslash_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Jynx_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+        "/wiki/Vulpix_(Pok%C3%A9mon)"
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+        "/wiki/Ninetales_(Pok%C3%A9mon)"
       ]
     },
-    "Ghost": {
-      "Poison": [
-        "/wiki/Gastly_(Pok%C3%A9mon)",
-        "/wiki/Haunter_(Pok%C3%A9mon)",
-        "/wiki/Gengar_(Pok%C3%A9mon)"
-      ]
-    },
-    "Dragon": {
-      "Dragon": [
+    "dragon": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Dragonite_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
         "/wiki/Dratini_(Pok%C3%A9mon)",
         "/wiki/Dragonair_(Pok%C3%A9mon)"
       ],
-      "Flying": [
-        "/wiki/Dragonite_(Pok%C3%A9mon)"
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "dark": {
+      "normal": [
+        "/wiki/Rattata_(Pok%C3%A9mon)",
+        "/wiki/Raticate_(Pok%C3%A9mon)"
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Meowth_(Pok%C3%A9mon)",
+        "/wiki/Persian_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "fairy": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+        "/wiki/Clefairy_(Pok%C3%A9mon)",
+        "/wiki/Clefable_(Pok%C3%A9mon)"
       ]
     }
   },
   "gen2": {
-    "Grass": {
-      "Grass": [
-        "/wiki/Chikorita_(Pok%C3%A9mon)",
-        "/wiki/Bayleef_(Pok%C3%A9mon)",
-        "/wiki/Meganium_(Pok%C3%A9mon)",
-        "/wiki/Bellossom_(Pok%C3%A9mon)",
-        "/wiki/Sunkern_(Pok%C3%A9mon)",
-        "/wiki/Sunflora_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Hoppip_(Pok%C3%A9mon)",
-        "/wiki/Skiploom_(Pok%C3%A9mon)",
-        "/wiki/Jumpluff_(Pok%C3%A9mon)"
-      ]
-    },
-    "Fire": {
-      "Fire": [
-        "/wiki/Cyndaquil_(Pok%C3%A9mon)",
-        "/wiki/Quilava_(Pok%C3%A9mon)",
-        "/wiki/Typhlosion_(Pok%C3%A9mon)",
-        "/wiki/Slugma_(Pok%C3%A9mon)",
-        "/wiki/Magby_(Pok%C3%A9mon)",
-        "/wiki/Entei_(Pok%C3%A9mon)"
-      ],
-      "Rock": [
-        "/wiki/Magcargo_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Ho-Oh_(Pok%C3%A9mon)"
-      ]
-    },
-    "Water": {
-      "Water": [
-        "/wiki/Totodile_(Pok%C3%A9mon)",
-        "/wiki/Croconaw_(Pok%C3%A9mon)",
-        "/wiki/Feraligatr_(Pok%C3%A9mon)",
-        "/wiki/Politoed_(Pok%C3%A9mon)",
-        "/wiki/Remoraid_(Pok%C3%A9mon)",
-        "/wiki/Octillery_(Pok%C3%A9mon)",
-        "/wiki/Suicune_(Pok%C3%A9mon)"
-      ],
-      "Electric": [
-        "/wiki/Chinchou_(Pok%C3%A9mon)",
-        "/wiki/Lanturn_(Pok%C3%A9mon)"
-      ],
-      "Fairy": [
-        "/wiki/Marill_(Pok%C3%A9mon)",
-        "/wiki/Azumarill_(Pok%C3%A9mon)"
-      ],
-      "Ground": [
-        "/wiki/Wooper_(Pok%C3%A9mon)",
-        "/wiki/Quagsire_(Pok%C3%A9mon)"
-      ],
-      "Psychic": [
-        "/wiki/Slowking_(Pok%C3%A9mon)"
-      ],
-      "Poison": [
-        "/wiki/Qwilfish_(Pok%C3%A9mon)"
-      ],
-      "Rock": [
-        "/wiki/Corsola_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Mantine_(Pok%C3%A9mon)"
-      ],
-      "Dragon": [
-        "/wiki/Kingdra_(Pok%C3%A9mon)"
-      ]
-    },
-    "Normal": {
-      "Normal": [
+    "normal": {
+      "normal": [
         "/wiki/Sentret_(Pok%C3%A9mon)",
         "/wiki/Furret_(Pok%C3%A9mon)",
         "/wiki/Aipom_(Pok%C3%A9mon)",
@@ -387,245 +870,780 @@
         "/wiki/Miltank_(Pok%C3%A9mon)",
         "/wiki/Blissey_(Pok%C3%A9mon)"
       ],
-      "Flying": [
+      "fighting": [
+      ],
+      "flying": [
         "/wiki/Hoothoot_(Pok%C3%A9mon)",
         "/wiki/Noctowl_(Pok%C3%A9mon)"
       ],
-      "Fairy": [
-        "/wiki/Igglybuff_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Psychic": [
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
         "/wiki/Girafarig_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+        "/wiki/Igglybuff_(Pok%C3%A9mon)"
       ]
     },
-    "Bug": {
-      "Flying": [
+    "fighting": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Tyrogue_(Pok%C3%A9mon)",
+        "/wiki/Hitmontop_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "flying": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "poison": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Crobat_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "ground": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Gligar_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Phanpy_(Pok%C3%A9mon)",
+        "/wiki/Donphan_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "rock": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Larvitar_(Pok%C3%A9mon)",
+        "/wiki/Pupitar_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+        "/wiki/Sudowoodo_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Tyranitar_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "bug": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Heracross_(Pok%C3%A9mon)"
+      ],
+      "flying": [
         "/wiki/Ledyba_(Pok%C3%A9mon)",
         "/wiki/Ledian_(Pok%C3%A9mon)",
         "/wiki/Yanma_(Pok%C3%A9mon)"
       ],
-      "Poison": [
+      "poison": [
         "/wiki/Spinarak_(Pok%C3%A9mon)",
         "/wiki/Ariados_(Pok%C3%A9mon)"
       ],
-      "Bug": [
+      "ground": [
+      ],
+      "rock": [
+        "/wiki/Shuckle_(Pok%C3%A9mon)"
+      ],
+      "bug": [
         "/wiki/Pineco_(Pok%C3%A9mon)"
       ],
-      "Steel": [
+      "ghost": [
+      ],
+      "steel": [
         "/wiki/Forretress_(Pok%C3%A9mon)",
         "/wiki/Scizor_(Pok%C3%A9mon)"
       ],
-      "Rock": [
-        "/wiki/Shuckle_(Pok%C3%A9mon)"
+      "fire": [
       ],
-      "Fighting": [
-        "/wiki/Heracross_(Pok%C3%A9mon)"
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Poison": {
-      "Flying": [
-        "/wiki/Crobat_(Pok%C3%A9mon)"
+    "ghost": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Misdreavus_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Electric": {
-      "Electric": [
+    "steel": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Skarmory_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Steelix_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "fire": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Ho-Oh_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+        "/wiki/Magcargo_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+        "/wiki/Cyndaquil_(Pok%C3%A9mon)",
+        "/wiki/Quilava_(Pok%C3%A9mon)",
+        "/wiki/Typhlosion_(Pok%C3%A9mon)",
+        "/wiki/Slugma_(Pok%C3%A9mon)",
+        "/wiki/Magby_(Pok%C3%A9mon)",
+        "/wiki/Entei_(Pok%C3%A9mon)"
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "water": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Mantine_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+        "/wiki/Qwilfish_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+        "/wiki/Wooper_(Pok%C3%A9mon)",
+        "/wiki/Quagsire_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+        "/wiki/Corsola_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+        "/wiki/Totodile_(Pok%C3%A9mon)",
+        "/wiki/Croconaw_(Pok%C3%A9mon)",
+        "/wiki/Feraligatr_(Pok%C3%A9mon)",
+        "/wiki/Politoed_(Pok%C3%A9mon)",
+        "/wiki/Remoraid_(Pok%C3%A9mon)",
+        "/wiki/Octillery_(Pok%C3%A9mon)",
+        "/wiki/Suicune_(Pok%C3%A9mon)"
+      ],
+      "grass": [
+      ],
+      "electric": [
+        "/wiki/Chinchou_(Pok%C3%A9mon)",
+        "/wiki/Lanturn_(Pok%C3%A9mon)"
+      ],
+      "psychic": [
+        "/wiki/Slowking_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+        "/wiki/Kingdra_(Pok%C3%A9mon)"
+      ],
+      "dark": [
+      ],
+      "fairy": [
+        "/wiki/Marill_(Pok%C3%A9mon)",
+        "/wiki/Azumarill_(Pok%C3%A9mon)"
+      ]
+    },
+    "grass": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Hoppip_(Pok%C3%A9mon)",
+        "/wiki/Skiploom_(Pok%C3%A9mon)",
+        "/wiki/Jumpluff_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Chikorita_(Pok%C3%A9mon)",
+        "/wiki/Bayleef_(Pok%C3%A9mon)",
+        "/wiki/Meganium_(Pok%C3%A9mon)",
+        "/wiki/Bellossom_(Pok%C3%A9mon)",
+        "/wiki/Sunkern_(Pok%C3%A9mon)",
+        "/wiki/Sunflora_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "electric": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
         "/wiki/Pichu_(Pok%C3%A9mon)",
         "/wiki/Mareep_(Pok%C3%A9mon)",
         "/wiki/Flaaffy_(Pok%C3%A9mon)",
         "/wiki/Ampharos_(Pok%C3%A9mon)",
         "/wiki/Elekid_(Pok%C3%A9mon)",
         "/wiki/Raikou_(Pok%C3%A9mon)"
-      ]
-    },
-    "Fairy": {
-      "Fairy": [
-        "/wiki/Cleffa_(Pok%C3%A9mon)",
-        "/wiki/Togepi_(Pok%C3%A9mon)",
-        "/wiki/Snubbull_(Pok%C3%A9mon)",
-        "/wiki/Granbull_(Pok%C3%A9mon)"
       ],
-      "Flying": [
-        "/wiki/Togetic_(Pok%C3%A9mon)"
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Psychic": {
-      "Flying": [
+    "psychic": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
         "/wiki/Natu_(Pok%C3%A9mon)",
         "/wiki/Xatu_(Pok%C3%A9mon)",
         "/wiki/Lugia_(Pok%C3%A9mon)"
       ],
-      "Psychic": [
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Celebi_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
         "/wiki/Espeon_(Pok%C3%A9mon)",
         "/wiki/Unown_(Pok%C3%A9mon)",
         "/wiki/Wobbuffet_(Pok%C3%A9mon)"
       ],
-      "Grass": [
-        "/wiki/Celebi_(Pok%C3%A9mon)"
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Rock": {
-      "Rock": [
-        "/wiki/Sudowoodo_(Pok%C3%A9mon)"
+    "ice": {
+      "normal": [
       ],
-      "Ground": [
-        "/wiki/Larvitar_(Pok%C3%A9mon)",
-        "/wiki/Pupitar_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Dark": [
-        "/wiki/Tyranitar_(Pok%C3%A9mon)"
-      ]
-    },
-    "Dark": {
-      "Dark": [
-        "/wiki/Umbreon_(Pok%C3%A9mon)"
+      "flying": [
+        "/wiki/Delibird_(Pok%C3%A9mon)"
       ],
-      "Flying": [
-        "/wiki/Murkrow_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Ice": [
-        "/wiki/Sneasel_(Pok%C3%A9mon)"
-      ],
-      "Fire": [
-        "/wiki/Houndour_(Pok%C3%A9mon)",
-        "/wiki/Houndoom_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ghost": {
-      "Ghost": [
-        "/wiki/Misdreavus_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ground": {
-      "Flying": [
-        "/wiki/Gligar_(Pok%C3%A9mon)"
-      ],
-      "Ground": [
-        "/wiki/Phanpy_(Pok%C3%A9mon)",
-        "/wiki/Donphan_(Pok%C3%A9mon)"
-      ]
-    },
-    "Steel": {
-      "Ground": [
-        "/wiki/Steelix_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Skarmory_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ice": {
-      "Ground": [
+      "ground": [
         "/wiki/Swinub_(Pok%C3%A9mon)",
         "/wiki/Piloswine_(Pok%C3%A9mon)"
       ],
-      "Flying": [
-        "/wiki/Delibird_(Pok%C3%A9mon)"
+      "rock": [
       ],
-      "Psychic": [
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
         "/wiki/Smoochum_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Fighting": {
-      "Fighting": [
-        "/wiki/Tyrogue_(Pok%C3%A9mon)",
-        "/wiki/Hitmontop_(Pok%C3%A9mon)"
+    "dragon": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "dark": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Murkrow_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+        "/wiki/Houndour_(Pok%C3%A9mon)",
+        "/wiki/Houndoom_(Pok%C3%A9mon)"
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+        "/wiki/Sneasel_(Pok%C3%A9mon)"
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Umbreon_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "fairy": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Togetic_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+        "/wiki/Cleffa_(Pok%C3%A9mon)",
+        "/wiki/Togepi_(Pok%C3%A9mon)",
+        "/wiki/Snubbull_(Pok%C3%A9mon)",
+        "/wiki/Granbull_(Pok%C3%A9mon)"
       ]
     }
   },
   "gen3": {
-    "Grass": {
-      "Grass": [
-        "/wiki/Treecko_(Pok%C3%A9mon)",
-        "/wiki/Grovyle_(Pok%C3%A9mon)",
-        "/wiki/Sceptile_(Pok%C3%A9mon)",
-        "/wiki/Seedot_(Pok%C3%A9mon)",
-        "/wiki/Shroomish_(Pok%C3%A9mon)",
-        "/wiki/Cacnea_(Pok%C3%A9mon)"
-      ],
-      "Dark": [
-        "/wiki/Nuzleaf_(Pok%C3%A9mon)",
-        "/wiki/Shiftry_(Pok%C3%A9mon)",
-        "/wiki/Cacturne_(Pok%C3%A9mon)"
-      ],
-      "Fighting": [
-        "/wiki/Breloom_(Pok%C3%A9mon)"
-      ],
-      "Poison": [
-        "/wiki/Roselia_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Tropius_(Pok%C3%A9mon)"
-      ]
-    },
-    "Fire": {
-      "Fire": [
-        "/wiki/Torchic_(Pok%C3%A9mon)",
-        "/wiki/Torkoal_(Pok%C3%A9mon)",
-        "/wiki/Castform_(Pok%C3%A9mon)"
-      ],
-      "Fighting": [
-        "/wiki/Combusken_(Pok%C3%A9mon)",
-        "/wiki/Blaziken_(Pok%C3%A9mon)"
-      ],
-      "Ground": [
-        "/wiki/Numel_(Pok%C3%A9mon)",
-        "/wiki/Camerupt_(Pok%C3%A9mon)"
-      ]
-    },
-    "Water": {
-      "Water": [
-        "/wiki/Mudkip_(Pok%C3%A9mon)",
-        "/wiki/Wailmer_(Pok%C3%A9mon)",
-        "/wiki/Wailord_(Pok%C3%A9mon)",
-        "/wiki/Corphish_(Pok%C3%A9mon)",
-        "/wiki/Feebas_(Pok%C3%A9mon)",
-        "/wiki/Milotic_(Pok%C3%A9mon)",
-        "/wiki/Castform_(Pok%C3%A9mon)",
-        "/wiki/Clamperl_(Pok%C3%A9mon)",
-        "/wiki/Huntail_(Pok%C3%A9mon)",
-        "/wiki/Gorebyss_(Pok%C3%A9mon)",
-        "/wiki/Luvdisc_(Pok%C3%A9mon)",
-        "/wiki/Kyogre_(Pok%C3%A9mon)"
-      ],
-      "Ground": [
-        "/wiki/Marshtomp_(Pok%C3%A9mon)",
-        "/wiki/Swampert_(Pok%C3%A9mon)",
-        "/wiki/Barboach_(Pok%C3%A9mon)",
-        "/wiki/Whiscash_(Pok%C3%A9mon)"
-      ],
-      "Grass": [
-        "/wiki/Lotad_(Pok%C3%A9mon)",
-        "/wiki/Lombre_(Pok%C3%A9mon)",
-        "/wiki/Ludicolo_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Wingull_(Pok%C3%A9mon)",
-        "/wiki/Pelipper_(Pok%C3%A9mon)"
-      ],
-      "Dark": [
-        "/wiki/Carvanha_(Pok%C3%A9mon)",
-        "/wiki/Sharpedo_(Pok%C3%A9mon)",
-        "/wiki/Crawdaunt_(Pok%C3%A9mon)"
-      ],
-      "Rock": [
-        "/wiki/Relicanth_(Pok%C3%A9mon)"
-      ]
-    },
-    "Dark": {
-      "Dark": [
-        "/wiki/Poochyena_(Pok%C3%A9mon)",
-        "/wiki/Mightyena_(Pok%C3%A9mon)",
-        "/wiki/Absol_(Pok%C3%A9mon)"
-      ],
-      "Normal": [
-        "/wiki/Zigzagoon_(Pok%C3%A9mon)",
-        "/wiki/Linoone_(Pok%C3%A9mon)"
-      ],
-      "Ghost": [
-        "/wiki/Sableye_(Pok%C3%A9mon)"
-      ]
-    },
-    "Normal": {
-      "Normal": [
+    "normal": {
+      "normal": [
         "/wiki/Zigzagoon_(Pok%C3%A9mon)",
         "/wiki/Linoone_(Pok%C3%A9mon)",
         "/wiki/Slakoth_(Pok%C3%A9mon)",
@@ -641,241 +1659,817 @@
         "/wiki/Castform_(Pok%C3%A9mon)",
         "/wiki/Kecleon_(Pok%C3%A9mon)"
       ],
-      "Flying": [
+      "fighting": [
+      ],
+      "flying": [
         "/wiki/Taillow_(Pok%C3%A9mon)",
         "/wiki/Swellow_(Pok%C3%A9mon)",
         "/wiki/Swablu_(Pok%C3%A9mon)"
       ],
-      "Fairy": [
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
         "/wiki/Azurill_(Pok%C3%A9mon)"
       ]
     },
-    "Bug": {
-      "Bug": [
+    "fighting": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Makuhita_(Pok%C3%A9mon)",
+        "/wiki/Hariyama_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Meditite_(Pok%C3%A9mon)",
+        "/wiki/Medicham_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "flying": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "poison": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+        "/wiki/Gulpin_(Pok%C3%A9mon)",
+        "/wiki/Swalot_(Pok%C3%A9mon)",
+        "/wiki/Seviper_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "ground": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Trapinch_(Pok%C3%A9mon)",
+        "/wiki/Groudon_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Baltoy_(Pok%C3%A9mon)",
+        "/wiki/Claydol_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+        "/wiki/Vibrava_(Pok%C3%A9mon)",
+        "/wiki/Flygon_(Pok%C3%A9mon)"
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "rock": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+        "/wiki/Nosepass_(Pok%C3%A9mon)",
+        "/wiki/Regirock_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+        "/wiki/Anorith_(Pok%C3%A9mon)",
+        "/wiki/Armaldo_(Pok%C3%A9mon)"
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Lileep_(Pok%C3%A9mon)",
+        "/wiki/Cradily_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Lunatone_(Pok%C3%A9mon)",
+        "/wiki/Solrock_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "bug": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Beautifly_(Pok%C3%A9mon)",
+        "/wiki/Masquerain_(Pok%C3%A9mon)",
+        "/wiki/Ninjask_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+        "/wiki/Dustox_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+        "/wiki/Nincada_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
         "/wiki/Wurmple_(Pok%C3%A9mon)",
         "/wiki/Silcoon_(Pok%C3%A9mon)",
         "/wiki/Cascoon_(Pok%C3%A9mon)",
         "/wiki/Volbeat_(Pok%C3%A9mon)",
         "/wiki/Illumise_(Pok%C3%A9mon)"
       ],
-      "Flying": [
-        "/wiki/Beautifly_(Pok%C3%A9mon)",
-        "/wiki/Masquerain_(Pok%C3%A9mon)",
-        "/wiki/Ninjask_(Pok%C3%A9mon)"
+      "ghost": [
+        "/wiki/Shedinja_(Pok%C3%A9mon)"
       ],
-      "Poison": [
-        "/wiki/Dustox_(Pok%C3%A9mon)"
+      "steel": [
       ],
-      "Water": [
+      "fire": [
+      ],
+      "water": [
         "/wiki/Surskit_(Pok%C3%A9mon)"
       ],
-      "Ground": [
-        "/wiki/Nincada_(Pok%C3%A9mon)"
+      "grass": [
       ],
-      "Ghost": [
-        "/wiki/Shedinja_(Pok%C3%A9mon)"
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Psychic": {
-      "Fairy": [
-        "/wiki/Ralts_(Pok%C3%A9mon)",
-        "/wiki/Kirlia_(Pok%C3%A9mon)",
-        "/wiki/Gardevoir_(Pok%C3%A9mon)"
+    "ghost": {
+      "normal": [
       ],
-      "Psychic": [
-        "/wiki/Spoink_(Pok%C3%A9mon)",
-        "/wiki/Grumpig_(Pok%C3%A9mon)",
-        "/wiki/Chimecho_(Pok%C3%A9mon)",
-        "/wiki/Wynaut_(Pok%C3%A9mon)",
-        "/wiki/Deoxys_(Pok%C3%A9mon)"
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Shuppet_(Pok%C3%A9mon)",
+        "/wiki/Banette_(Pok%C3%A9mon)",
+        "/wiki/Duskull_(Pok%C3%A9mon)",
+        "/wiki/Dusclops_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Fighting": {
-      "Fighting": [
-        "/wiki/Makuhita_(Pok%C3%A9mon)",
-        "/wiki/Hariyama_(Pok%C3%A9mon)"
+    "steel": {
+      "normal": [
       ],
-      "Psychic": [
-        "/wiki/Meditite_(Pok%C3%A9mon)",
-        "/wiki/Medicham_(Pok%C3%A9mon)"
-      ]
-    },
-    "Rock": {
-      "Rock": [
-        "/wiki/Nosepass_(Pok%C3%A9mon)",
-        "/wiki/Regirock_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Psychic": [
-        "/wiki/Lunatone_(Pok%C3%A9mon)",
-        "/wiki/Solrock_(Pok%C3%A9mon)"
+      "flying": [
       ],
-      "Grass": [
-        "/wiki/Lileep_(Pok%C3%A9mon)",
-        "/wiki/Cradily_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Bug": [
-        "/wiki/Anorith_(Pok%C3%A9mon)",
-        "/wiki/Armaldo_(Pok%C3%A9mon)"
-      ]
-    },
-    "Steel": {
-      "Fairy": [
-        "/wiki/Mawile_(Pok%C3%A9mon)"
+      "ground": [
       ],
-      "Rock": [
+      "rock": [
         "/wiki/Aron_(Pok%C3%A9mon)",
         "/wiki/Lairon_(Pok%C3%A9mon)",
         "/wiki/Aggron_(Pok%C3%A9mon)"
       ],
-      "Psychic": [
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Registeel_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
         "/wiki/Beldum_(Pok%C3%A9mon)",
         "/wiki/Metang_(Pok%C3%A9mon)",
         "/wiki/Metagross_(Pok%C3%A9mon)",
         "/wiki/Jirachi_(Pok%C3%A9mon)"
       ],
-      "Steel": [
-        "/wiki/Registeel_(Pok%C3%A9mon)"
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+        "/wiki/Mawile_(Pok%C3%A9mon)"
       ]
     },
-    "Electric": {
-      "Electric": [
+    "fire": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Combusken_(Pok%C3%A9mon)",
+        "/wiki/Blaziken_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Numel_(Pok%C3%A9mon)",
+        "/wiki/Camerupt_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+        "/wiki/Torchic_(Pok%C3%A9mon)",
+        "/wiki/Torkoal_(Pok%C3%A9mon)",
+        "/wiki/Castform_(Pok%C3%A9mon)"
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "water": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Wingull_(Pok%C3%A9mon)",
+        "/wiki/Pelipper_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Marshtomp_(Pok%C3%A9mon)",
+        "/wiki/Swampert_(Pok%C3%A9mon)",
+        "/wiki/Barboach_(Pok%C3%A9mon)",
+        "/wiki/Whiscash_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+        "/wiki/Relicanth_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+        "/wiki/Mudkip_(Pok%C3%A9mon)",
+        "/wiki/Wailmer_(Pok%C3%A9mon)",
+        "/wiki/Wailord_(Pok%C3%A9mon)",
+        "/wiki/Corphish_(Pok%C3%A9mon)",
+        "/wiki/Feebas_(Pok%C3%A9mon)",
+        "/wiki/Milotic_(Pok%C3%A9mon)",
+        "/wiki/Castform_(Pok%C3%A9mon)",
+        "/wiki/Clamperl_(Pok%C3%A9mon)",
+        "/wiki/Huntail_(Pok%C3%A9mon)",
+        "/wiki/Gorebyss_(Pok%C3%A9mon)",
+        "/wiki/Luvdisc_(Pok%C3%A9mon)",
+        "/wiki/Kyogre_(Pok%C3%A9mon)"
+      ],
+      "grass": [
+        "/wiki/Lotad_(Pok%C3%A9mon)",
+        "/wiki/Lombre_(Pok%C3%A9mon)",
+        "/wiki/Ludicolo_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Carvanha_(Pok%C3%A9mon)",
+        "/wiki/Sharpedo_(Pok%C3%A9mon)",
+        "/wiki/Crawdaunt_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "grass": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Breloom_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+        "/wiki/Tropius_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+        "/wiki/Roselia_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Treecko_(Pok%C3%A9mon)",
+        "/wiki/Grovyle_(Pok%C3%A9mon)",
+        "/wiki/Sceptile_(Pok%C3%A9mon)",
+        "/wiki/Seedot_(Pok%C3%A9mon)",
+        "/wiki/Shroomish_(Pok%C3%A9mon)",
+        "/wiki/Cacnea_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Nuzleaf_(Pok%C3%A9mon)",
+        "/wiki/Shiftry_(Pok%C3%A9mon)",
+        "/wiki/Cacturne_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "electric": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
         "/wiki/Electrike_(Pok%C3%A9mon)",
         "/wiki/Manectric_(Pok%C3%A9mon)",
         "/wiki/Plusle_(Pok%C3%A9mon)",
         "/wiki/Minun_(Pok%C3%A9mon)"
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Poison": {
-      "Poison": [
-        "/wiki/Gulpin_(Pok%C3%A9mon)",
-        "/wiki/Swalot_(Pok%C3%A9mon)",
-        "/wiki/Seviper_(Pok%C3%A9mon)"
+    "psychic": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Spoink_(Pok%C3%A9mon)",
+        "/wiki/Grumpig_(Pok%C3%A9mon)",
+        "/wiki/Chimecho_(Pok%C3%A9mon)",
+        "/wiki/Wynaut_(Pok%C3%A9mon)",
+        "/wiki/Deoxys_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+        "/wiki/Ralts_(Pok%C3%A9mon)",
+        "/wiki/Kirlia_(Pok%C3%A9mon)",
+        "/wiki/Gardevoir_(Pok%C3%A9mon)"
       ]
     },
-    "Ground": {
-      "Ground": [
-        "/wiki/Trapinch_(Pok%C3%A9mon)",
-        "/wiki/Groudon_(Pok%C3%A9mon)"
+    "ice": {
+      "normal": [
       ],
-      "Dragon": [
-        "/wiki/Vibrava_(Pok%C3%A9mon)",
-        "/wiki/Flygon_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Psychic": [
-        "/wiki/Baltoy_(Pok%C3%A9mon)",
-        "/wiki/Claydol_(Pok%C3%A9mon)"
-      ]
-    },
-    "Dragon": {
-      "Flying": [
-        "/wiki/Altaria_(Pok%C3%A9mon)",
-        "/wiki/Salamence_(Pok%C3%A9mon)",
-        "/wiki/Rayquaza_(Pok%C3%A9mon)"
+      "flying": [
       ],
-      "Dragon": [
-        "/wiki/Bagon_(Pok%C3%A9mon)",
-        "/wiki/Shelgon_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Psychic": [
-        "/wiki/Latias_(Pok%C3%A9mon)",
-        "/wiki/Latios_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ice": {
-      "Ice": [
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+        "/wiki/Spheal_(Pok%C3%A9mon)",
+        "/wiki/Sealeo_(Pok%C3%A9mon)",
+        "/wiki/Walrein_(Pok%C3%A9mon)"
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
         "/wiki/Castform_(Pok%C3%A9mon)",
         "/wiki/Snorunt_(Pok%C3%A9mon)",
         "/wiki/Glalie_(Pok%C3%A9mon)",
         "/wiki/Regice_(Pok%C3%A9mon)"
       ],
-      "Water": [
-        "/wiki/Spheal_(Pok%C3%A9mon)",
-        "/wiki/Sealeo_(Pok%C3%A9mon)",
-        "/wiki/Walrein_(Pok%C3%A9mon)"
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Ghost": {
-      "Ghost": [
-        "/wiki/Shuppet_(Pok%C3%A9mon)",
-        "/wiki/Banette_(Pok%C3%A9mon)",
-        "/wiki/Duskull_(Pok%C3%A9mon)",
-        "/wiki/Dusclops_(Pok%C3%A9mon)"
+    "dragon": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Altaria_(Pok%C3%A9mon)",
+        "/wiki/Salamence_(Pok%C3%A9mon)",
+        "/wiki/Rayquaza_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Latias_(Pok%C3%A9mon)",
+        "/wiki/Latios_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+        "/wiki/Bagon_(Pok%C3%A9mon)",
+        "/wiki/Shelgon_(Pok%C3%A9mon)"
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "dark": {
+      "normal": [
+        "/wiki/Zigzagoon_(Pok%C3%A9mon)",
+        "/wiki/Linoone_(Pok%C3%A9mon)"
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Sableye_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Poochyena_(Pok%C3%A9mon)",
+        "/wiki/Mightyena_(Pok%C3%A9mon)",
+        "/wiki/Absol_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "fairy": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     }
   },
   "gen4": {
-    "Grass": {
-      "Grass": [
-        "/wiki/Turtwig_(Pok%C3%A9mon)",
-        "/wiki/Grotle_(Pok%C3%A9mon)",
-        "/wiki/Cherubi_(Pok%C3%A9mon)",
-        "/wiki/Cherrim_(Pok%C3%A9mon)",
-        "/wiki/Carnivine_(Pok%C3%A9mon)",
-        "/wiki/Tangrowth_(Pok%C3%A9mon)",
-        "/wiki/Leafeon_(Pok%C3%A9mon)",
-        "/wiki/Shaymin_(Pok%C3%A9mon)"
-      ],
-      "Ground": [
-        "/wiki/Torterra_(Pok%C3%A9mon)"
-      ],
-      "Poison": [
-        "/wiki/Budew_(Pok%C3%A9mon)",
-        "/wiki/Roserade_(Pok%C3%A9mon)"
-      ],
-      "Ice": [
-        "/wiki/Snover_(Pok%C3%A9mon)",
-        "/wiki/Abomasnow_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Shaymin_(Pok%C3%A9mon)"
-      ]
-    },
-    "Fire": {
-      "Fire": [
-        "/wiki/Chimchar_(Pok%C3%A9mon)",
-        "/wiki/Magmortar_(Pok%C3%A9mon)"
-      ],
-      "Fighting": [
-        "/wiki/Monferno_(Pok%C3%A9mon)",
-        "/wiki/Infernape_(Pok%C3%A9mon)"
-      ],
-      "Steel": [
-        "/wiki/Heatran_(Pok%C3%A9mon)"
-      ]
-    },
-    "Water": {
-      "Water": [
-        "/wiki/Piplup_(Pok%C3%A9mon)",
-        "/wiki/Prinplup_(Pok%C3%A9mon)",
-        "/wiki/Buizel_(Pok%C3%A9mon)",
-        "/wiki/Floatzel_(Pok%C3%A9mon)",
-        "/wiki/Shellos_(Pok%C3%A9mon)",
-        "/wiki/Finneon_(Pok%C3%A9mon)",
-        "/wiki/Lumineon_(Pok%C3%A9mon)",
-        "/wiki/Phione_(Pok%C3%A9mon)",
-        "/wiki/Manaphy_(Pok%C3%A9mon)"
-      ],
-      "Steel": [
-        "/wiki/Empoleon_(Pok%C3%A9mon)"
-      ],
-      "Ground": [
-        "/wiki/Gastrodon_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Mantyke_(Pok%C3%A9mon)"
-      ],
-      "Dragon": [
-        "/wiki/Palkia_(Pok%C3%A9mon)"
-      ]
-    },
-    "Normal": {
-      "Flying": [
-        "/wiki/Starly_(Pok%C3%A9mon)",
-        "/wiki/Staravia_(Pok%C3%A9mon)",
-        "/wiki/Staraptor_(Pok%C3%A9mon)",
-        "/wiki/Chatot_(Pok%C3%A9mon)"
-      ],
-      "Normal": [
+    "normal": {
+      "normal": [
         "/wiki/Bidoof_(Pok%C3%A9mon)",
         "/wiki/Ambipom_(Pok%C3%A9mon)",
         "/wiki/Buneary_(Pok%C3%A9mon)",
@@ -889,189 +2483,1436 @@
         "/wiki/Regigigas_(Pok%C3%A9mon)",
         "/wiki/Arceus_(Pok%C3%A9mon)"
       ],
-      "Water": [
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Starly_(Pok%C3%A9mon)",
+        "/wiki/Staravia_(Pok%C3%A9mon)",
+        "/wiki/Staraptor_(Pok%C3%A9mon)",
+        "/wiki/Chatot_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
         "/wiki/Bibarel_(Pok%C3%A9mon)"
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Bug": {
-      "Bug": [
-        "/wiki/Kricketot_(Pok%C3%A9mon)",
-        "/wiki/Kricketune_(Pok%C3%A9mon)",
-        "/wiki/Burmy_(Pok%C3%A9mon)"
+    "fighting": {
+      "normal": [
       ],
-      "Grass": [
-        "/wiki/Wormadam_(Pok%C3%A9mon)"
+      "fighting": [
+        "/wiki/Riolu_(Pok%C3%A9mon)"
       ],
-      "Ground": [
-        "/wiki/Wormadam_(Pok%C3%A9mon)"
+      "flying": [
       ],
-      "Steel": [
-        "/wiki/Wormadam_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Flying": [
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Lucario_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "flying": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "poison": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Croagunk_(Pok%C3%A9mon)",
+        "/wiki/Toxicroak_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+        "/wiki/Skorupi_(Pok%C3%A9mon)"
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Stunky_(Pok%C3%A9mon)",
+        "/wiki/Skuntank_(Pok%C3%A9mon)",
+        "/wiki/Drapion_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "ground": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Gliscor_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Hippopotas_(Pok%C3%A9mon)",
+        "/wiki/Hippowdon_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+        "/wiki/Rhyperior_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "rock": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+        "/wiki/Cranidos_(Pok%C3%A9mon)",
+        "/wiki/Rampardos_(Pok%C3%A9mon)",
+        "/wiki/Bonsly_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Shieldon_(Pok%C3%A9mon)",
+        "/wiki/Bastiodon_(Pok%C3%A9mon)",
+        "/wiki/Probopass_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "bug": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
         "/wiki/Mothim_(Pok%C3%A9mon)",
         "/wiki/Combee_(Pok%C3%A9mon)",
         "/wiki/Vespiquen_(Pok%C3%A9mon)",
         "/wiki/Yanmega_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Wormadam_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+        "/wiki/Kricketot_(Pok%C3%A9mon)",
+        "/wiki/Kricketune_(Pok%C3%A9mon)",
+        "/wiki/Burmy_(Pok%C3%A9mon)"
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Wormadam_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Wormadam_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Electric": {
-      "Electric": [
+    "ghost": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Drifloon_(Pok%C3%A9mon)",
+        "/wiki/Drifblim_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Mismagius_(Pok%C3%A9mon)",
+        "/wiki/Dusknoir_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+        "/wiki/Giratina_(Pok%C3%A9mon)"
+      ],
+      "dark": [
+        "/wiki/Spiritomb_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "steel": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Bronzor_(Pok%C3%A9mon)",
+        "/wiki/Bronzong_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+        "/wiki/Dialga_(Pok%C3%A9mon)"
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "fire": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Monferno_(Pok%C3%A9mon)",
+        "/wiki/Infernape_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Heatran_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+        "/wiki/Chimchar_(Pok%C3%A9mon)",
+        "/wiki/Magmortar_(Pok%C3%A9mon)"
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "water": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Mantyke_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Gastrodon_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Empoleon_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+        "/wiki/Piplup_(Pok%C3%A9mon)",
+        "/wiki/Prinplup_(Pok%C3%A9mon)",
+        "/wiki/Buizel_(Pok%C3%A9mon)",
+        "/wiki/Floatzel_(Pok%C3%A9mon)",
+        "/wiki/Shellos_(Pok%C3%A9mon)",
+        "/wiki/Finneon_(Pok%C3%A9mon)",
+        "/wiki/Lumineon_(Pok%C3%A9mon)",
+        "/wiki/Phione_(Pok%C3%A9mon)",
+        "/wiki/Manaphy_(Pok%C3%A9mon)"
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+        "/wiki/Palkia_(Pok%C3%A9mon)"
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "grass": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Shaymin_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+        "/wiki/Budew_(Pok%C3%A9mon)",
+        "/wiki/Roserade_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+        "/wiki/Torterra_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Turtwig_(Pok%C3%A9mon)",
+        "/wiki/Grotle_(Pok%C3%A9mon)",
+        "/wiki/Cherubi_(Pok%C3%A9mon)",
+        "/wiki/Cherrim_(Pok%C3%A9mon)",
+        "/wiki/Carnivine_(Pok%C3%A9mon)",
+        "/wiki/Tangrowth_(Pok%C3%A9mon)",
+        "/wiki/Leafeon_(Pok%C3%A9mon)",
+        "/wiki/Shaymin_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+        "/wiki/Snover_(Pok%C3%A9mon)",
+        "/wiki/Abomasnow_(Pok%C3%A9mon)"
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "electric": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Rotom_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Rotom_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+        "/wiki/Magnezone_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+        "/wiki/Rotom_(Pok%C3%A9mon)"
+      ],
+      "water": [
+        "/wiki/Rotom_(Pok%C3%A9mon)"
+      ],
+      "grass": [
+        "/wiki/Rotom_(Pok%C3%A9mon)"
+      ],
+      "electric": [
         "/wiki/Shinx_(Pok%C3%A9mon)",
         "/wiki/Luxio_(Pok%C3%A9mon)",
         "/wiki/Luxray_(Pok%C3%A9mon)",
         "/wiki/Pachirisu_(Pok%C3%A9mon)",
         "/wiki/Electivire_(Pok%C3%A9mon)"
       ],
-      "Steel": [
-        "/wiki/Magnezone_(Pok%C3%A9mon)"
+      "psychic": [
       ],
-      "Ghost": [
+      "ice": [
         "/wiki/Rotom_(Pok%C3%A9mon)"
       ],
-      "Fire": [
-        "/wiki/Rotom_(Pok%C3%A9mon)"
+      "dragon": [
       ],
-      "Water": [
-        "/wiki/Rotom_(Pok%C3%A9mon)"
+      "dark": [
       ],
-      "Ice": [
-        "/wiki/Rotom_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Rotom_(Pok%C3%A9mon)"
-      ],
-      "Grass": [
-        "/wiki/Rotom_(Pok%C3%A9mon)"
+      "fairy": [
       ]
     },
-    "Rock": {
-      "Rock": [
-        "/wiki/Cranidos_(Pok%C3%A9mon)",
-        "/wiki/Rampardos_(Pok%C3%A9mon)",
-        "/wiki/Bonsly_(Pok%C3%A9mon)"
+    "psychic": {
+      "normal": [
       ],
-      "Steel": [
-        "/wiki/Shieldon_(Pok%C3%A9mon)",
-        "/wiki/Bastiodon_(Pok%C3%A9mon)",
-        "/wiki/Probopass_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ghost": {
-      "Flying": [
-        "/wiki/Drifloon_(Pok%C3%A9mon)",
-        "/wiki/Drifblim_(Pok%C3%A9mon)"
+      "fighting": [
+        "/wiki/Gallade_(Pok%C3%A9mon)"
       ],
-      "Ghost": [
-        "/wiki/Mismagius_(Pok%C3%A9mon)",
-        "/wiki/Dusknoir_(Pok%C3%A9mon)"
+      "flying": [
       ],
-      "Dark": [
-        "/wiki/Spiritomb_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Dragon": [
-        "/wiki/Giratina_(Pok%C3%A9mon)"
-      ]
-    },
-    "Dark": {
-      "Flying": [
-        "/wiki/Honchkrow_(Pok%C3%A9mon)"
+      "ground": [
       ],
-      "Ice": [
-        "/wiki/Weavile_(Pok%C3%A9mon)"
+      "rock": [
       ],
-      "Dark": [
-        "/wiki/Darkrai_(Pok%C3%A9mon)"
-      ]
-    },
-    "Psychic": {
-      "Psychic": [
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
         "/wiki/Chingling_(Pok%C3%A9mon)",
         "/wiki/Uxie_(Pok%C3%A9mon)",
         "/wiki/Mesprit_(Pok%C3%A9mon)",
         "/wiki/Azelf_(Pok%C3%A9mon)",
         "/wiki/Cresselia_(Pok%C3%A9mon)"
       ],
-      "Fairy": [
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
         "/wiki/Mime_Jr._(Pok%C3%A9mon)"
-      ],
-      "Fighting": [
-        "/wiki/Gallade_(Pok%C3%A9mon)"
       ]
     },
-    "Poison": {
-      "Dark": [
-        "/wiki/Stunky_(Pok%C3%A9mon)",
-        "/wiki/Skuntank_(Pok%C3%A9mon)",
-        "/wiki/Drapion_(Pok%C3%A9mon)"
+    "ice": {
+      "normal": [
       ],
-      "Bug": [
-        "/wiki/Skorupi_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Fighting": [
-        "/wiki/Croagunk_(Pok%C3%A9mon)",
-        "/wiki/Toxicroak_(Pok%C3%A9mon)"
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Mamoswine_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Froslass_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+        "/wiki/Glaceon_(Pok%C3%A9mon)"
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Steel": {
-      "Psychic": [
-        "/wiki/Bronzor_(Pok%C3%A9mon)",
-        "/wiki/Bronzong_(Pok%C3%A9mon)"
+    "dragon": {
+      "normal": [
       ],
-      "Dragon": [
-        "/wiki/Dialga_(Pok%C3%A9mon)"
-      ]
-    },
-    "Dragon": {
-      "Ground": [
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
         "/wiki/Gible_(Pok%C3%A9mon)",
         "/wiki/Gabite_(Pok%C3%A9mon)",
         "/wiki/Garchomp_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Fighting": {
-      "Fighting": [
-        "/wiki/Riolu_(Pok%C3%A9mon)"
+    "dark": {
+      "normal": [
       ],
-      "Steel": [
-        "/wiki/Lucario_(Pok%C3%A9mon)"
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Honchkrow_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+        "/wiki/Weavile_(Pok%C3%A9mon)"
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Darkrai_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
       ]
     },
-    "Ground": {
-      "Ground": [
-        "/wiki/Hippopotas_(Pok%C3%A9mon)",
-        "/wiki/Hippowdon_(Pok%C3%A9mon)"
+    "fairy": {
+      "normal": [
       ],
-      "Rock": [
-        "/wiki/Rhyperior_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Flying": [
-        "/wiki/Gliscor_(Pok%C3%A9mon)"
-      ]
-    },
-    "Fairy": {
-      "Flying": [
+      "flying": [
         "/wiki/Togekiss_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ice": {
-      "Ice": [
-        "/wiki/Glaceon_(Pok%C3%A9mon)"
       ],
-      "Ground": [
-        "/wiki/Mamoswine_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Ghost": [
-        "/wiki/Froslass_(Pok%C3%A9mon)"
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     }
   },
   "gen5": {
-    "Psychic": {
-      "Fire": [
+    "normal": {
+      "normal": [
+        "/wiki/Patrat_(Pok%C3%A9mon)",
+        "/wiki/Watchog_(Pok%C3%A9mon)",
+        "/wiki/Lillipup_(Pok%C3%A9mon)",
+        "/wiki/Herdier_(Pok%C3%A9mon)",
+        "/wiki/Stoutland_(Pok%C3%A9mon)",
+        "/wiki/Audino_(Pok%C3%A9mon)",
+        "/wiki/Minccino_(Pok%C3%A9mon)",
+        "/wiki/Cinccino_(Pok%C3%A9mon)",
+        "/wiki/Bouffalant_(Pok%C3%A9mon)"
+      ],
+      "fighting": [
+        "/wiki/Meloetta_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+        "/wiki/Pidove_(Pok%C3%A9mon)",
+        "/wiki/Tranquill_(Pok%C3%A9mon)",
+        "/wiki/Unfezant_(Pok%C3%A9mon)",
+        "/wiki/Rufflet_(Pok%C3%A9mon)",
+        "/wiki/Braviary_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Deerling_(Pok%C3%A9mon)",
+        "/wiki/Sawsbuck_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Meloetta_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "fighting": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Timburr_(Pok%C3%A9mon)",
+        "/wiki/Gurdurr_(Pok%C3%A9mon)",
+        "/wiki/Conkeldurr_(Pok%C3%A9mon)",
+        "/wiki/Throh_(Pok%C3%A9mon)",
+        "/wiki/Sawk_(Pok%C3%A9mon)",
+        "/wiki/Mienfoo_(Pok%C3%A9mon)",
+        "/wiki/Mienshao_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "flying": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Tornadus_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "poison": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+        "/wiki/Trubbish_(Pok%C3%A9mon)",
+        "/wiki/Garbodor_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "ground": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Landorus_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Drilbur_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Golett_(Pok%C3%A9mon)",
+        "/wiki/Golurk_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+        "/wiki/Excadrill_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+        "/wiki/Stunfisk_(Pok%C3%A9mon)"
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+        "/wiki/Sandile_(Pok%C3%A9mon)",
+        "/wiki/Krokorok_(Pok%C3%A9mon)",
+        "/wiki/Krookodile_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "rock": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Terrakion_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+        "/wiki/Archen_(Pok%C3%A9mon)",
+        "/wiki/Archeops_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+        "/wiki/Roggenrola_(Pok%C3%A9mon)",
+        "/wiki/Boldore_(Pok%C3%A9mon)",
+        "/wiki/Gigalith_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "bug": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+        "/wiki/Venipede_(Pok%C3%A9mon)",
+        "/wiki/Whirlipede_(Pok%C3%A9mon)",
+        "/wiki/Scolipede_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+      ],
+      "rock": [
+        "/wiki/Dwebble_(Pok%C3%A9mon)",
+        "/wiki/Crustle_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+        "/wiki/Karrablast_(Pok%C3%A9mon)",
+        "/wiki/Shelmet_(Pok%C3%A9mon)",
+        "/wiki/Accelgor_(Pok%C3%A9mon)"
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Escavalier_(Pok%C3%A9mon)",
+        "/wiki/Durant_(Pok%C3%A9mon)",
+        "/wiki/Genesect_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+        "/wiki/Larvesta_(Pok%C3%A9mon)",
+        "/wiki/Volcarona_(Pok%C3%A9mon)"
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Sewaddle_(Pok%C3%A9mon)",
+        "/wiki/Swadloon_(Pok%C3%A9mon)",
+        "/wiki/Leavanny_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+        "/wiki/Joltik_(Pok%C3%A9mon)",
+        "/wiki/Galvantula_(Pok%C3%A9mon)"
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "ghost": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Yamask_(Pok%C3%A9mon)",
+        "/wiki/Cofagrigus_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+      ],
+      "fire": [
+        "/wiki/Litwick_(Pok%C3%A9mon)",
+        "/wiki/Lampent_(Pok%C3%A9mon)",
+        "/wiki/Chandelure_(Pok%C3%A9mon)"
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "steel": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Cobalion_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Klink_(Pok%C3%A9mon)",
+        "/wiki/Klang_(Pok%C3%A9mon)",
+        "/wiki/Klinklang_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "fire": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Pignite_(Pok%C3%A9mon)",
+        "/wiki/Emboar_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+        "/wiki/Tepig_(Pok%C3%A9mon)",
+        "/wiki/Pansear_(Pok%C3%A9mon)",
+        "/wiki/Simisear_(Pok%C3%A9mon)",
+        "/wiki/Darumaka_(Pok%C3%A9mon)",
+        "/wiki/Darmanitan_(Pok%C3%A9mon)",
+        "/wiki/Heatmor_(Pok%C3%A9mon)"
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+        "/wiki/Darmanitan_(Pok%C3%A9mon)"
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "water": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Keldeo_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+        "/wiki/Ducklett_(Pok%C3%A9mon)",
+        "/wiki/Swanna_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+        "/wiki/Palpitoad_(Pok%C3%A9mon)",
+        "/wiki/Seismitoad_(Pok%C3%A9mon)"
+      ],
+      "rock": [
+        "/wiki/Tirtouga_(Pok%C3%A9mon)",
+        "/wiki/Carracosta_(Pok%C3%A9mon)"
+      ],
+      "bug": [
+      ],
+      "ghost": [
+        "/wiki/Frillish_(Pok%C3%A9mon)",
+        "/wiki/Jellicent_(Pok%C3%A9mon)"
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+        "/wiki/Oshawott_(Pok%C3%A9mon)",
+        "/wiki/Dewott_(Pok%C3%A9mon)",
+        "/wiki/Samurott_(Pok%C3%A9mon)",
+        "/wiki/Panpour_(Pok%C3%A9mon)",
+        "/wiki/Simipour_(Pok%C3%A9mon)",
+        "/wiki/Tympole_(Pok%C3%A9mon)",
+        "/wiki/Basculin_(Pok%C3%A9mon)",
+        "/wiki/Alomomola_(Pok%C3%A9mon)"
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "grass": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Virizion_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+      ],
+      "poison": [
+        "/wiki/Foongus_(Pok%C3%A9mon)",
+        "/wiki/Amoonguss_(Pok%C3%A9mon)"
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Ferroseed_(Pok%C3%A9mon)",
+        "/wiki/Ferrothorn_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+        "/wiki/Snivy_(Pok%C3%A9mon)",
+        "/wiki/Servine_(Pok%C3%A9mon)",
+        "/wiki/Serperior_(Pok%C3%A9mon)",
+        "/wiki/Pansage_(Pok%C3%A9mon)",
+        "/wiki/Simisage_(Pok%C3%A9mon)",
+        "/wiki/Petilil_(Pok%C3%A9mon)",
+        "/wiki/Lilligant_(Pok%C3%A9mon)",
+        "/wiki/Maractus_(Pok%C3%A9mon)"
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+        "/wiki/Cottonee_(Pok%C3%A9mon)",
+        "/wiki/Whimsicott_(Pok%C3%A9mon)"
+      ]
+    },
+    "electric": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Emolga_(Pok%C3%A9mon)",
+        "/wiki/Thundurus_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+        "/wiki/Blitzle_(Pok%C3%A9mon)",
+        "/wiki/Zebstrika_(Pok%C3%A9mon)",
+        "/wiki/Tynamo_(Pok%C3%A9mon)",
+        "/wiki/Eelektrik_(Pok%C3%A9mon)",
+        "/wiki/Eelektross_(Pok%C3%A9mon)"
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
+      ]
+    },
+    "psychic": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+        "/wiki/Woobat_(Pok%C3%A9mon)",
+        "/wiki/Swoobat_(Pok%C3%A9mon)",
+        "/wiki/Sigilyph_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
         "/wiki/Victini_(Pok%C3%A9mon)"
       ],
-      "Psychic": [
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
         "/wiki/Munna_(Pok%C3%A9mon)",
         "/wiki/Musharna_(Pok%C3%A9mon)",
         "/wiki/Gothita_(Pok%C3%A9mon)",
@@ -1083,294 +3924,191 @@
         "/wiki/Elgyem_(Pok%C3%A9mon)",
         "/wiki/Beheeyem_(Pok%C3%A9mon)"
       ],
-      "Flying": [
-        "/wiki/Woobat_(Pok%C3%A9mon)",
-        "/wiki/Swoobat_(Pok%C3%A9mon)",
-        "/wiki/Sigilyph_(Pok%C3%A9mon)"
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Grass": {
-      "Grass": [
-        "/wiki/Snivy_(Pok%C3%A9mon)",
-        "/wiki/Servine_(Pok%C3%A9mon)",
-        "/wiki/Serperior_(Pok%C3%A9mon)",
-        "/wiki/Pansage_(Pok%C3%A9mon)",
-        "/wiki/Simisage_(Pok%C3%A9mon)",
-        "/wiki/Petilil_(Pok%C3%A9mon)",
-        "/wiki/Lilligant_(Pok%C3%A9mon)",
-        "/wiki/Maractus_(Pok%C3%A9mon)"
+    "ice": {
+      "normal": [
       ],
-      "Fairy": [
-        "/wiki/Cottonee_(Pok%C3%A9mon)",
-        "/wiki/Whimsicott_(Pok%C3%A9mon)"
+      "fighting": [
       ],
-      "Poison": [
-        "/wiki/Foongus_(Pok%C3%A9mon)",
-        "/wiki/Amoonguss_(Pok%C3%A9mon)"
+      "flying": [
       ],
-      "Steel": [
-        "/wiki/Ferroseed_(Pok%C3%A9mon)",
-        "/wiki/Ferrothorn_(Pok%C3%A9mon)"
+      "poison": [
       ],
-      "Fighting": [
-        "/wiki/Virizion_(Pok%C3%A9mon)"
-      ]
-    },
-    "Fire": {
-      "Fire": [
-        "/wiki/Tepig_(Pok%C3%A9mon)",
-        "/wiki/Pansear_(Pok%C3%A9mon)",
-        "/wiki/Simisear_(Pok%C3%A9mon)",
-        "/wiki/Darumaka_(Pok%C3%A9mon)",
-        "/wiki/Darmanitan_(Pok%C3%A9mon)",
-        "/wiki/Heatmor_(Pok%C3%A9mon)"
+      "ground": [
       ],
-      "Fighting": [
-        "/wiki/Pignite_(Pok%C3%A9mon)",
-        "/wiki/Emboar_(Pok%C3%A9mon)"
+      "rock": [
       ],
-      "Psychic": [
-        "/wiki/Darmanitan_(Pok%C3%A9mon)"
-      ]
-    },
-    "Water": {
-      "Water": [
-        "/wiki/Oshawott_(Pok%C3%A9mon)",
-        "/wiki/Dewott_(Pok%C3%A9mon)",
-        "/wiki/Samurott_(Pok%C3%A9mon)",
-        "/wiki/Panpour_(Pok%C3%A9mon)",
-        "/wiki/Simipour_(Pok%C3%A9mon)",
-        "/wiki/Tympole_(Pok%C3%A9mon)",
-        "/wiki/Basculin_(Pok%C3%A9mon)",
-        "/wiki/Alomomola_(Pok%C3%A9mon)"
+      "bug": [
       ],
-      "Ground": [
-        "/wiki/Palpitoad_(Pok%C3%A9mon)",
-        "/wiki/Seismitoad_(Pok%C3%A9mon)"
+      "ghost": [
       ],
-      "Rock": [
-        "/wiki/Tirtouga_(Pok%C3%A9mon)",
-        "/wiki/Carracosta_(Pok%C3%A9mon)"
+      "steel": [
       ],
-      "Flying": [
-        "/wiki/Ducklett_(Pok%C3%A9mon)",
-        "/wiki/Swanna_(Pok%C3%A9mon)"
+      "fire": [
       ],
-      "Ghost": [
-        "/wiki/Frillish_(Pok%C3%A9mon)",
-        "/wiki/Jellicent_(Pok%C3%A9mon)"
+      "water": [
       ],
-      "Fighting": [
-        "/wiki/Keldeo_(Pok%C3%A9mon)"
-      ]
-    },
-    "Normal": {
-      "Normal": [
-        "/wiki/Patrat_(Pok%C3%A9mon)",
-        "/wiki/Watchog_(Pok%C3%A9mon)",
-        "/wiki/Lillipup_(Pok%C3%A9mon)",
-        "/wiki/Herdier_(Pok%C3%A9mon)",
-        "/wiki/Stoutland_(Pok%C3%A9mon)",
-        "/wiki/Audino_(Pok%C3%A9mon)",
-        "/wiki/Minccino_(Pok%C3%A9mon)",
-        "/wiki/Cinccino_(Pok%C3%A9mon)",
-        "/wiki/Bouffalant_(Pok%C3%A9mon)"
+      "grass": [
       ],
-      "Flying": [
-        "/wiki/Pidove_(Pok%C3%A9mon)",
-        "/wiki/Tranquill_(Pok%C3%A9mon)",
-        "/wiki/Unfezant_(Pok%C3%A9mon)",
-        "/wiki/Rufflet_(Pok%C3%A9mon)",
-        "/wiki/Braviary_(Pok%C3%A9mon)"
+      "electric": [
       ],
-      "Grass": [
-        "/wiki/Deerling_(Pok%C3%A9mon)",
-        "/wiki/Sawsbuck_(Pok%C3%A9mon)"
+      "psychic": [
       ],
-      "Psychic": [
-        "/wiki/Meloetta_(Pok%C3%A9mon)"
-      ],
-      "Fighting": [
-        "/wiki/Meloetta_(Pok%C3%A9mon)"
-      ]
-    },
-    "Dark": {
-      "Dark": [
-        "/wiki/Purrloin_(Pok%C3%A9mon)",
-        "/wiki/Liepard_(Pok%C3%A9mon)",
-        "/wiki/Zorua_(Pok%C3%A9mon)",
-        "/wiki/Zoroark_(Pok%C3%A9mon)"
-      ],
-      "Fighting": [
-        "/wiki/Scraggy_(Pok%C3%A9mon)",
-        "/wiki/Scrafty_(Pok%C3%A9mon)"
-      ],
-      "Steel": [
-        "/wiki/Pawniard_(Pok%C3%A9mon)",
-        "/wiki/Bisharp_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Vullaby_(Pok%C3%A9mon)",
-        "/wiki/Mandibuzz_(Pok%C3%A9mon)"
-      ],
-      "Dragon": [
-        "/wiki/Deino_(Pok%C3%A9mon)",
-        "/wiki/Zweilous_(Pok%C3%A9mon)",
-        "/wiki/Hydreigon_(Pok%C3%A9mon)"
-      ]
-    },
-    "Electric": {
-      "Electric": [
-        "/wiki/Blitzle_(Pok%C3%A9mon)",
-        "/wiki/Zebstrika_(Pok%C3%A9mon)",
-        "/wiki/Tynamo_(Pok%C3%A9mon)",
-        "/wiki/Eelektrik_(Pok%C3%A9mon)",
-        "/wiki/Eelektross_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Emolga_(Pok%C3%A9mon)",
-        "/wiki/Thundurus_(Pok%C3%A9mon)"
-      ]
-    },
-    "Rock": {
-      "Rock": [
-        "/wiki/Roggenrola_(Pok%C3%A9mon)",
-        "/wiki/Boldore_(Pok%C3%A9mon)",
-        "/wiki/Gigalith_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Archen_(Pok%C3%A9mon)",
-        "/wiki/Archeops_(Pok%C3%A9mon)"
-      ],
-      "Fighting": [
-        "/wiki/Terrakion_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ground": {
-      "Ground": [
-        "/wiki/Drilbur_(Pok%C3%A9mon)"
-      ],
-      "Steel": [
-        "/wiki/Excadrill_(Pok%C3%A9mon)"
-      ],
-      "Dark": [
-        "/wiki/Sandile_(Pok%C3%A9mon)",
-        "/wiki/Krokorok_(Pok%C3%A9mon)",
-        "/wiki/Krookodile_(Pok%C3%A9mon)"
-      ],
-      "Electric": [
-        "/wiki/Stunfisk_(Pok%C3%A9mon)"
-      ],
-      "Ghost": [
-        "/wiki/Golett_(Pok%C3%A9mon)",
-        "/wiki/Golurk_(Pok%C3%A9mon)"
-      ],
-      "Flying": [
-        "/wiki/Landorus_(Pok%C3%A9mon)"
-      ]
-    },
-    "Fighting": {
-      "Fighting": [
-        "/wiki/Timburr_(Pok%C3%A9mon)",
-        "/wiki/Gurdurr_(Pok%C3%A9mon)",
-        "/wiki/Conkeldurr_(Pok%C3%A9mon)",
-        "/wiki/Throh_(Pok%C3%A9mon)",
-        "/wiki/Sawk_(Pok%C3%A9mon)",
-        "/wiki/Mienfoo_(Pok%C3%A9mon)",
-        "/wiki/Mienshao_(Pok%C3%A9mon)"
-      ]
-    },
-    "Bug": {
-      "Grass": [
-        "/wiki/Sewaddle_(Pok%C3%A9mon)",
-        "/wiki/Swadloon_(Pok%C3%A9mon)",
-        "/wiki/Leavanny_(Pok%C3%A9mon)"
-      ],
-      "Poison": [
-        "/wiki/Venipede_(Pok%C3%A9mon)",
-        "/wiki/Whirlipede_(Pok%C3%A9mon)",
-        "/wiki/Scolipede_(Pok%C3%A9mon)"
-      ],
-      "Rock": [
-        "/wiki/Dwebble_(Pok%C3%A9mon)",
-        "/wiki/Crustle_(Pok%C3%A9mon)"
-      ],
-      "Bug": [
-        "/wiki/Karrablast_(Pok%C3%A9mon)",
-        "/wiki/Shelmet_(Pok%C3%A9mon)",
-        "/wiki/Accelgor_(Pok%C3%A9mon)"
-      ],
-      "Steel": [
-        "/wiki/Escavalier_(Pok%C3%A9mon)",
-        "/wiki/Durant_(Pok%C3%A9mon)",
-        "/wiki/Genesect_(Pok%C3%A9mon)"
-      ],
-      "Electric": [
-        "/wiki/Joltik_(Pok%C3%A9mon)",
-        "/wiki/Galvantula_(Pok%C3%A9mon)"
-      ],
-      "Fire": [
-        "/wiki/Larvesta_(Pok%C3%A9mon)",
-        "/wiki/Volcarona_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ghost": {
-      "Ghost": [
-        "/wiki/Yamask_(Pok%C3%A9mon)",
-        "/wiki/Cofagrigus_(Pok%C3%A9mon)"
-      ],
-      "Fire": [
-        "/wiki/Litwick_(Pok%C3%A9mon)",
-        "/wiki/Lampent_(Pok%C3%A9mon)",
-        "/wiki/Chandelure_(Pok%C3%A9mon)"
-      ]
-    },
-    "Poison": {
-      "Poison": [
-        "/wiki/Trubbish_(Pok%C3%A9mon)",
-        "/wiki/Garbodor_(Pok%C3%A9mon)"
-      ]
-    },
-    "Ice": {
-      "Ice": [
+      "ice": [
         "/wiki/Vanillite_(Pok%C3%A9mon)",
         "/wiki/Vanillish_(Pok%C3%A9mon)",
         "/wiki/Vanilluxe_(Pok%C3%A9mon)",
         "/wiki/Cubchoo_(Pok%C3%A9mon)",
         "/wiki/Beartic_(Pok%C3%A9mon)",
         "/wiki/Cryogonal_(Pok%C3%A9mon)"
-      ]
-    },
-    "Steel": {
-      "Steel": [
-        "/wiki/Klink_(Pok%C3%A9mon)",
-        "/wiki/Klang_(Pok%C3%A9mon)",
-        "/wiki/Klinklang_(Pok%C3%A9mon)"
       ],
-      "Fighting": [
-        "/wiki/Cobalion_(Pok%C3%A9mon)"
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     },
-    "Dragon": {
-      "Dragon": [
+    "dragon": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+        "/wiki/Reshiram_(Pok%C3%A9mon)"
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+        "/wiki/Zekrom_(Pok%C3%A9mon)"
+      ],
+      "psychic": [
+      ],
+      "ice": [
+        "/wiki/Kyurem_(Pok%C3%A9mon)"
+      ],
+      "dragon": [
         "/wiki/Axew_(Pok%C3%A9mon)",
         "/wiki/Fraxure_(Pok%C3%A9mon)",
         "/wiki/Haxorus_(Pok%C3%A9mon)",
         "/wiki/Druddigon_(Pok%C3%A9mon)"
       ],
-      "Fire": [
-        "/wiki/Reshiram_(Pok%C3%A9mon)"
+      "dark": [
       ],
-      "Electric": [
-        "/wiki/Zekrom_(Pok%C3%A9mon)"
-      ],
-      "Ice": [
-        "/wiki/Kyurem_(Pok%C3%A9mon)"
+      "fairy": [
       ]
     },
-    "Flying": {
-      "Flying": [
-        "/wiki/Tornadus_(Pok%C3%A9mon)"
+    "dark": {
+      "normal": [
+      ],
+      "fighting": [
+        "/wiki/Scraggy_(Pok%C3%A9mon)",
+        "/wiki/Scrafty_(Pok%C3%A9mon)"
+      ],
+      "flying": [
+        "/wiki/Vullaby_(Pok%C3%A9mon)",
+        "/wiki/Mandibuzz_(Pok%C3%A9mon)"
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+        "/wiki/Pawniard_(Pok%C3%A9mon)",
+        "/wiki/Bisharp_(Pok%C3%A9mon)"
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+        "/wiki/Deino_(Pok%C3%A9mon)",
+        "/wiki/Zweilous_(Pok%C3%A9mon)",
+        "/wiki/Hydreigon_(Pok%C3%A9mon)"
+      ],
+      "dark": [
+        "/wiki/Purrloin_(Pok%C3%A9mon)",
+        "/wiki/Liepard_(Pok%C3%A9mon)",
+        "/wiki/Zorua_(Pok%C3%A9mon)",
+        "/wiki/Zoroark_(Pok%C3%A9mon)"
+      ],
+      "fairy": [
+      ]
+    },
+    "fairy": {
+      "normal": [
+      ],
+      "fighting": [
+      ],
+      "flying": [
+      ],
+      "poison": [
+      ],
+      "ground": [
+      ],
+      "rock": [
+      ],
+      "bug": [
+      ],
+      "ghost": [
+      ],
+      "steel": [
+      ],
+      "fire": [
+      ],
+      "water": [
+      ],
+      "grass": [
+      ],
+      "electric": [
+      ],
+      "psychic": [
+      ],
+      "ice": [
+      ],
+      "dragon": [
+      ],
+      "dark": [
+      ],
+      "fairy": [
       ]
     }
   }
