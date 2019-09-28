@@ -1,5 +1,6 @@
 package commandlogic
 
+import java.net.HttpURLConnection
 import java.net.URL
 import java.util.concurrent.ThreadLocalRandom
 import javax.net.ssl.HttpsURLConnection
@@ -62,45 +63,155 @@ fun getRandomMTGCommanderCard(): String {
 
 }
 
-fun getRandomPokemon() : String {
-    // The prefixes we are looking for:
-    val prefix = "<a href=\"/wiki/"
+fun getRandomGuardDialog () : String {
+    val stringPrefix = "<td>\""
 
-    // Adding each link to a pokemon to an arraylist
-    val pokelinks = ArrayList<String>()
+    val address = "https://en.uesp.net/wiki/Skyrim:Guard_Dialogue"
 
-    println("Connecting")
-    //val url = URL("https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number")
-    //val raw = url.readText()
-    //println(raw)
+    val url = URL(address)
 
-    val connection = URL("https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number").openConnection() as HttpsURLConnection
-    connection.requestMethod = "GET"
-    val rsc = connection.responseCode
-    val rsm = connection.responseMessage
+    if (isConnected(url.openConnection() as HttpURLConnection)) {
+        val rawtext = url.readText().split("\n")
+        val choices = ArrayList<String>()
 
-    println("$rsc: $rsm")
-
-    // Construct list of all pokemons
-    val br = connection.inputStream.bufferedReader()
-    for (line in br.lines()) {
-        //println("Found line $line")
-        if (line.contains(prefix)) {
-            // Get href element of line
-            val href = line.split(" ")[1]
-            val link = href.split("\"")[1]
-            pokelinks.add(link)
-
+        for (line in rawtext) {
+            if (line.contains(stringPrefix) && !line.contains("href")) {
+                choices.add(line.split("\"")[1])
+            }
         }
-    }
 
-    // Kotlin magic :O
-    return if (pokelinks.isNotEmpty()) {
-        val index = ThreadLocalRandom.current().nextInt(0, pokelinks.size)
-        pokelinks[index]
+        return if (choices.isNotEmpty()) {
+            val index = ThreadLocalRandom.current().nextInt(0, choices.size)
+            choices[index]
+
+        } else {
+            "Could not find anything cool to reply with"
+        }
 
     } else {
-        "Hmmm, something went wrong..."
+        return "Could not connect to $address"
     }
 
 }
+
+fun getNRKHeadlines(search : String = "", depth : Int = 1) : String {
+    if (depth <= 0) {
+        return "Cannot fetch $depth results..."
+    }
+
+    val titleTag = "<title>"
+    val linkTag = "<link>"
+
+    val lastUpdatedStringBuilder = StringBuilder()
+    lastUpdatedStringBuilder.append("Last updated ")
+    val lastUpdatedTag = "<lastBuildDate>"
+
+    val address = "https://www.nrk.no/toppsaker.rss"
+
+    val results = ArrayList<String>(depth)
+
+    val url = URL(address)
+
+    // Local function for stripping tags:
+    fun stripTags(raw : String, startTagLength : Int) : String {
+        // Get the line without the starting tag
+        val startStripped = raw.substring(startTagLength)
+        // Get the line without the end tag from this
+        return startStripped.substring(0, startStripped.length - startTagLength - 1)
+    }
+
+    if (isConnected(url.openConnection() as HttpURLConnection)) {
+        val text = url.readText().split("\n")
+
+        println("searching for $search")
+
+        // Need the index for this one
+        for (i in 0 until text.size) {
+            val line = text[i].trim()
+
+            if (line.contains(lastUpdatedTag)) {
+                val stripped = stripTags(line, lastUpdatedTag.length)
+                lastUpdatedStringBuilder.append(stripped)
+                continue
+            }
+
+            if (line.contains(titleTag) && !line.contains("NRK")) {
+                // Found a title
+                val title = stripTags(line, titleTag.length).toLowerCase()
+                val description = text[i+2].toLowerCase().trim()
+
+                // Look if search term is present
+                // It always contains the default search term ""
+                if (title.contains(search.toLowerCase()) || description.contains(search.toLowerCase())) {
+                    val link = stripTags(text[i+1].trim(), linkTag.length)
+                    results.add(link)
+
+                    // Check if we found as many searches as desired:
+                    if (results.size >= depth) {
+                        break
+                    }
+
+                }
+
+
+            }
+
+
+        }
+
+        return if (results.isNotEmpty()) {
+            val sb = StringBuilder()
+
+            results.forEach {
+                sb.append("\n${results.indexOf(it)+1}: $it")
+            }
+
+            "$lastUpdatedStringBuilder\nFound results: $sb"
+
+
+        } else {
+            "No matches found!"
+        }
+
+    } else {
+        return "Could not connect to $address"
+    }
+
+}
+
+fun isConnected(connection : HttpURLConnection) : Boolean =
+    connection.responseCode / 100 == 2
+
+fun getNRKHeadlinesCommand(words : List<String>) : String {
+
+    if (words.size >= 2) {
+        // One argument
+        val arg1 = words[1]
+        val depth1 = arg1.toIntOrNull()
+
+        if (words.size >= 3) {
+            val arg2 = words[2]
+            val depth2 = arg2.toIntOrNull()
+
+            return if (depth2 != null) {
+                getNRKHeadlines(arg1, depth2)
+
+            } else {
+                getNRKHeadlines(arg1)
+            }
+
+        } else {
+            return if (depth1 != null) {
+                getNRKHeadlines("", depth1)
+
+            } else {
+                getNRKHeadlines(arg1)
+            }
+        }
+
+    } else {
+        return getNRKHeadlines()
+
+    }
+}
+

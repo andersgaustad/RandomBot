@@ -7,8 +7,11 @@ import com.jessecorbett.diskord.dsl.bot
 import com.jessecorbett.diskord.dsl.command
 import com.jessecorbett.diskord.dsl.commands
 import com.jessecorbett.diskord.util.isFromUser
+import com.jessecorbett.diskord.util.words
 import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
+import utils.PokemonFixedParser
 
 
 const val BOT_NAME = "RandomBot"
@@ -18,6 +21,8 @@ val BOT_TOKEN = safe.getToken()
 private const val RANDOM_PREFIX = ""
 val FRENCH_PEOPLE = Array(1) {"Fairylight18"}
 
+// Added because of serializing over json for bacon command
+@ImplicitReflectionSerializer
 @UnstableDefault
 fun main() = runBlocking {
     // Initialize bot
@@ -47,6 +52,13 @@ fun main() = runBlocking {
 
              }
 
+             // NRK news
+             command ("nrk") {
+                 reply(commandlogic.getNRKHeadlinesCommand(this.words))
+                 delete()
+
+             }
+
              // RD-commands
              // Random wiki article
              command(RANDOM_PREFIX + "wiki") {
@@ -64,19 +76,27 @@ fun main() = runBlocking {
 
              // Random pokemon
              command(RANDOM_PREFIX + "pokemon") {
-                 /**
-                  * URL cannot connect to bulbapedia
-                  * Stuck for the moment
-                  */
-
-                 println("Finding pokemon")
-                 println(commandlogic.getRandomPokemon())
-                 //reply(commandlogic.getRandomPokemon())
-                 delete()
 
              }
 
 
+             /*
+             DISCLAIMER: I do not own any of the videos fetched by using this command
+             All videos fetched with the command !bacon are the property of youtuber Bacon_
+             Bacon_'s youtube channel may be accessed by following the link below:
+             https://www.youtube.com/channel/UCcybVOrBgpzUxm-mlBT0WTA
+             */
+             command(RANDOM_PREFIX + "bacon") {
+                 // Get words, and parse optional argument
+                 val words = this.words
+                 if (words.size >= 2) {
+                     reply(commandlogic.getRandomBaconVideoLink(words[1]))
+                 } else {
+                     reply(commandlogic.getRandomBaconVideoLink())
+
+                 }
+                 delete()
+             }
 
 
             /*
@@ -100,13 +120,34 @@ fun main() = runBlocking {
              */
 
              command("help") {
-                 reply(commandlogic.help())
+                 reply(commandlogic.helpCommand(this.words))
                  delete()
 
              }
              command("h") {
-                 reply(commandlogic.help())
+                 reply(commandlogic.helpCommand(this.words))
                  delete()
+             }
+
+             // Dev commands
+             // Should clean up this later
+             command("dev") {
+                 val words = this.words
+
+                 if (words.size >= 2) {
+                     val arg = words[1]
+
+                     if (arg == "pokeparse" || arg == "pp") {
+                         val root = "src/main/resources"
+                         val parseMessage = PokemonFixedParser().parseRawFile(
+                             "$root/raw/ListOfPokemonPageSource.txt",
+                             "$root/json/Pokemon.json"
+                         )
+
+                         reply(parseMessage)
+                         delete()
+                     }
+                 }
              }
 
         }
@@ -132,7 +173,7 @@ fun main() = runBlocking {
                     val username = it.username
 
                     if (username == BOT_NAME) {
-                        message.reply("Hello ${message.author.username}!")
+                        message.reply(commandlogic.getRandomGuardDialog())
                     }
 
                     if (username == COOL_KID_NAME) {
@@ -158,6 +199,7 @@ fun debug() {
     println("Bot is active")
 }
 
+@ImplicitReflectionSerializer
 @UnstableDefault
 fun main(args: Array<String>) {
     debug()
