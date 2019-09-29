@@ -3,34 +3,34 @@ package json
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class JsonPokemonParser(val gen1 : JsonType1Parser,
-                          val gen2 : JsonType1Parser,
-                          val gen3 : JsonType1Parser,
-                          val gen4 : JsonType1Parser,
-                          val gen5 : JsonType1Parser)
+data class JsonPokemonObject(val gen1 : JsonType1Object,
+                             val gen2 : JsonType1Object,
+                             val gen3 : JsonType1Object,
+                             val gen4 : JsonType1Object,
+                             val gen5 : JsonType1Object)
 
 @Serializable
-data class JsonType1Parser(val normal : JsonType2Parser,
-                            val fighting : JsonType2Parser,
-                            val flying : JsonType2Parser,
-                            val poison : JsonType2Parser,
-                            val ground : JsonType2Parser,
-                            val rock : JsonType2Parser,
-                            val bug : JsonType2Parser,
-                            val ghost : JsonType2Parser,
-                            val steel : JsonType2Parser,
-                            val fire : JsonType2Parser,
-                            val water : JsonType2Parser,
-                            val grass : JsonType2Parser,
-                            val electric : JsonType2Parser,
-                            val psychic : JsonType2Parser,
-                            val ice : JsonType2Parser,
-                            val dragon : JsonType2Parser,
-                            val dark : JsonType2Parser,
-                            val fairy : JsonType2Parser)
+data class JsonType1Object(val normal : JsonType2Object,
+                           val fighting : JsonType2Object,
+                           val flying : JsonType2Object,
+                           val poison : JsonType2Object,
+                           val ground : JsonType2Object,
+                           val rock : JsonType2Object,
+                           val bug : JsonType2Object,
+                           val ghost : JsonType2Object,
+                           val steel : JsonType2Object,
+                           val fire : JsonType2Object,
+                           val water : JsonType2Object,
+                           val grass : JsonType2Object,
+                           val electric : JsonType2Object,
+                           val psychic : JsonType2Object,
+                           val ice : JsonType2Object,
+                           val dragon : JsonType2Object,
+                           val dark : JsonType2Object,
+                           val fairy : JsonType2Object)
 
 @Serializable
-data class JsonType2Parser(val normal : Array<String> = Array(0){""},
+data class JsonType2Object(val normal : Array<String> = Array(0){""},
                            val fighting : Array<String> = Array(0){""},
                            val flying : Array<String> = Array(0){""},
                            val poison : Array<String> = Array(0){""},
@@ -52,7 +52,7 @@ data class JsonType2Parser(val normal : Array<String> = Array(0){""},
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as JsonType2Parser
+        other as JsonType2Object
 
         if (!normal.contentEquals(other.normal)) return false
 
