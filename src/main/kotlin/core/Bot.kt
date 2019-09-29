@@ -8,6 +8,7 @@ import com.jessecorbett.diskord.dsl.command
 import com.jessecorbett.diskord.dsl.commands
 import com.jessecorbett.diskord.util.isFromUser
 import com.jessecorbett.diskord.util.words
+import commandlogic.*
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
@@ -35,26 +36,26 @@ fun main() = runBlocking {
 
             // Ping command
              command("ping") {
-                 reply("pong!")
+                 reply(Ping().executeCommand(this))
                  delete()
 
              }
 
              // Roll command:
              command("roll") {
-                 reply(commandlogic.roll(this))
+                 reply(Dice().executeCommand(this))
                  delete()
 
              }
              command("r") {
-                 reply(commandlogic.roll(this))
+                 reply(Dice().executeCommand(this))
                  delete()
 
              }
 
              // NRK news
              command ("nrk") {
-                 reply(commandlogic.getNRKHeadlinesCommand(this.words))
+                 reply(NRK().executeCommand(this))
                  delete()
 
              }
@@ -62,24 +63,20 @@ fun main() = runBlocking {
              // RD-commands
              // Random wiki article
              command(RANDOM_PREFIX + "wiki") {
-                 reply(commandlogic.getRandomWikiArticle())
+                 reply(Wiki().executeCommand(this))
                  delete()
 
              }
 
              // Random mtg commander card
              command(RANDOM_PREFIX + "commander") {
-                 reply(commandlogic.getRandomMTGCommanderCard())
+                 reply(MTGCommander().executeCommand(this))
                  delete()
 
              }
 
-             // Random pokemon
-             command(RANDOM_PREFIX + "pokemon") {
 
-             }
-
-
+             // Bacon
              /*
              DISCLAIMER: I do not own any of the videos fetched by using this command
              All videos fetched with the command !bacon are the property of youtuber Bacon_
@@ -87,55 +84,29 @@ fun main() = runBlocking {
              https://www.youtube.com/channel/UCcybVOrBgpzUxm-mlBT0WTA
              */
              command(RANDOM_PREFIX + "bacon") {
-                 // Get words, and parse optional argument
-                 val words = this.words
-                 if (words.size >= 2) {
-                     reply(commandlogic.getRandomBaconVideoLink(words[1]))
-                 } else {
-                     reply(commandlogic.getRandomBaconVideoLink())
-
-                 }
+                 reply(Bacon().executeCommand(this))
                  delete()
              }
 
              // Pokemon:
              command(RANDOM_PREFIX + "pokelist") {
-                 reply(commandlogic.getPokemonCommand(this.words, false))
+                 reply(Pokelist().executeCommand(this))
                  delete()
              }
              command(RANDOM_PREFIX + "pokemon") {
-                 reply(commandlogic.getPokemonCommand(this.words, true))
+                 reply(Pokemon().executeCommand(this))
                  delete()
              }
 
 
-            /*
-            // Prefix command
-            command("prefix") {
-                if (this.words.size > 1) {
-                    val newPrefix = this.words[1]
-                    prefix = newPrefix
-                    reply("New prefix set to $newPrefix")
-                    delete()
-                    //randomBot.restart()
-
-                } else {
-                    reply("No prefix found, try again?")
-                    delete()
-
-                }
-
-            }
-
-             */
-
+             // Help
              command("help") {
-                 reply(commandlogic.helpCommand(this.words))
+                 reply(Help().executeCommand(this))
                  delete()
 
              }
              command("h") {
-                 reply(commandlogic.helpCommand(this.words))
+                 reply(Help().executeCommand(this))
                  delete()
              }
 
@@ -183,7 +154,7 @@ fun main() = runBlocking {
                     val username = it.username
 
                     if (username == BOT_NAME) {
-                        message.reply(commandlogic.getRandomGuardDialog())
+                        message.reply(getRandomGuardDialog())
                     }
 
                     if (username == COOL_KID_NAME) {

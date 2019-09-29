@@ -5,6 +5,15 @@ import com.jessecorbett.diskord.util.mention
 import com.jessecorbett.diskord.util.words
 import java.util.concurrent.ThreadLocalRandom
 
+class Dice() : Command() {
+    override val name: String
+        get() = "dice"
+
+    override fun parseMessage(message: Message): String {
+        return roll(message)
+    }
+}
+
 fun roll(message: Message) : String {
     // Wrong format string:
     val wrongFormatString = "Wrong format; Roll command should be '!roll ndX'"
