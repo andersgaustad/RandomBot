@@ -44,7 +44,11 @@ abstract class Command {
 
         val jsonparser = Json.parse<JsonDetailedHelpObject>(data)
 
-        return when(name) {
+        val sb = StringBuilder()
+
+        sb.append("$name:\n```")
+
+        sb.append(when(name) {
             // Add more when needed
             "bacon" -> jsonparser.bacon
             "commander" -> jsonparser.commander
@@ -56,7 +60,11 @@ abstract class Command {
             "roll" -> jsonparser.roll
             "wiki" -> jsonparser.wiki
             else -> "Error: Help not found. Is Command.kt updated?"
-        }
+        })
+
+        sb.append("```")
+
+        return sb.toString()
 
     }
 
