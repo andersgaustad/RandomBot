@@ -70,18 +70,13 @@ fun getRandomPokemon(single : Boolean = true, type1 : String = "all", type2 : St
 
     val data = File(pokemonJsonFilePath).readText()
 
-    try {
-        Json.parse<JsonPokemonParser>(data)
-    } catch(e: Exception) {
-        e.printStackTrace()
-        return "Something went wrong!"
-    }
-
     val jsonparser = Json.parse<JsonPokemonParser>(data)
 
+    // Function returning the whole list
     fun getJsonMatches(matchedType1 : String, matchedType2: String, matchedGeneration : String) : ArrayList<String> {
         val all = ArrayList<String>()
 
+        // Function returing all relevant parse object given a generation
         fun getGenObjects(matchedGeneration : String) : ArrayList<JsonType1Parser> {
             val allGenObjects = ArrayList<JsonType1Parser>()
 
@@ -105,11 +100,17 @@ fun getRandomPokemon(single : Boolean = true, type1 : String = "all", type2 : St
 
         }
 
+        // Getting the relevant generation
         val genObjects = getGenObjects(matchedGeneration)
 
+        // Creating two lists:
+        // 1. For "normal" fetching type1 type2
+        // 2. For aliases using the format type2 type1
+        // E.g. If a user wants water/flying pokemon, flying/water pokemon should be fetched as well
         val primaryType1Objects = ArrayList<JsonType2Parser>()
         val secondaryType1Objects = ArrayList<JsonType2Parser>()
 
+        // Gets the pokemon given a type and a generation
         fun getType1Objects(type : String, genObject : JsonType1Parser) : ArrayList<JsonType2Parser> {
             val allType1Objects = ArrayList<JsonType2Parser>()
 
@@ -147,6 +148,8 @@ fun getRandomPokemon(single : Boolean = true, type1 : String = "all", type2 : St
         // If we have to identical types, there is no need to add or check the secondary type
         val identicalTypes = matchedType1 == matchedType2
 
+        // Parse all genObjects
+        // When searching within a specific generation
         for (genObject in genObjects) {
             primaryType1Objects.addAll(getType1Objects(matchedType1, genObject))
 
@@ -207,7 +210,7 @@ fun getRandomPokemon(single : Boolean = true, type1 : String = "all", type2 : St
 
     val bulbapediaRoot = "https://bulbapedia.bulbagarden.net"
 
-
+    // Does the user want a single pokemon or a list?
     if (single) {
         val index = ThreadLocalRandom.current().nextInt(0, all.size)
         return bulbapediaRoot + all[index]
@@ -222,8 +225,55 @@ fun getRandomPokemon(single : Boolean = true, type1 : String = "all", type2 : St
             i++
         }
 
-        return sb.toString()
+        val message = sb.toString()
+        return if (message.length<2000) {
+            message
+
+        } else {
+            "Fetched to many pokemon! Discord won't let med post them all :frowning:"
+        }
     }
 
 
+}
+
+@ImplicitReflectionSerializer
+fun getPokemonCommand(words : List<String>, single: Boolean = true) : String {
+    if (words.size >= 2) {
+        val arg1 = words[1]
+        if (words.size >= 3) {
+            val arg2 = words[2]
+            if (words.size >= 4) {
+                // We should have all possible arguments present
+                val arg3 = words[3]
+                return getRandomPokemon(single, arg1, arg2, arg3)
+
+            } else {
+                // Two arguments
+                // First should be type, other may be type or gen
+                return if (utils.genAliases.containsValue(arg2)) {
+                    getRandomPokemon(single, arg1, arg1, arg2)
+
+                } else {
+                    getRandomPokemon(single, arg1, arg2)
+
+                }
+
+            }
+
+        } else {
+            // One argument, check if this is gen.
+            // If not, assume it is type
+            return if (utils.genAliases.containsValue(arg1)) {
+                getRandomPokemon(single, "all", "all", arg1)
+
+            } else {
+                getRandomPokemon(single, arg1, arg1)
+            }
+        }
+
+    } else {
+        // No arguments, return default
+        return getRandomPokemon(single)
+    }
 }

@@ -99,8 +99,12 @@ fun main() = runBlocking {
              }
 
              // Pokemon:
+             command(RANDOM_PREFIX + "pokelist") {
+                 reply(commandlogic.getPokemonCommand(this.words, false))
+                 delete()
+             }
              command(RANDOM_PREFIX + "pokemon") {
-                 reply(commandlogic.getRandomPokemon())
+                 reply(commandlogic.getPokemonCommand(this.words, true))
                  delete()
              }
 

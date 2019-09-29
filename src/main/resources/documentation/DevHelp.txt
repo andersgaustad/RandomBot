@@ -1,5 +1,5 @@
 Developer commands for RandomBot
 Begin each line with !dev and follow with command
 
-Command:    Alias:      Description                         Format:             Ex:
+Command:    Alias:      Description                         Format:                 Ex:
 pokeparse   pp          Parses the HTML source to JSON      !dev pp

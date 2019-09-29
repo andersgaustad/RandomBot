@@ -18,6 +18,7 @@ class PokemonFixedParser : Parsing {
             val genMapping = LinkedHashMap<Int, LinkedHashMap<String, LinkedHashMap<String, ArrayList<String>>>>()
 
             // Initializing genMapping to retain sorted relation
+            // The JSON parser needs this to not crash
             for (g in genAliases.keys) {
                 for (t1 in types) {
                     for (t2 in types) {
@@ -33,7 +34,7 @@ class PokemonFixedParser : Parsing {
 
             var gen = 0
 
-            for (i in 0 until raw.size) {
+            for (i in raw.indices) {
                 val line = raw[i].trim()
 
                 if (line.contains(generationPrefix)) {
@@ -78,7 +79,6 @@ class PokemonFixedParser : Parsing {
                     // Duplicates may occur!
                     // Burmy, Gastrodon, Jellicent, and Girantina are examples of pokemon with variants
                     // Although different forms, the links will be identical, so we only need one
-
                     if (!links.contains(linkAppendix)) {
                         links.add(linkAppendix)
                     }
@@ -94,6 +94,7 @@ class PokemonFixedParser : Parsing {
             val clear = File(toPath)
             clear.writeText("")
 
+            // Function global out = file to write
             val out = File(toPath)
 
             fun appendFull(text : String)
@@ -103,6 +104,7 @@ class PokemonFixedParser : Parsing {
             appendFull("{\n")
             indents++
 
+            // Write content for each generation
             for (genNumber in genMapping.keys) {
                 // Add gen tag and info to file
                 val genText = "\"${genAliases[genNumber]}\": {\n"
@@ -113,6 +115,7 @@ class PokemonFixedParser : Parsing {
 
                 if (genMap != null) {
                     for (primaryType in genMap.keys) {
+                        // Write for first type
                         val primaryTypeText = "\"$primaryType\": {\n"
                         appendFull(primaryTypeText)
                         indents++
@@ -121,6 +124,7 @@ class PokemonFixedParser : Parsing {
 
                         if (primaryTypeMap != null) {
                             for (secondaryType in primaryTypeMap.keys) {
+                                // Write for second type
                                 val secondaryTypeText = "\"$secondaryType\": [\n"
                                 appendFull(secondaryTypeText)
                                 indents++
