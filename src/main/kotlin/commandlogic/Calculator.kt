@@ -141,4 +141,62 @@ fun evaluateRPN(RPNQueue : ArrayList<Any>) : Double {
 
 }
 
+fun shuntingYardTranslate(inputQueue : ArrayList<Any>) : ArrayList<Any> {
+    val output = ArrayList<Any>()
+    val stack = Stack<Any>()
+
+    fun handleEndParenthesis() {
+        var element = stack.pop()
+        // Do until we find start parenthesis
+        while (element != "(") {
+            output.add(element)
+
+            element = stack.pop()
+        }
+
+    }
+
+    fun handleOperator(operator: Operator) {
+        loop@ while (stack.isNotEmpty()) {
+            // Checking top of the stack as long as we are not done
+            when(val top = stack.peek()) {
+                is Function -> output.add(stack.pop())
+                is Operator -> {
+                    if (top.strength >= operator.strength) {
+                        output.add(stack.pop())
+
+                    } else {
+                        break@loop // Whoa
+                    }
+                }
+                else -> break@loop // Whoa dude
+            }
+
+        }
+
+        stack.push(operator)
+
+    }
+
+    // Iterate over input
+    for (item in inputQueue) {
+        // Switch on type
+        when(item) {
+            is Double -> output.add(item)
+            is Function -> stack.add(item)
+            "(" -> stack.add(item)
+            ")" -> handleEndParenthesis()
+            is Operator -> handleOperator(item)
+            else -> throw IllegalArgumentException("How did you get here?")
+        }
+    }
+
+    // When done, put the rest of stack in output
+    while (stack.isNotEmpty()) {
+        output.add(stack.pop())
+    }
+
+    return output
+}
+
 
