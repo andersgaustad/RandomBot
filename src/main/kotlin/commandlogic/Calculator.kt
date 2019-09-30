@@ -1,6 +1,8 @@
 package commandlogic
 
 import com.jessecorbett.diskord.api.model.Message
+import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.math.*
 import kotlin.system.exitProcess
 
@@ -106,6 +108,36 @@ class Div : Operator(1) {
             return op1 / op2
         }
     }
+
+}
+
+
+fun evaluateRPN(RPNQueue : ArrayList<Any>) : Double {
+    // Stack needed for calculation
+    val stack = Stack<Double>()
+
+    fun handleFunction(function: Function) : Double =
+        function.execute(stack.pop())
+
+    fun handleOperator(operator: Operator) : Double {
+        val op2 = stack.pop()
+        val op1 = stack.pop()
+
+        return operator.execute(op1, op2)
+    }
+
+    // Iterate through the queue
+    for (item in RPNQueue) {
+        // Switch on type
+        when(item) {
+            is Double -> stack.push(item)
+            is Function -> stack.push(handleFunction(item))
+            is Operator -> stack.push(handleOperator(item))
+        }
+
+    }
+
+    return stack.peek()
 
 }
 
