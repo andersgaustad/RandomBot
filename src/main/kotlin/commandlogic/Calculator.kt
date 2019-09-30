@@ -2,6 +2,7 @@ package commandlogic
 
 import com.jessecorbett.diskord.api.model.Message
 import kotlin.math.*
+import kotlin.system.exitProcess
 
 class Calculator : Command() {
     override val name: String
@@ -13,7 +14,6 @@ class Calculator : Command() {
 
 }
 
-// Different interfaces used by calculator
 // Functions
 interface Function {
     fun execute(double: Double) : Double
@@ -67,5 +67,46 @@ class Log2Function : LogFunction(2.0)
 
 class Log10Function : LogFunction(10.0)
 
+
+// Operators
+abstract class Operator(val strength : Int) {
+    abstract fun execute(op1: Double, op2 : Double) : Double
+}
+
+class Add : Operator(0) {
+    override fun execute(op1: Double, op2: Double): Double {
+        return op1 + op2
+    }
+
+}
+
+class Sub : Operator(0) {
+    override fun execute(op1: Double, op2: Double): Double {
+        return op1 - op2
+    }
+
+}
+
+class Mul : Operator(1) {
+    override fun execute(op1: Double, op2: Double): Double {
+        return op1 * op2
+    }
+
+}
+
+class Div : Operator(1) {
+    override fun execute(op1: Double, op2: Double): Double {
+        // Let kotlin manage zero division on its own
+        try {
+            op1 / op2
+        } catch (ze: ArithmeticException) {
+            ze.printStackTrace()
+
+        } finally {
+            return op1 / op2
+        }
+    }
+
+}
 
 
