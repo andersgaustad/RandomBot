@@ -1,6 +1,7 @@
 package commandlogic
 
 import com.jessecorbett.diskord.api.model.Message
+import com.jessecorbett.diskord.util.words
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.math.*
@@ -29,7 +30,17 @@ class Calculator : Command() {
         get() = "calculate"
 
     override fun parseMessage(message: Message): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val words = message.words.subList(1, message.words.size)
+
+        // Parse a list with types
+        println("Parsing")
+        val parsed = parseString(words.joinToString())
+        // Translate list to RPN
+        println("Translate")
+        val rpn = shuntingYardTranslate(parsed)
+        // Evaluate and return result
+        println("Evaluate")
+        return evaluateRPN(rpn).toString()
     }
 
 }
@@ -106,6 +117,7 @@ fun shuntingYardTranslate(inputQueue : ArrayList<Any>) : ArrayList<Any> {
         // Switch on type
         when(item) {
             is Double -> output.add(item)
+            is Int -> output.add(item.toDouble())
             is Function -> stack.add(item)
             "(" -> stack.add(item)
             ")" -> handleEndParenthesis()
@@ -124,6 +136,7 @@ fun shuntingYardTranslate(inputQueue : ArrayList<Any>) : ArrayList<Any> {
 
 fun parseString(string: String) : ArrayList<Any> {
     val raw = string.replace(" ", "").toLowerCase()
+    println("Raw: $raw")
 
     fun buildSubSafeString(raw : String) : String {
         val sb = StringBuilder()
@@ -165,32 +178,62 @@ fun parseString(string: String) : ArrayList<Any> {
                 } else {
                     sb.append(currentChar)
                 }
+            } else {
+                sb.append(currentChar)
             }
         }
 
         // If no errors are found simply return the built string
+        println("Built : ${sb.toString()}")
         return sb.toString()
     }
 
     // Build safe string:
-    val safe = buildSubSafeString(raw)
+    var regexString = buildSubSafeString(raw)
 
     // Regexes to match
-
     // Ints
-    val intPattern = Regex("^[0 | [123456789]+]")
+    val intPattern = Regex("^[[1-9][0-9]*]")
 
     // Parenthesis
     val parenthesisPattern = Regex("^[(|)]")
 
+    // Functions
     val functionPattern = Regex("^[" + functionMap.keys.joinToString("|") + "]")
+
+    // Operators
     val operatorPattern = Regex("^[" + operatorMap.keys.joinToString("|") + "]")
+
 
     val result = ArrayList<Any>()
 
-    // TODO
+    val patterns = arrayOf(intPattern, parenthesisPattern, functionPattern, operatorPattern)
 
+    // Parse the actual string
+    while (regexString.isNotEmpty()) {
+        println("Regex: $regexString")
+        for (pattern in patterns) {
+            val check = pattern.find(regexString)
+            if (check != null) {
+                println("Value: ${check.value}")
+                when(pattern) {
+                    intPattern -> result.add(check.value.toInt())
+                    parenthesisPattern -> result.add(check.value)
+                    // Functions and operands should always be in map, but safe casting to be safe
+                    functionPattern -> functionMap[check.value]?.let { result.add(it)}
+                    operatorPattern -> operatorMap[check.value]?.let { result.add(it)}
+                }
+                println("Added ${check.value}")
 
+                // Reduce regex string
+                regexString = regexString.substring(check.range.last+1)
+                break
+
+            }
+        }
+
+    }
+    println("Parsed ${result.joinToString("|")}")
     return result
 
 }
