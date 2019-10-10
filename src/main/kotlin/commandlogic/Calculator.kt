@@ -4,6 +4,7 @@ import com.jessecorbett.diskord.api.model.Message
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.math.*
+import kotlin.text.StringBuilder
 
 val functionMap = mapOf(
     "sin" to SinFunction(),
@@ -122,11 +123,75 @@ fun shuntingYardTranslate(inputQueue : ArrayList<Any>) : ArrayList<Any> {
 }
 
 fun parseString(string: String) : ArrayList<Any> {
-    val raw = string.replace(" ", "")
+    val raw = string.replace(" ", "").toLowerCase()
 
-    // TODO Continue here
+    fun buildSubSafeString(raw : String) : String {
+        val sb = StringBuilder()
 
-    return ArrayList()
+        // Iterate through all indexes
+        for (i in raw.indices) {
+            val currentChar = raw[i]
+
+            // Check if we hit a -
+            if (currentChar == '-') {
+                // If we found a - without a numeric before it the user wants to input a negative number
+                // This should only happen when we start with a negative numner or after an opening parenthesis
+                // The parenthesis may be a function call or a regular set
+                if (i == 0 || raw[i-1] == '(') {
+                    // We need to reformat string from -x to (0-x)
+                    // The parenthesis should start immediately and continue until next operator
+                    sb.append("(0-")
+                    for (j in i until raw.length) {
+                        // There may be more negative numbers nested in here, but these wil be solved later
+                        val nestedChar = raw[j].toString()
+
+                        if (operatorMap.keys.contains(nestedChar)) {
+                            // Should now have found operator and end of (0-x)
+                            sb.append(")")
+                            // Add the rest of the string to the builder
+                            sb.append(raw.substring(j))
+
+                            // We have now created a slightly more correct string
+                            // Return this instead, adn fix recursively
+                            break
+
+                        } else {
+                            sb.append(nestedChar)
+                        }
+                    }
+                    // Return after breaking or getting out of the loop
+                    return buildSubSafeString(sb.toString())
+
+                } else {
+                    sb.append(currentChar)
+                }
+            }
+        }
+
+        // If no errors are found simply return the built string
+        return sb.toString()
+    }
+
+    // Build safe string:
+    val safe = buildSubSafeString(raw)
+
+    // Regexes to match
+
+    // Ints
+    val intPattern = Regex("^[0 | [123456789]+]")
+
+    // Parenthesis
+    val parenthesisPattern = Regex("^[(|)]")
+
+    val functionPattern = Regex("^[" + functionMap.keys.joinToString("|") + "]")
+    val operatorPattern = Regex("^[" + operatorMap.keys.joinToString("|") + "]")
+
+    val result = ArrayList<Any>()
+
+    // TODO
+
+
+    return result
 
 }
 
