@@ -44,7 +44,7 @@ class Calculator : Command() {
 
         // Parse a list with types
         println("Parsing")
-        val parsed = parseString(words.joinToString())
+        val parsed = parseString(words.joinToString(""))
         // Translate list to RPN
         println("Translate")
         val rpn = shuntingYardTranslate(parsed)
@@ -226,16 +226,16 @@ fun parseString(string: String) : ArrayList<Any> {
     // Parenthesis
     val parenthesisPattern = Regex("^[(|)]")
 
-    // Functions
-    val functionPattern = Regex("^(" + functionMap.keys.joinToString(")|(") + ")")
-
     // Operators
     val operatorPattern = Regex("^[(" + operatorMap.keys.joinToString(")|(") + ")]")
+
+    // Functions
+    val functionPattern = Regex("^(" + functionMap.keys.joinToString(")|(") + ")")
 
 
     val result = ArrayList<Any>()
 
-    val patterns = arrayOf(intPattern, parenthesisPattern, functionPattern, operatorPattern)
+    val patterns = arrayOf(intPattern, parenthesisPattern, operatorPattern, functionPattern)
 
     // Parse the actual string
     while (regexString.isNotEmpty()) {
@@ -248,12 +248,27 @@ fun parseString(string: String) : ArrayList<Any> {
                 val toCheck = regexString.substring(check.range.first, check.range.last+1)
                 println("Tested string: $toCheck (${check.range.first}, ${check.range.last+1})")
                 when(pattern) {
-                    intPattern -> result.add(check.value.toInt())
+                    intPattern -> {
+                        // If we found a single digit int:
+                        if(result.isNotEmpty()) {
+                            when(result.last()) {
+                                is Int -> {
+                                    // Hmmmm, is there really not any simpler way?
+                                    result[result.lastIndex] = result.last().toString().toInt() * 10 + check.value.toInt()
+
+                                }
+                                else -> result.add(check.value.toInt())
+                            }
+                        } else {
+                            result.add(check.value.toInt())
+                        }
+
+                    }
                     parenthesisPattern -> result.add(check.value)
                     // Functions and operands should always be in map, but safe casting to be safe
                     functionPattern -> functionMap[check.value]?.let { result.add(it)}
                     operatorPattern -> {
-                        // "-" needs to ecape when used in regex, so we need special case
+                        // "-" needs to escape when used in regex, so we need special case
                         if (check.value == "-") {
                             operatorMap["\\" + check.value]?.let { result.add(it)}
 
