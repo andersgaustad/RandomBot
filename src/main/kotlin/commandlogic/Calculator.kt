@@ -13,16 +13,26 @@ val functionMap = mapOf(
     "sqrt" to SqrtFunction(),
     "exp" to ExpFunction(),
     "ln" to NaturalLogarithmFunction(),
-    "log" to Log10Function(),
-    "log2" to Log2Function()
+    "log2" to Log2Function(),
+    "log" to Log10Function()
 )
 
 val operatorMap = mapOf(
     "+" to Add(),
-    "-" to Sub(),
+    "\\-" to Sub(),
     "*" to Mul(),
     "/" to Div()
 )
+
+/*
+val arithmeticMap =  mapOf(
+    "+" to "ADD",
+    "-" to "MIN",
+    "*" to "MUL",
+    "/" to "DIV"
+)
+
+ */
 
 
 class Calculator : Command() {
@@ -141,51 +151,69 @@ fun parseString(string: String) : ArrayList<Any> {
     fun buildSubSafeString(raw : String) : String {
         val sb = StringBuilder()
 
-        // Iterate through all indexes
-        for (i in raw.indices) {
-            val currentChar = raw[i]
+        // Translate minuses to (0-x) when missing prefix
+        fun parseMinus(raw : String) : String {
+            val minusSB = StringBuilder()
 
-            // Check if we hit a -
-            if (currentChar == '-') {
-                // If we found a - without a numeric before it the user wants to input a negative number
-                // This should only happen when we start with a negative numner or after an opening parenthesis
-                // The parenthesis may be a function call or a regular set
-                if (i == 0 || raw[i-1] == '(') {
-                    // We need to reformat string from -x to (0-x)
-                    // The parenthesis should start immediately and continue until next operator
-                    sb.append("(0-")
-                    for (j in i until raw.length) {
-                        // There may be more negative numbers nested in here, but these wil be solved later
-                        val nestedChar = raw[j].toString()
+            // Iterate through all indexes
+            for (i in raw.indices) {
+                val currentChar = raw[i]
 
-                        if (operatorMap.keys.contains(nestedChar)) {
-                            // Should now have found operator and end of (0-x)
-                            sb.append(")")
-                            // Add the rest of the string to the builder
-                            sb.append(raw.substring(j))
+                // Check if we hit a -
+                if (currentChar == '-') {
+                    // If we found a - without a numeric before it the user wants to input a negative number
+                    // This should only happen when we start with a negative numner or after an opening parenthesis
+                    // The parenthesis may be a function call or a regular set
+                    if (i == 0 || raw[i-1] == '(') {
+                        // We need to reformat string from -x to (0-x)
+                        // The parenthesis should start immediately and continue until next operator
+                        minusSB.append("(0")
+                        for (j in i until raw.length) {
+                            // There may be more negative numbers nested in here, but these wil be solved later
+                            val nestedChar = raw[j].toString()
 
-                            // We have now created a slightly more correct string
-                            // Return this instead, adn fix recursively
-                            break
+                            if (operatorMap.keys.contains(nestedChar)) {
+                                // Should now have found operator and end of (0-x)
+                                minusSB.append(")")
+                                // Add the rest of the string to the builder
+                                minusSB.append(raw.substring(j))
 
-                        } else {
-                            sb.append(nestedChar)
+                                // We have now created a slightly more correct string
+                                // Return this instead, adn fix recursively
+                                break
+
+                            } else {
+                                minusSB.append(nestedChar)
+                            }
                         }
-                    }
-                    // Return after breaking or getting out of the loop
-                    return buildSubSafeString(sb.toString())
+                        // Return after breaking or getting out of the loop
+                        return buildSubSafeString(minusSB.toString())
 
+                    } else {
+                        minusSB.append(currentChar)
+                    }
                 } else {
-                    sb.append(currentChar)
+                    minusSB.append(currentChar)
                 }
-            } else {
-                sb.append(currentChar)
             }
+
+            // If no errors are found simply return the built string
+            println("Built : ${minusSB.toString()}")
+            return minusSB.toString()
         }
 
-        // If no errors are found simply return the built string
-        println("Built : ${sb.toString()}")
+        // Translate to a min safe string
+        val processed = parseMinus(raw)
+
+        // Iterate through all indexes
+        for (i in processed.indices) {
+            val currentChar = processed[i].toString()
+
+            sb.append(currentChar)
+        }
+
         return sb.toString()
+
     }
 
     // Build safe string:
@@ -193,16 +221,16 @@ fun parseString(string: String) : ArrayList<Any> {
 
     // Regexes to match
     // Ints
-    val intPattern = Regex("^[[1-9][0-9]*]")
+    val intPattern = Regex("^[0-9]")
 
     // Parenthesis
     val parenthesisPattern = Regex("^[(|)]")
 
     // Functions
-    val functionPattern = Regex("^[" + functionMap.keys.joinToString("|") + "]")
+    val functionPattern = Regex("^(" + functionMap.keys.joinToString(")|(") + ")")
 
     // Operators
-    val operatorPattern = Regex("^[" + operatorMap.keys.joinToString("|") + "]")
+    val operatorPattern = Regex("^[(" + operatorMap.keys.joinToString(")|(") + ")]")
 
 
     val result = ArrayList<Any>()
@@ -214,14 +242,26 @@ fun parseString(string: String) : ArrayList<Any> {
         println("Regex: $regexString")
         for (pattern in patterns) {
             val check = pattern.find(regexString)
+            println("Checking for $pattern: $check")
             if (check != null) {
                 println("Value: ${check.value}")
+                val toCheck = regexString.substring(check.range.first, check.range.last+1)
+                println("Tested string: $toCheck (${check.range.first}, ${check.range.last+1})")
                 when(pattern) {
                     intPattern -> result.add(check.value.toInt())
                     parenthesisPattern -> result.add(check.value)
                     // Functions and operands should always be in map, but safe casting to be safe
                     functionPattern -> functionMap[check.value]?.let { result.add(it)}
-                    operatorPattern -> operatorMap[check.value]?.let { result.add(it)}
+                    operatorPattern -> {
+                        // "-" needs to ecape when used in regex, so we need special case
+                        if (check.value == "-") {
+                            operatorMap["\\" + check.value]?.let { result.add(it)}
+
+                        } else {
+                            // Normally we just add as normal
+                            operatorMap[check.value]?.let { result.add(it)}
+                        }
+                    }
                 }
                 println("Added ${check.value}")
 
