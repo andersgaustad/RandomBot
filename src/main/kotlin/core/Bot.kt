@@ -60,6 +60,11 @@ fun main() = runBlocking {
 
              }
 
+             command("calculate") {
+                 reply(Calculator().executeCommand(this))
+                 delete()
+             }
+
              // RD-commands
              // Random wiki article
              command(RANDOM_PREFIX + "wiki") {
@@ -97,6 +102,8 @@ fun main() = runBlocking {
                  reply(Pokemon().executeCommand(this))
                  delete()
              }
+
+
 
 
              // Help
