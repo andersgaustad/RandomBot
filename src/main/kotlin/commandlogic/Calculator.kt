@@ -24,16 +24,6 @@ val operatorMap = mapOf(
     "/" to Div()
 )
 
-/*
-val arithmeticMap =  mapOf(
-    "+" to "ADD",
-    "-" to "MIN",
-    "*" to "MUL",
-    "/" to "DIV"
-)
-
- */
-
 
 class Calculator : Command() {
     override val name: String
@@ -43,13 +33,13 @@ class Calculator : Command() {
         val words = message.words.subList(1, message.words.size)
 
         // Parse a list with types
-        println("Parsing")
+        //println("Parsing")
         val parsed = parseString(words.joinToString(""))
         // Translate list to RPN
-        println("Translate")
+        //println("Translate")
         val rpn = shuntingYardTranslate(parsed)
         // Evaluate and return result
-        println("Evaluate")
+        //println("Evaluate")
         return evaluateRPN(rpn).toString()
     }
 
@@ -146,7 +136,7 @@ fun shuntingYardTranslate(inputQueue : ArrayList<Any>) : ArrayList<Any> {
 
 fun parseString(string: String) : ArrayList<Any> {
     val raw = string.replace(" ", "").toLowerCase()
-    println("Raw: $raw")
+    //println("Raw: $raw")
 
     fun buildSubSafeString(raw : String) : String {
         val sb = StringBuilder()
@@ -198,7 +188,7 @@ fun parseString(string: String) : ArrayList<Any> {
             }
 
             // If no errors are found simply return the built string
-            println("Built : ${minusSB.toString()}")
+            //println("Built : ${minusSB.toString()}")
             return minusSB.toString()
         }
 
@@ -239,14 +229,12 @@ fun parseString(string: String) : ArrayList<Any> {
 
     // Parse the actual string
     while (regexString.isNotEmpty()) {
-        println("Regex: $regexString")
+        //println("Regex: $regexString")
         for (pattern in patterns) {
             val check = pattern.find(regexString)
-            println("Checking for $pattern: $check")
+            //println("Checking for $pattern: $check")
             if (check != null) {
-                println("Value: ${check.value}")
-                val toCheck = regexString.substring(check.range.first, check.range.last+1)
-                println("Tested string: $toCheck (${check.range.first}, ${check.range.last+1})")
+                //println("Value: ${check.value}")
                 when(pattern) {
                     intPattern -> {
                         // If we found a single digit int:
@@ -278,7 +266,7 @@ fun parseString(string: String) : ArrayList<Any> {
                         }
                     }
                 }
-                println("Added ${check.value}")
+                //println("Added ${check.value}")
 
                 // Reduce regex string
                 regexString = regexString.substring(check.range.last+1)
@@ -288,7 +276,7 @@ fun parseString(string: String) : ArrayList<Any> {
         }
 
     }
-    println("Parsed ${result.joinToString("|")}")
+    //println("Parsed ${result.joinToString("|")}")
     return result
 
 }
