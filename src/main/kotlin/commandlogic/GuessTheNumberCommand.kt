@@ -8,10 +8,10 @@ private const val defaultLimit = 100
 
 class GuessTheNumberCommand : Command() {
     override val name: String
-        get() = "guessthenumber"
+        get() = "gtn"
 
     override fun parseMessage(message: Message): String {
-        return "Creating game..."
+        return ""
     }
 
 }

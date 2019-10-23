@@ -24,7 +24,7 @@ class GuessTheNumberGame(val limit : Int) {
     }
 
     // Returns negative when below, positive when over, and 0 when correct!
-    fun checkGuessedNumber(guess : Int) = guess - number
+    private fun checkGuessedNumber(guess : Int) = guess - number
 
     fun guessIsCorrect(guess : Int) = checkGuessedNumber(guess) == 0
 }

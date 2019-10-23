@@ -78,12 +78,16 @@ fun main() = runBlocking {
 
 
              // Guess the number game
-             command("guessthenumber") {
-                 println("Checking if game can be created...")
+             command("gtn") {
+                 val helpCheck = GuessTheNumberCommand().executeCommand(this)
+                 if (helpCheck.isNotEmpty()) {
+                     reply(helpCheck)
+                     delete()
+                 }
+
                  if (!flags.contains(States.GUESSTHENUMBER)) {
-                     println("Game can be started!")
                      // Create game
-                     // This shoul resolve no matter argument
+                     // This should resolve no matter what argument is used
                      guessTheNumberGame = createGame(this)
                      flags.add(States.GUESSTHENUMBER)
 

@@ -54,6 +54,7 @@ abstract class Command {
             "commander" -> jsonparser.commander
             "calculate" -> jsonparser.calculate
             "help" -> jsonparser.help
+            "gtn" -> jsonparser.gtn
             "nrk" -> jsonparser.nrk
             "ping" -> jsonparser.ping
             "pokelist" -> jsonparser.pokelist
