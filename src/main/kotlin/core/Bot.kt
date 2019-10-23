@@ -76,6 +76,7 @@ fun main() = runBlocking {
 
              }
 
+
              // Guess the number game
              command("guessthenumber") {
                  println("Checking if game can be created...")
@@ -90,6 +91,13 @@ fun main() = runBlocking {
                      reply("Created game with a number between 0 and ${guessTheNumberGame.limit}")
                      delete()
                  }
+             }
+
+             // Calculate
+             command("calculate") {
+                 reply(Calculator().executeCommand(this))
+                 delete()
+
              }
 
              // RD-commands
@@ -129,6 +137,8 @@ fun main() = runBlocking {
                  reply(Pokemon().executeCommand(this))
                  delete()
              }
+
+
 
 
              // Help
