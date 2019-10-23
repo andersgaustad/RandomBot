@@ -19,7 +19,7 @@ class GuessTheNumberGame(val limit : Int) {
         return when {
             delta > 0 -> "Too high, $playerMention!"
             delta < 0 -> "Too low, $playerMention!"
-            else -> ":tada: tada: $playerMention guessed right! :tada: tada:\n The correct number was $number"
+            else -> ":tada: :tada: $playerMention guessed right! :tada: :tada:\n The correct number was $number"
         }
     }
 
