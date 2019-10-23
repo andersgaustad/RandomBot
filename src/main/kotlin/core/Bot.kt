@@ -9,6 +9,7 @@ import com.jessecorbett.diskord.dsl.commands
 import com.jessecorbett.diskord.util.isFromUser
 import com.jessecorbett.diskord.util.words
 import commandlogic.*
+import games.GuessTheNumberGame
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
@@ -17,10 +18,22 @@ import utils.PokemonFixedParser
 
 const val BOT_NAME = "RandomBot"
 private const val COOL_KID_NAME = "Cousland"
+val FRENCH_PEOPLE = Array(1) {"Fairylight18"}
+
 val BOT_TOKEN = safe.getToken()
 
 private const val RANDOM_PREFIX = ""
-val FRENCH_PEOPLE = Array(1) {"Fairylight18"}
+
+// Flags
+enum class States {
+    GUESSTHENUMBER
+}
+
+private val flags = mutableSetOf<States>()
+
+
+
+
 
 // Added because of serializing over json for bacon command
 @ImplicitReflectionSerializer
@@ -29,6 +42,9 @@ fun main() = runBlocking {
     // Initialize bot
      bot(BOT_TOKEN) {
          val prefix = "!"
+
+         // Omnipresent
+         var guessTheNumberGame = GuessTheNumberGame(0)
 
 
          // Commands
@@ -60,9 +76,32 @@ fun main() = runBlocking {
 
              }
 
+
+             // Guess the number game
+             command("gtn") {
+                 val helpCheck = GuessTheNumberCommand().executeCommand(this)
+                 if (helpCheck.isNotEmpty()) {
+                     reply(helpCheck)
+                     delete()
+                 }
+
+                 if (!flags.contains(States.GUESSTHENUMBER)) {
+                     // Create game
+                     // This should resolve no matter what argument is used
+                     guessTheNumberGame = createGame(this)
+                     flags.add(States.GUESSTHENUMBER)
+
+                     // Confirm creation
+                     reply("Created game with a number between 0 and ${guessTheNumberGame.limit}")
+                     delete()
+                 }
+             }
+
+             // Calculate
              command("calculate") {
                  reply(Calculator().executeCommand(this))
                  delete()
+
              }
 
              // RD-commands
@@ -153,6 +192,22 @@ fun main() = runBlocking {
                     message.react("\uD83E\uDD16")
                 }
 
+            }
+
+            // Guess the number functionality
+            if (flags.contains(States.GUESSTHENUMBER)) {
+                when(val guess = message.words[0].toIntOrNull()) {
+                    is Int -> {
+                        // Check if correct:
+                        if (guessTheNumberGame.guessIsCorrect(guess)) {
+                            flags.remove(States.GUESSTHENUMBER)
+                        }
+
+                        // Did the user guess correctly?
+                        val feedback = guessTheNumberGame.constructFeedbackMessage(message)
+                        message.reply(feedback)
+                    }
+                }
             }
 
             // Mentions
