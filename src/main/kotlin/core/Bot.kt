@@ -10,6 +10,7 @@ import com.jessecorbett.diskord.util.isFromUser
 import com.jessecorbett.diskord.util.words
 import commandlogic.*
 import games.GuessTheNumberGame
+import games.HangmanGame
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
@@ -26,14 +27,10 @@ private const val RANDOM_PREFIX = ""
 
 // Flags
 enum class States {
-    GUESSTHENUMBER
+    GUESSTHENUMBER, HANGMAN
 }
 
 private val flags = mutableSetOf<States>()
-
-
-
-
 
 // Added because of serializing over json for bacon command
 @ImplicitReflectionSerializer
@@ -43,8 +40,9 @@ fun main() = runBlocking {
      bot(BOT_TOKEN) {
          val prefix = "!"
 
-         // Omnipresent
+         // Games
          var guessTheNumberGame = GuessTheNumberGame(0)
+         var hangmanGame = HangmanGame()
 
 
          // Commands
@@ -74,27 +72,6 @@ fun main() = runBlocking {
                  reply(NRK().executeCommand(this))
                  delete()
 
-             }
-
-
-             // Guess the number game
-             command("gtn") {
-                 val helpCheck = GuessTheNumberCommand().executeCommand(this)
-                 if (helpCheck.isNotEmpty()) {
-                     reply(helpCheck)
-                     delete()
-                 }
-
-                 if (!flags.contains(States.GUESSTHENUMBER)) {
-                     // Create game
-                     // This should resolve no matter what argument is used
-                     guessTheNumberGame = createGame(this)
-                     flags.add(States.GUESSTHENUMBER)
-
-                     // Confirm creation
-                     reply("Created game with a number between 0 and ${guessTheNumberGame.limit}")
-                     delete()
-                 }
              }
 
              // Calculate
@@ -140,6 +117,59 @@ fun main() = runBlocking {
              command(RANDOM_PREFIX + "pokemon") {
                  reply(Pokemon().executeCommand(this))
                  delete()
+             }
+
+
+             // Games
+             // Guess the number game
+             command("gtn") {
+                 val helpCheck = GuessTheNumberCommand().executeCommand(this)
+                 if (helpCheck.isNotEmpty()) {
+                     reply(helpCheck)
+                     delete()
+                 }
+
+                 if (!flags.contains(States.GUESSTHENUMBER)) {
+                     // Create game
+                     // This should resolve no matter what argument is used
+                     guessTheNumberGame = createGame(this)
+                     flags.add(States.GUESSTHENUMBER)
+
+                     // Confirm creation
+                     reply("Created game with a number between 0 and ${guessTheNumberGame.limit}")
+                     delete()
+                 }
+             }
+
+             // Hangman game
+             command("hangman") {
+                 val helpCheck = HangmanCommand().executeCommand(this)
+                 // Should we run game or fetch detailed help
+                 if (helpCheck.isEmpty()) {
+                     // Only run if game is not created already
+                     if (!flags.contains(States.HANGMAN)) {
+                         val words = this.words
+                         hangmanGame = if (words.size >= 2 && words[1].toIntOrNull() != null) {
+                             val guesses = words[1].toInt()
+                             HangmanGame(guesses)
+
+                         } else {
+                             HangmanGame()
+                         }
+
+                         // Finally, give information
+                         reply("Hangman game was created")
+                         flags.add(States.HANGMAN)
+
+                         // Show word (aka dashes)
+                         reply(hangmanGame.getCurrentRevealedWord())
+                         delete()
+                     }
+
+                 } else {
+                     reply(helpCheck)
+                     delete()
+                 }
              }
 
 
@@ -194,6 +224,7 @@ fun main() = runBlocking {
 
             }
 
+            // Games
             // Guess the number functionality
             if (flags.contains(States.GUESSTHENUMBER)) {
                 when(val guess = message.words[0].toIntOrNull()) {
@@ -207,6 +238,35 @@ fun main() = runBlocking {
                         val feedback = guessTheNumberGame.constructFeedbackMessage(message)
                         message.reply(feedback)
                     }
+                }
+            }
+
+            // Hangman functionality
+            if (flags.contains((States.HANGMAN))) {
+                val words = message.words
+                // First of all, only guess for one sentence words
+                if (words.size == 1 && words[0][0].isLetter()) {
+                    // Then check if we are guessing char or word
+                    val word = words[0]
+                    if (word.length == 1) {
+                        message.reply(hangmanGame.guessCharacter(word[0]))
+
+                    } else {
+                        message.reply(hangmanGame.guessWord(word))
+                    }
+
+                    // Show the current word
+                    message.reply(hangmanGame.getCurrentRevealedWord())
+
+                    // Check if game is won or lost, and reset flag if it is
+                    if (hangmanGame.wonGame() || hangmanGame.lostGame()) {
+                        flags.remove(States.HANGMAN)
+
+                        if (hangmanGame.lostGame()) {
+                            message.reply("You lost :cry: The word was ${hangmanGame.word}")
+                        }
+                    }
+
                 }
             }
 
