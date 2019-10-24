@@ -247,7 +247,7 @@ fun main() = runBlocking {
                 // First of all, only guess for one sentence words
                 if (words.size == 1 && words[0][0].isLetter()) {
                     // Then check if we are guessing char or word
-                    val word = words[0]
+                    val word = words[0].toLowerCase()
                     if (word.length == 1) {
                         message.reply(hangmanGame.guessCharacter(word[0]))
 
