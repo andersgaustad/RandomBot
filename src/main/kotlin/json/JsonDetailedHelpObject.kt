@@ -6,6 +6,7 @@ import kotlinx.serialization.Serializable
 data class JsonDetailedHelpObject(val bacon : String,
                                   val commander : String,
                                   val calculate : String,
+                                  val hangman : String,
                                   val help : String,
                                   val gtn : String,
                                   val nrk : String,
