@@ -3,16 +3,17 @@
 package core
 
 // Imports work! :O
-import com.jessecorbett.diskord.api.rest.client.DiscordClient
 import com.jessecorbett.diskord.dsl.bot
 import com.jessecorbett.diskord.dsl.command
 import com.jessecorbett.diskord.dsl.commands
 import com.jessecorbett.diskord.util.isFromUser
+import com.jessecorbett.diskord.util.mention
 import com.jessecorbett.diskord.util.words
 import commandlogic.*
 import discordclient.DiscordClientWrapper
 import events.GuessTheNumberGame
 import events.HangmanGame
+import events.ReactTestEvent
 import events.Reactable
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ImplicitReflectionSerializer
@@ -27,12 +28,13 @@ val FRENCH_PEOPLE = arrayOf("Fairylight18")
 
 val BOT_TOKEN = safe.getToken()
 
+val DCW = DiscordClientWrapper(BOT_TOKEN)
 
 private const val RANDOM_PREFIX = ""
 
 // Flags
 enum class States {
-    GUESSTHENUMBER, HANGMAN
+    GUESSTHENUMBER, HANGMAN, REACTTEST
 }
 
 
@@ -42,192 +44,235 @@ enum class States {
 @UnstableDefault
 fun main() = runBlocking {
     // Initialize bot
-    val dcw = DiscordClientWrapper(BOT_TOKEN)
     bot(BOT_TOKEN) {
-         val prefix = "!"
+        val prefix = "!"
 
+        // Flags
+        val flags = mutableSetOf<States>()
 
+        // Reaction logic
+        val reactionAddListeners = mutableSetOf<Reactable>()
+        val reactionRemoveListeners = mutableSetOf<Reactable>()
 
-         // Flags
-         val flags = mutableSetOf<States>()
+        // Games
+        var guessTheNumberGame = GuessTheNumberGame(0)
+        var hangmanGame = HangmanGame()
 
-         // Reaction logic
-         val reactionAddListeners = mutableSetOf<Reactable>()
-         val reactionRemoveListeners = mutableSetOf<Reactable>()
+        // Other events
+        var reactTestEvent = ReactTestEvent(null)
 
-         // Games
-         var guessTheNumberGame = GuessTheNumberGame(0)
-         var hangmanGame = HangmanGame()
+        // Commands
+        commands(prefix) {
 
-         // Commands
-         commands(prefix) {
 
             // Ping command
-             command("ping") {
-                 reply(Ping().executeCommand(this))
-                 delete()
+            command("ping") {
+                reply(Ping().executeCommand(this))
+                delete()
+            }
 
-             }
+            // Roll command:
+            command("roll") {
+                reply(Dice().executeCommand(this))
+                delete()
 
-             // Roll command:
-             command("roll") {
-                 reply(Dice().executeCommand(this))
-                 delete()
+            }
+            /*
+            command("r") {
+                reply(Dice().executeCommand(this))
+                delete()
 
-             }
-             command("r") {
-                 reply(Dice().executeCommand(this))
-                 delete()
+            }
 
-             }
-
-             // NRK news
-             command ("nrk") {
-                 reply(NRK().executeCommand(this))
-                 delete()
-
-             }
-
-             // Calculate
-             command("calculate") {
-                 reply(Calculator().executeCommand(this))
-                 delete()
-
-             }
-
-             // RD-commands
-             // Random wiki article
-             command(RANDOM_PREFIX + "wiki") {
-                 reply(Wiki().executeCommand(this))
-                 delete()
-
-             }
-
-             // Random mtg commander card
-             command(RANDOM_PREFIX + "commander") {
-                 reply(MTGCommander().executeCommand(this))
-                 delete()
-
-             }
-
-
-             // Bacon
-             /*
-             DISCLAIMER: I do not own any of the videos fetched by using this command
-             All videos fetched with the command !bacon are the property of youtuber Bacon_
-             Bacon_'s youtube channel may be accessed by following the link below:
-             https://www.youtube.com/channel/UCcybVOrBgpzUxm-mlBT0WTA
              */
-             command(RANDOM_PREFIX + "bacon") {
-                 reply(Bacon().executeCommand(this))
-                 delete()
-             }
 
-             // Pokemon:
-             command(RANDOM_PREFIX + "pokelist") {
-                 reply(Pokelist().executeCommand(this))
-                 delete()
-             }
-             command(RANDOM_PREFIX + "pokemon") {
-                 reply(Pokemon().executeCommand(this))
-                 delete()
-             }
+            // NRK news
+            command ("nrk") {
+                reply(NRK().executeCommand(this))
+                delete()
 
+            }
 
-             // Games
-             // Guess the number game
-             command("gtn") {
-                 val helpCheck = GuessTheNumberCommand().executeCommand(this)
-                 if (helpCheck.isNotEmpty()) {
-                     reply(helpCheck)
-                     delete()
-                 }
+            // Calculate
+            command("calculate") {
+                reply(Calculator().executeCommand(this))
+                delete()
 
-                 if (!flags.contains(States.GUESSTHENUMBER)) {
-                     // Create game
-                     // This should resolve no matter what argument is used
-                     guessTheNumberGame = createGame(this)
-                     flags.add(States.GUESSTHENUMBER)
+            }
 
-                     // Confirm creation
-                     reply("Created game with a number between 0 and ${guessTheNumberGame.limit}")
-                     delete()
-                 }
-             }
+            // RD-commands
+            // Random wiki article
+            command(RANDOM_PREFIX + "wiki") {
+                reply(Wiki().executeCommand(this))
+                delete()
 
-             // Hangman game
-             command("hangman") {
-                 val helpCheck = HangmanCommand().executeCommand(this)
-                 // Should we run game or fetch detailed help
-                 if (helpCheck.isEmpty()) {
-                     // Only run if game is not created already
-                     if (!flags.contains(States.HANGMAN)) {
-                         val words = this.words
-                         hangmanGame = if (words.size >= 2 && words[1].toIntOrNull() != null) {
-                             val guesses = words[1].toInt()
-                             HangmanGame(guesses)
+            }
 
-                         } else {
-                             HangmanGame()
-                         }
+            // Random mtg commander card
+            command(RANDOM_PREFIX + "commander") {
+                reply(MTGCommander().executeCommand(this))
+                delete()
 
-                         // Finally, give information
-                         reply("Hangman game was created")
-                         flags.add(States.HANGMAN)
-
-                         // Show word (aka dashes)
-                         reply(hangmanGame.getCurrentRevealedWord())
-                         delete()
-                     }
-
-                 } else {
-                     reply(helpCheck)
-                     delete()
-                 }
-             }
+            }
 
 
+            // Bacon
+            /*
+            DISCLAIMER: I do not own any of the videos fetched by using this command
+            All videos fetched with the command !bacon are the property of youtuber Bacon_
+            Bacon_'s youtube channel may be accessed by following the link below:
+            https://www.youtube.com/channel/UCcybVOrBgpzUxm-mlBT0WTA
+            */
+            command(RANDOM_PREFIX + "bacon") {
+                reply(Bacon().executeCommand(this))
+                delete()
+            }
+
+            // Pokemon:
+            command(RANDOM_PREFIX + "pokelist") {
+                reply(Pokelist().executeCommand(this))
+                delete()
+            }
+            command(RANDOM_PREFIX + "pokemon") {
+                reply(Pokemon().executeCommand(this))
+                delete()
+            }
 
 
-             // Help
-             command("help") {
-                 reply(Help().executeCommand(this))
-                 delete()
+            // Games
+            // Guess the number game
+            command("gtn") {
+                val helpCheck = GuessTheNumberCommand().executeCommand(this)
+                if (helpCheck.isNotEmpty()) {
+                    reply(helpCheck)
+                    delete()
+                }
 
-             }
-             command("h") {
-                 reply(Help().executeCommand(this))
-                 delete()
-             }
+                if (!flags.contains(States.GUESSTHENUMBER)) {
+                    // Create game
+                    // This should resolve no matter what argument is used
+                    guessTheNumberGame = createGame(this)
+                    flags.add(States.GUESSTHENUMBER)
 
-             // Dev commands
-             command("dev") {
-                 val words = this.words
+                    // Confirm creation
+                    reply("Created game with a number between 0 and ${guessTheNumberGame.limit}")
+                    delete()
+                }
+            }
 
-                 // Check minimum size
-                 if (words.size >= 2) {
-                     val confirmation = when(val arg = words[1]){
-                         "pokeparse", "pp" -> {
-                             val root = "src/main/resources"
-                             // Create a any parser compatible with the parser interface
-                             val parser = PokemonFixedParser()
-                             parser.parseRawFile(
-                                 "$root/raw/ListOfPokemonPageSource.txt",
-                                 "$root/json/Pokemon.json"
-                             )
-                         }
-                         "clearflags", "cf" -> {
-                             flags.clear()
-                             "All flags where cleared!"
-                         }
+            // Hangman game
+            command("hangman") {
+                val helpCheck = HangmanCommand().executeCommand(this)
+                // Should we run game or fetch detailed help
+                if (helpCheck.isEmpty()) {
+                    // Only run if game is not created already
+                    if (!flags.contains(States.HANGMAN)) {
+                        hangmanGame = if (words.size >= 2 && words[1].toIntOrNull() != null) {
+                            val guesses = words[1].toInt()
+                            HangmanGame(guesses)
 
-                         else -> "Error; no command named $arg"
-                     }
+                        } else {
+                            HangmanGame()
+                        }
 
-                     reply(confirmation)
-                     delete()
-                 }
-             }
+                        // Finally, give information
+                        reply("Hangman game was created")
+                        flags.add(States.HANGMAN)
+
+                        // Show word (aka dashes)
+                        reply(hangmanGame.getCurrentRevealedWord())
+                        delete()
+                    }
+
+                } else {
+                    reply(helpCheck)
+                    delete()
+                }
+            }
+
+            // Events
+            command("reacttest") {
+                if (words.size == 1) {
+                    if (!flags.contains(States.REACTTEST)) {
+                        // Set up react event
+                        val root = reply(ReactTestCommand().executeCommand(this))
+                        reactTestEvent = ReactTestEvent(root)
+                        root.react("\uD83D\uDD25")
+                        delete()
+
+                        // Add to listeners
+                        reactionAddListeners.add(reactTestEvent)
+                        reactionRemoveListeners.add(reactTestEvent)
+
+                        // Add flag
+                        flags.add(States.REACTTEST)
+
+                    } else {
+                        reply("Test is live! Use !react check")
+                    }
+                } else {
+                    if (words[1] == "check" && flags.contains(States.REACTTEST)) {
+                        val sb = StringBuilder()
+                        sb.append("The following reacted to this message:\n")
+                        sb.append(reactTestEvent.listOfJoiningUsers.joinToString {
+                            it.mention
+                        })
+
+                        reply(sb.toString())
+                        delete()
+
+                        // Remove listeneres
+                        reactionAddListeners.remove(reactTestEvent)
+                        reactionRemoveListeners.remove(reactTestEvent)
+
+                        // Remove flag
+                        flags.remove(States.REACTTEST)
+                    }
+                }
+
+            }
+
+
+
+
+            // Help
+            command("help") {
+                reply(Help().executeCommand(this))
+                delete()
+            }
+            command("h") {
+                reply(Help().executeCommand(this))
+                delete()
+            }
+
+            // Dev commands
+            command("dev") {
+                val words = this.words
+
+                // Check minimum size
+                if (words.size >= 2) {
+                    val confirmation = when(val arg = words[1]){
+                        "pokeparse", "pp" -> {
+                            val root = "src/main/resources"
+                            // Create a any parser compatible with the parser interface
+                            val parser = PokemonFixedParser()
+                            parser.parseRawFile(
+                                "$root/raw/ListOfPokemonPageSource.txt",
+                                "$root/json/Pokemon.json"
+                            )
+                        }
+                        "clearflags", "cf" -> {
+                            flags.clear()
+                            "All flags where cleared!"
+                        }
+
+                        else -> "Error; no command named $arg"
+                    }
+
+                    reply(confirmation)
+                    delete()
+                }
+            }
 
         }
 
@@ -263,6 +308,7 @@ fun main() = runBlocking {
                         // Check if correct:
                         if (guessTheNumberGame.guessIsCorrect(guess)) {
                             flags.remove(States.GUESSTHENUMBER)
+
                         }
 
                         // Did the user guess correctly?

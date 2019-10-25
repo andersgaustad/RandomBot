@@ -8,8 +8,7 @@ class ReactTestCommand : Command() {
         get() = "react"
 
     override fun parseMessage(message: Message): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return "React with :fire: to test"
     }
 
-    //fun createReactTestEvent() = ReactTestEvent()
 }
