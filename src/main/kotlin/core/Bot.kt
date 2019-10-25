@@ -46,8 +46,6 @@ fun main() = runBlocking {
     bot(BOT_TOKEN) {
          val prefix = "!"
 
-
-
          // Flags
          val flags = mutableSetOf<States>()
 
