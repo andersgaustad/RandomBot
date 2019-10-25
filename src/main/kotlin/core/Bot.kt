@@ -187,23 +187,31 @@ fun main() = runBlocking {
              }
 
              // Dev commands
-             // Should clean up this later
              command("dev") {
                  val words = this.words
 
+                 // Check minimum size
                  if (words.size >= 2) {
-                     val arg = words[1]
+                     val confirmation = when(val arg = words[1]){
+                         "pokeparse", "pp" -> {
+                             val root = "src/main/resources"
+                             // Create a any parser compatible with the parser interface
+                             val parser = PokemonFixedParser()
+                             parser.parseRawFile(
+                                 "$root/raw/ListOfPokemonPageSource.txt",
+                                 "$root/json/Pokemon.json"
+                             )
+                         }
+                         "resetflags", "rf" -> {
+                             flags.clear()
+                             "All flags where reset!"
+                         }
 
-                     if (arg == "pokeparse" || arg == "pp") {
-                         val root = "src/main/resources"
-                         val parseMessage = PokemonFixedParser().parseRawFile(
-                             "$root/raw/ListOfPokemonPageSource.txt",
-                             "$root/json/Pokemon.json"
-                         )
-
-                         reply(parseMessage)
-                         delete()
+                         else -> "Error; no command named $arg"
                      }
+
+                     reply(confirmation)
+                     delete()
                  }
              }
 
