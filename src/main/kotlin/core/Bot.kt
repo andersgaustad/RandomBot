@@ -19,7 +19,7 @@ import utils.PokemonFixedParser
 
 const val BOT_NAME = "RandomBot"
 private const val COOL_KID_NAME = "Cousland"
-val FRENCH_PEOPLE = Array(1) {"Fairylight18"}
+val FRENCH_PEOPLE = arrayOf("Fairylight18")
 
 val BOT_TOKEN = safe.getToken()
 
