@@ -1,8 +1,8 @@
 package commandlogic
 
 import com.jessecorbett.diskord.api.model.Message
-import games.HangmanGame
-import games.defaultNumberOfHangmanGuesses
+import events.HangmanGame
+import events.defaultNumberOfHangmanGuesses
 
 class HangmanCommand : Command() {
     override val name: String

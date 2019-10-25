@@ -3,14 +3,17 @@
 package core
 
 // Imports work! :O
+import com.jessecorbett.diskord.api.rest.client.DiscordClient
 import com.jessecorbett.diskord.dsl.bot
 import com.jessecorbett.diskord.dsl.command
 import com.jessecorbett.diskord.dsl.commands
 import com.jessecorbett.diskord.util.isFromUser
 import com.jessecorbett.diskord.util.words
 import commandlogic.*
-import games.GuessTheNumberGame
-import games.HangmanGame
+import discordclient.DiscordClientWrapper
+import events.GuessTheNumberGame
+import events.HangmanGame
+import events.Reactable
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
@@ -19,9 +22,11 @@ import utils.PokemonFixedParser
 
 const val BOT_NAME = "RandomBot"
 private const val COOL_KID_NAME = "Cousland"
+
 val FRENCH_PEOPLE = arrayOf("Fairylight18")
 
 val BOT_TOKEN = safe.getToken()
+
 
 private const val RANDOM_PREFIX = ""
 
@@ -30,20 +35,27 @@ enum class States {
     GUESSTHENUMBER, HANGMAN
 }
 
-private val flags = mutableSetOf<States>()
+
 
 // Added because of serializing over json for bacon command
 @ImplicitReflectionSerializer
 @UnstableDefault
 fun main() = runBlocking {
     // Initialize bot
-     bot(BOT_TOKEN) {
+    val dcw = DiscordClientWrapper(BOT_TOKEN)
+    bot(BOT_TOKEN) {
          val prefix = "!"
+
+         // Flags
+         val flags = mutableSetOf<States>()
+
+         // Reaction logic
+         val reactionAddListeners = mutableSetOf<Reactable>()
+         val reactionRemoveListeners = mutableSetOf<Reactable>()
 
          // Games
          var guessTheNumberGame = GuessTheNumberGame(0)
          var hangmanGame = HangmanGame()
-
 
          // Commands
          commands(prefix) {
@@ -222,6 +234,15 @@ fun main() = runBlocking {
             if (message.content.contains("echo") && message.isFromUser) {
                 val echo = message.content
                 message.reply(echo)
+
+
+                // In case I forget how to do this...
+                /*
+                println("Testing dcw...")
+                val testUser = dcw.getUser(message.author.id)
+                println("Got result for ${testUser.username}")
+
+                */
             }
 
             if (message.usersMentioned.isNotEmpty()) {
@@ -293,13 +314,25 @@ fun main() = runBlocking {
                 }
             }
 
-            // Author:
             if (message.author.username in FRENCH_PEOPLE) {
                 message.react("\uD83C\uDDEB\uD83C\uDDF7")
                 message.delete()
             }
 
         }
+
+         // For reactions
+         reactionAdded {
+             for (listener in reactionAddListeners) {
+                 listener.onReactAdd(it)
+             }
+         }
+
+         reactionRemoved {
+             for (listener in reactionRemoveListeners) {
+                 listener.onReactRemove(it)
+             }
+         }
 
 
     }
