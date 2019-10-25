@@ -1,4 +1,4 @@
-package games
+package events
 
 import java.io.File
 import kotlin.random.Random

@@ -2,7 +2,7 @@ package commandlogic
 
 import com.jessecorbett.diskord.api.model.Message
 import com.jessecorbett.diskord.util.words
-import games.GuessTheNumberGame
+import events.GuessTheNumberGame
 
 private const val defaultLimit = 100
 
