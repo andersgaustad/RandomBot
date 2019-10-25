@@ -202,9 +202,9 @@ fun main() = runBlocking {
                                  "$root/json/Pokemon.json"
                              )
                          }
-                         "resetflags", "rf" -> {
+                         "clearflags", "cf" -> {
                              flags.clear()
-                             "All flags where reset!"
+                             "All flags where cleared!"
                          }
 
                          else -> "Error; no command named $arg"
