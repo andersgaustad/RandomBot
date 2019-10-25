@@ -10,6 +10,7 @@ import com.jessecorbett.diskord.dsl.commands
 import com.jessecorbett.diskord.util.isFromUser
 import com.jessecorbett.diskord.util.words
 import commandlogic.*
+import discordclient.DiscordClientWrapper
 import events.GuessTheNumberGame
 import events.HangmanGame
 import events.Reactable
@@ -41,10 +42,11 @@ enum class States {
 @UnstableDefault
 fun main() = runBlocking {
     // Initialize bot
-    val discordClient = DiscordClient(BOT_TOKEN)
-    discordClient.getUser("")
+    val dcw = DiscordClientWrapper(BOT_TOKEN)
     bot(BOT_TOKEN) {
          val prefix = "!"
+
+
 
          // Flags
          val flags = mutableSetOf<States>()
@@ -56,8 +58,6 @@ fun main() = runBlocking {
          // Games
          var guessTheNumberGame = GuessTheNumberGame(0)
          var hangmanGame = HangmanGame()
-
-         // Functions:
 
          // Commands
          commands(prefix) {
@@ -236,6 +236,15 @@ fun main() = runBlocking {
             if (message.content.contains("echo") && message.isFromUser) {
                 val echo = message.content
                 message.reply(echo)
+
+
+                // In case I forget how to do this...
+                /*
+                println("Testing dcw...")
+                val testUser = dcw.getUser(message.author.id)
+                println("Got result for ${testUser.username}")
+
+                */
             }
 
             if (message.usersMentioned.isNotEmpty()) {
