@@ -3,6 +3,7 @@
 package core
 
 // Imports work! :O
+import com.jessecorbett.diskord.api.rest.client.DiscordClient
 import com.jessecorbett.diskord.dsl.bot
 import com.jessecorbett.diskord.dsl.command
 import com.jessecorbett.diskord.dsl.commands
@@ -64,7 +65,6 @@ fun main() = runBlocking {
         // Commands
         commands(prefix) {
 
-
             // Ping command
             command("ping") {
                 reply(Ping().executeCommand(this))
@@ -77,6 +77,7 @@ fun main() = runBlocking {
                 delete()
 
             }
+            // Disabled for now
             /*
             command("r") {
                 reply(Dice().executeCommand(this))
