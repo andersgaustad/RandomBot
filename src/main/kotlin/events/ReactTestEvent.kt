@@ -19,7 +19,7 @@ class ReactTestEvent(private val messageToReactTo: Message?, private val emojiTo
         }
     }
 
-    val listOfJoiningUsers = mutableSetOf<User>()
+    private val listOfJoiningUsers = mutableSetOf<User>()
 
     private fun relevantReaction(messageReaction: MessageReaction) : Boolean {
         return if (messageToReactTo != null) {
@@ -37,5 +37,8 @@ class ReactTestEvent(private val messageToReactTo: Message?, private val emojiTo
 
 
     }
+
+    // Pretty
+    fun getReactingUsers() : MutableSet<User> = listOfJoiningUsers.filter { !it.isBot }.toMutableSet()
 
 }

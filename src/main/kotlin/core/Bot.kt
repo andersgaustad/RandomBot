@@ -33,7 +33,7 @@ val DCW = DiscordClientWrapper(BOT_TOKEN)
 private const val RANDOM_PREFIX = ""
 
 // Flags
-enum class States {
+enum class Flags {
     GUESSTHENUMBER, HANGMAN, REACTTEST
 }
 
@@ -48,7 +48,7 @@ fun main() = runBlocking {
         val prefix = "!"
 
         // Flags
-        val flags = mutableSetOf<States>()
+        val flags = mutableSetOf<Flags>()
 
         // Reaction logic
         val reactionAddListeners = mutableSetOf<Reactable>()
@@ -148,11 +148,11 @@ fun main() = runBlocking {
                     delete()
                 }
 
-                if (!flags.contains(States.GUESSTHENUMBER)) {
+                if (!flags.contains(Flags.GUESSTHENUMBER)) {
                     // Create game
                     // This should resolve no matter what argument is used
                     guessTheNumberGame = createGame(this)
-                    flags.add(States.GUESSTHENUMBER)
+                    flags.add(Flags.GUESSTHENUMBER)
 
                     // Confirm creation
                     reply("Created game with a number between 0 and ${guessTheNumberGame.limit}")
@@ -166,7 +166,7 @@ fun main() = runBlocking {
                 // Should we run game or fetch detailed help
                 if (helpCheck.isEmpty()) {
                     // Only run if game is not created already
-                    if (!flags.contains(States.HANGMAN)) {
+                    if (!flags.contains(Flags.HANGMAN)) {
                         hangmanGame = if (words.size >= 2 && words[1].toIntOrNull() != null) {
                             val guesses = words[1].toInt()
                             HangmanGame(guesses)
@@ -177,7 +177,7 @@ fun main() = runBlocking {
 
                         // Finally, give information
                         reply("Hangman game was created")
-                        flags.add(States.HANGMAN)
+                        flags.add(Flags.HANGMAN)
 
                         // Show word (aka dashes)
                         reply(hangmanGame.getCurrentRevealedWord())
@@ -193,46 +193,44 @@ fun main() = runBlocking {
             // Events
             command("reacttest") {
                 if (words.size == 1) {
-                    if (!flags.contains(States.REACTTEST)) {
+                    if (!flags.contains(Flags.REACTTEST)) {
                         // Set up react event
                         val root = reply(ReactTestCommand().executeCommand(this))
                         reactTestEvent = ReactTestEvent(root)
                         root.react("\uD83D\uDD25")
-                        delete()
 
                         // Add to listeners
                         reactionAddListeners.add(reactTestEvent)
                         reactionRemoveListeners.add(reactTestEvent)
 
                         // Add flag
-                        flags.add(States.REACTTEST)
+                        flags.add(Flags.REACTTEST)
+
+                        delete()
 
                     } else {
                         reply("Test is live! Use !react check")
                     }
                 } else {
-                    if (words[1] == "check" && flags.contains(States.REACTTEST)) {
+                    if (words[1] == "check" && flags.contains(Flags.REACTTEST)) {
                         val sb = StringBuilder()
-                        sb.append("The following reacted to this message:\n")
-                        sb.append(reactTestEvent.listOfJoiningUsers.joinToString {
-                            it.mention
-                        })
+                        sb.append("The following reacted to the message:\n")
+                        sb.append(reactTestEvent.getReactingUsers().joinToString { it.mention })
 
                         reply(sb.toString())
-                        delete()
 
                         // Remove listeneres
                         reactionAddListeners.remove(reactTestEvent)
                         reactionRemoveListeners.remove(reactTestEvent)
 
                         // Remove flag
-                        flags.remove(States.REACTTEST)
+                        flags.remove(Flags.REACTTEST)
+
+                        delete()
                     }
                 }
 
             }
-
-
 
 
             // Help
@@ -302,12 +300,12 @@ fun main() = runBlocking {
 
             // Games
             // Guess the number functionality
-            if (flags.contains(States.GUESSTHENUMBER)) {
+            if (flags.contains(Flags.GUESSTHENUMBER)) {
                 when(val guess = message.words[0].toIntOrNull()) {
                     is Int -> {
                         // Check if correct:
                         if (guessTheNumberGame.guessIsCorrect(guess)) {
-                            flags.remove(States.GUESSTHENUMBER)
+                            flags.remove(Flags.GUESSTHENUMBER)
 
                         }
 
@@ -319,7 +317,7 @@ fun main() = runBlocking {
             }
 
             // Hangman functionality
-            if (flags.contains((States.HANGMAN))) {
+            if (flags.contains((Flags.HANGMAN))) {
                 val words = message.words
                 // First of all, only guess for one sentence words
                 if (words.size == 1 && words[0][0].isLetter()) {
@@ -337,7 +335,7 @@ fun main() = runBlocking {
 
                     // Check if game is won or lost, and reset flag if it is
                     if (hangmanGame.wonGame() || hangmanGame.lostGame()) {
-                        flags.remove(States.HANGMAN)
+                        flags.remove(Flags.HANGMAN)
 
                         if (hangmanGame.lostGame()) {
                             message.reply("You lost :cry: The word was ${hangmanGame.word}")

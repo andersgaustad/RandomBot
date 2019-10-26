@@ -4,3 +4,7 @@ Begin each line with !dev and follow with command
 Command:    Alias:      Description                         Format:                 Ex:
 clearflags  cf          Clears all flags indicating states  !dev cf
 pokeparse   pp          Parses the HTML source to JSON      !dev pp
+
+Hidden commands
+Command:    Alias:      Description                         Format:                 Ex:
+!reacttest              Used to debug message reactions     !reacttest {-> "check"}
