@@ -20,6 +20,8 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
 import utils.PokemonFixedParser
+import java.util.Timer
+import kotlin.concurrent.schedule
 
 
 const val BOT_NAME = "RandomBot"
@@ -263,6 +265,15 @@ fun main() = runBlocking {
                         "clearflags", "cf" -> {
                             flags.clear()
                             "All flags where cleared!"
+                        }
+                        "timer" -> {
+                            Timer().schedule(3000) {
+                                runBlocking {
+                                    this@command.reply("Reply!")
+                                }
+
+                            }
+                            "Test running"
                         }
 
                         else -> "Error; no command named $arg"
