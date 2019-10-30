@@ -4,6 +4,7 @@ Begin each line with !dev and follow with command
 Command:    Alias:      Description                         Format:                 Ex:
 clearflags  cf          Clears all flags indicating states  !dev cf
 pokeparse   pp          Parses the HTML source to JSON      !dev pp
+timer                   Gets a reply after 3s               !dev timer
 
 Hidden commands
 Command:    Alias:      Description                         Format:                 Ex:
