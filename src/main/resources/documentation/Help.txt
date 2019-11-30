@@ -12,4 +12,5 @@ Command:    Alias:      Description                         Format:             
 !pokelist               Gets a list of pokemon!             !pokelist [t1] [t2] [g] !pokelist water flying gen3
 !pokemon                Gets a random pokemon               !pokemon [t1] [t2] [g]  !pokemon water flying gen3
 !roll       !r          Roll dice!                          !r NdX                  !r 2d8
+!tofflus                Christmas calendar! (December)
 !wiki                   Get a random wikipedia article!
