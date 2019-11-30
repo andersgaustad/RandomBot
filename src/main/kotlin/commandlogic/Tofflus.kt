@@ -23,7 +23,7 @@ class Tofflus : Command() {
             if (dayOfMonth in 1..24) {
                 // It is soon christmas!
                 if (dayOfMonth == 24) {
-                    sb.append(":sparkles: :sparkles: Merry Christmas! :sparkles: :sparkles:")
+                    sb.append(":sparkles: :sparkles: Merry Christmas! :sparkles: :sparkles:\n")
 
                 } else {
                     sb.append("Today is the $dayOfMonth${getDateEnd(dayOfMonth)} of December, and there are ${24-dayOfMonth} days until Christmas")
@@ -36,7 +36,7 @@ class Tofflus : Command() {
             }
 
         } else {
-            sb.append("It is not December yet!")
+            sb.append("It is not December yet!\n")
             sb.append("There are still ${december-month} months until December")
 
         }
