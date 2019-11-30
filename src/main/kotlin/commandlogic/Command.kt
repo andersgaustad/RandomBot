@@ -61,6 +61,7 @@ abstract class Command {
             "pokelist" -> jsonparser.pokelist
             "pokemon" -> jsonparser.pokemon
             "roll" -> jsonparser.roll
+            "tofflus" -> jsonparser.tofflus
             "wiki" -> jsonparser.wiki
             else -> "Error: Help not found. Is Command.kt updated?"
         })

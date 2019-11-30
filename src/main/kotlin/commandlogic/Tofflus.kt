@@ -26,7 +26,7 @@ class Tofflus : Command() {
                     sb.append(":sparkles: :sparkles: Merry Christmas! :sparkles: :sparkles:\n")
 
                 } else {
-                    sb.append("Today is the $dayOfMonth${getDateEnd(dayOfMonth)} of December, and there are ${24-dayOfMonth} days until Christmas")
+                    sb.append("Today is the $dayOfMonth${getDateEnd(dayOfMonth)} of December, and there are ${24-dayOfMonth} days until Christmas\n")
                 }
 
                 sb.append("https://tv.nrk.no/serie/jul-i-skomakergata/sesong/1/episode/$dayOfMonth/avspiller")
