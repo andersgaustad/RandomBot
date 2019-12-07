@@ -103,6 +103,11 @@ fun main() = runBlocking {
 
             }
 
+            command("tofflus") {
+                reply(Tofflus().executeCommand(this))
+                delete()
+            }
+
             // RD-commands
             // Random wiki article
             command(RANDOM_PREFIX + "wiki") {
@@ -140,6 +145,7 @@ fun main() = runBlocking {
                 reply(Pokemon().executeCommand(this))
                 delete()
             }
+
 
 
             // Games

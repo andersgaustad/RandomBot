@@ -14,4 +14,5 @@ data class JsonDetailedHelpObject(val bacon : String,
                                   val pokelist : String,
                                   val pokemon : String,
                                   val roll : String,
+                                  val tofflus : String,
                                   val wiki: String)
