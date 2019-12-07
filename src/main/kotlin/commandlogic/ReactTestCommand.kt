@@ -1,7 +1,6 @@
 package commandlogic
 
 import com.jessecorbett.diskord.api.model.Message
-import events.ReactTestEvent
 
 class ReactTestCommand : Command() {
     override val name: String

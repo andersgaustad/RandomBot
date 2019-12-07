@@ -3,9 +3,9 @@ package events
 import com.jessecorbett.diskord.api.model.Message
 import com.jessecorbett.diskord.api.model.User
 
-class DuelGame(private val messageRoot : Message?,  participatingUsers : List<User>) {
+class DuelGame(participatingUsers : List<User>) {
 
-    private val remainingParticipants = participatingUsers.shuffled()
+    private var remainingParticipants : MutableList<User> = participatingUsers.shuffled().toMutableList()
 
     // Done in one line
     data class DuelPair(val player1 : User, val player2 : User?)
@@ -26,6 +26,16 @@ class DuelGame(private val messageRoot : Message?,  participatingUsers : List<Us
     }
 
     var pairs = createPairs(remainingParticipants)
+    var pairIndex = 0
+
+    fun declareDuelWinner(winner : User) {
+        val currentDuelPair = pairs[pairIndex]
+        when(winner) {
+            currentDuelPair.player1 -> remainingParticipants.remove(currentDuelPair.player2)
+            currentDuelPair.player2 -> remainingParticipants.remove(currentDuelPair.player1)
+            else -> {}
+        }
+    }
 
     fun gameIsWon() = remainingParticipants.size == 1
 

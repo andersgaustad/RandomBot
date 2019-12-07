@@ -6,7 +6,7 @@ import com.jessecorbett.diskord.api.model.User
 import com.jessecorbett.diskord.api.websocket.events.MessageReaction
 import core.DCW
 
-class ReactTestEvent(private val messageToReactTo: Message?, private val emojiToReact: Emoji? = null) : Reactable {
+class ReactEvent(private val messageToReactTo: Message?, private val emojiToReact: Emoji? = null) : Reactable {
     override fun onReactAdd(messageReaction: MessageReaction) {
         if (relevantReaction(messageReaction)) {
             listOfJoiningUsers.add(DCW.getUser(messageReaction.userId))

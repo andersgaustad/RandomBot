@@ -3,7 +3,7 @@
 package core
 
 // Imports work! :O
-import com.jessecorbett.diskord.api.rest.client.DiscordClient
+import com.jessecorbett.diskord.api.model.Emoji
 import com.jessecorbett.diskord.dsl.bot
 import com.jessecorbett.diskord.dsl.command
 import com.jessecorbett.diskord.dsl.commands
@@ -12,10 +12,7 @@ import com.jessecorbett.diskord.util.mention
 import com.jessecorbett.diskord.util.words
 import commandlogic.*
 import discordclient.DiscordClientWrapper
-import events.GuessTheNumberGame
-import events.HangmanGame
-import events.ReactTestEvent
-import events.Reactable
+import events.*
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
@@ -37,7 +34,7 @@ private const val RANDOM_PREFIX = ""
 
 // Flags
 enum class Flags {
-    GUESSTHENUMBER, HANGMAN, REACTTEST
+    GUESSTHENUMBER, HANGMAN, REACTTEST, DUELGAME
 }
 
 
@@ -57,12 +54,24 @@ fun main() = runBlocking {
         val reactionAddListeners = mutableSetOf<Reactable>()
         val reactionRemoveListeners = mutableSetOf<Reactable>()
 
+        fun setupListeners(reactable: Reactable) {
+            reactionAddListeners.add(reactable)
+            reactionRemoveListeners.add(reactable)
+        }
+
+        fun retireListeners(reactable: Reactable) {
+            reactionAddListeners.remove(reactable)
+            reactionRemoveListeners.remove(reactable)
+        }
+
         // Games
         var guessTheNumberGame = GuessTheNumberGame(0)
         var hangmanGame = HangmanGame()
+        var duelGame = DuelGame(listOf())
 
         // Other events
-        var reactTestEvent = ReactTestEvent(null)
+        var reactTestEvent = ReactEvent(null)
+        var duelGameReactEvent = ReactEvent(null)
 
         // Commands
         commands(prefix) {
@@ -199,13 +208,47 @@ fun main() = runBlocking {
                 }
             }
 
+            // Duel game
+            command("duel") {
+                val dgc = DuelGameCommand()
+                val helpCheck = dgc.executeCommand(this)
+
+                if (helpCheck != dgc.duelGameCreatedMessage) {
+                    if (!flags.contains(Flags.DUELGAME)) {
+                        val root = reply(helpCheck)
+                        val gunReaction = "\uD83D\uDD2B"
+                        root.react(gunReaction)
+                        duelGameReactEvent = ReactEvent(root, root.reactions[0].emoji)
+
+                        // Add listeners
+                        setupListeners(duelGameReactEvent)
+
+                        // Wait a couple of seconds
+                        Timer().schedule(10000) {
+                            runBlocking {
+
+                            }
+
+                        }
+                        retireListeners(duelGameReactEvent)
+                        val reactingUsers = duelGameReactEvent.getReactingUsers().toList()
+                        val mentions = reactingUsers.joinToString(", "){it.mention}
+                        reply("Duel Game created!\nContestanst are: $mentions")
+                        duelGame = DuelGame(reactingUsers)
+
+
+
+                    }
+                }
+            }
+
             // Events
             command("reacttest") {
                 if (words.size == 1) {
                     if (!flags.contains(Flags.REACTTEST)) {
                         // Set up react event
                         val root = reply(ReactTestCommand().executeCommand(this))
-                        reactTestEvent = ReactTestEvent(root)
+                        reactTestEvent = ReactEvent(root)
                         root.react("\uD83D\uDD25")
 
                         // Add to listeners
@@ -401,6 +444,8 @@ fun main() = runBlocking {
 
     }
 }
+
+
 
 fun debug() {
     //println(BOT_TOKEN)
