@@ -214,6 +214,9 @@ fun main() = runBlocking {
                 val helpCheck = dgc.executeCommand(this)
                 if (helpCheck == dgc.duelGameCreatedMessage) {
                     if (!flags.contains(Flags.DUELGAME)) {
+                        // Starting game
+                        flags.add(Flags.DUELGAME)
+
                         val root = reply(helpCheck)
                         val gunReaction = "\uD83D\uDD2B"
                         root.react(gunReaction)
@@ -230,9 +233,17 @@ fun main() = runBlocking {
                                 reply("I have now waited some time")
                                 retireListeners(duelGameReactEvent)
                                 val reactingUsers = duelGameReactEvent.getReactingUsers().toList()
-                                val mentions = reactingUsers.joinToString(", "){it.mention}
-                                reply("Duel Game created!\nContestants are: $mentions")
-                                duelGame = DuelGame(reactingUsers)
+
+                                // if list is empty we don't bother starting a new game
+                                if (reactingUsers.isNotEmpty()) {
+                                    val mentions = reactingUsers.joinToString(", "){it.mention}
+                                    reply("Duel Game created!\nContestants are: $mentions")
+                                    duelGame = DuelGame(reactingUsers)
+
+                                } else {
+                                    reply("No one wanted to join duel :frowning: Ending Duel Game...")
+                                    flags.remove(Flags.DUELGAME)
+                                }
                             }
 
                         }
