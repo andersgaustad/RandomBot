@@ -212,13 +212,13 @@ fun main() = runBlocking {
             command("duel") {
                 val dgc = DuelGameCommand()
                 val helpCheck = dgc.executeCommand(this)
-
-                if (helpCheck != dgc.duelGameCreatedMessage) {
+                if (helpCheck == dgc.duelGameCreatedMessage) {
                     if (!flags.contains(Flags.DUELGAME)) {
                         val root = reply(helpCheck)
                         val gunReaction = "\uD83D\uDD2B"
                         root.react(gunReaction)
-                        duelGameReactEvent = ReactEvent(root, root.reactions[0].emoji)
+
+                        duelGameReactEvent = ReactEvent(root, Emoji(null, gunReaction))
 
                         // Add listeners
                         setupListeners(duelGameReactEvent)
@@ -226,17 +226,16 @@ fun main() = runBlocking {
                         // Wait a couple of seconds
                         Timer().schedule(10000) {
                             runBlocking {
-
+                                // For debugging
+                                reply("I have now waited some time")
+                                retireListeners(duelGameReactEvent)
+                                val reactingUsers = duelGameReactEvent.getReactingUsers().toList()
+                                val mentions = reactingUsers.joinToString(", "){it.mention}
+                                reply("Duel Game created!\nContestants are: $mentions")
+                                duelGame = DuelGame(reactingUsers)
                             }
 
                         }
-                        retireListeners(duelGameReactEvent)
-                        val reactingUsers = duelGameReactEvent.getReactingUsers().toList()
-                        val mentions = reactingUsers.joinToString(", "){it.mention}
-                        reply("Duel Game created!\nContestanst are: $mentions")
-                        duelGame = DuelGame(reactingUsers)
-
-
 
                     }
                 }
