@@ -227,7 +227,8 @@ fun main() = runBlocking {
                         setupListeners(duelGameReactEvent)
 
                         // Wait a couple of seconds
-                        Timer().schedule(10000) {
+                        val secondsToWait = 10
+                        Timer().schedule((secondsToWait * 1000).toLong()) {
                             runBlocking {
                                 // For debugging
                                 reply("I have now waited some time")
@@ -235,13 +236,19 @@ fun main() = runBlocking {
                                 val reactingUsers = duelGameReactEvent.getReactingUsers().toList()
 
                                 // if list is empty we don't bother starting a new game
-                                if (reactingUsers.isNotEmpty()) {
+                                if (reactingUsers.size >= 2) {
                                     val mentions = reactingUsers.joinToString(", "){it.mention}
                                     reply("Duel Game created!\nContestants are: $mentions")
                                     duelGame = DuelGame(reactingUsers)
 
+                                    // Start with first pair
+                                    reply(duelGame.createDuelMessage())
+
+                                    // Start duel
+                                    reply(duelGame.countdown())
+
                                 } else {
-                                    reply("No one wanted to join duel :frowning: Ending Duel Game...")
+                                    reply("Need at least two players to start duel :frowning: Ending Duel Game...")
                                     flags.remove(Flags.DUELGAME)
                                 }
                             }
@@ -414,6 +421,28 @@ fun main() = runBlocking {
                     }
 
                 }
+            }
+
+            // Duel game functionality
+            if (message.content == ":gun:" && flags.contains(Flags.DUELGAME) && duelGame.active && duelGame.getCurrentPair().contains(message.author)) {
+                // Deactivate duel
+                duelGame.deactivate()
+
+                val winningPlayer = message.author
+
+                // Declare winner of current duel
+                duelGame.declareDuelWinner(winningPlayer)
+                message.reply("${winningPlayer.mention} wins the duel!")
+
+                // Ready for next duel
+                duelGame.createDuelMessage()
+
+                // Start next duel
+                if(!duelGame.gameIsWon()) {
+                    message.reply(duelGame.countdown())
+                }
+
+
             }
 
             // Mentions
