@@ -293,6 +293,7 @@ fun main() = runBlocking {
         }
 
         // Messages
+
         messageCreated { message ->
             if (message.content.contains("echo") && message.isFromUser) {
                 val echo = message.content
