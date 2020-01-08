@@ -408,7 +408,6 @@ fun main() = runBlocking {
 
             // Message handling events
             for (messageHandler in messageEvents) {
-                println("Test")
                 messageHandler.onMessageCreated(message, this@bot)
 
             }
