@@ -249,13 +249,15 @@ fun main() = runBlocking {
 
             // Message events
             command("animerec") {
-                val helpCheck = AnimeRecommendationCommand().executeCommand(this)
+                val arc = AnimeRecommendationCommand(arh)
+                val helpCheck = arc.executeCommand(this)
                 reply(helpCheck)
 
 
                 // Do not start flowchart when helping
-                if (helpCheck != AnimeRecommendationCommand().getDetailedHelp()) {
+                if (helpCheck != arc.getDetailedHelp()) {
                     reply(arh.getRootDisplayMessage())
+
 
                 }
                 delete()
@@ -406,6 +408,7 @@ fun main() = runBlocking {
 
             // Message handling events
             for (messageHandler in messageEvents) {
+                println("Test")
                 messageHandler.onMessageCreated(message, this@bot)
 
             }
