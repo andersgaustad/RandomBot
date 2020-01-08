@@ -15,7 +15,7 @@ open class Node(val caption : String, val options : List<String>) {
     private fun getOptionDisplay() : String {
         val sb = StringBuilder()
         sb.append("```\n")
-        sb.append(options.joinToString("\n", "- "))
+        sb.append(options.joinToString("\n- ", "- "))
         sb.append("\n```")
 
         return sb.toString();

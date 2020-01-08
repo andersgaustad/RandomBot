@@ -3,7 +3,6 @@
 package core
 
 // Imports work! :O
-import com.jessecorbett.diskord.api.rest.client.DiscordClient
 import com.jessecorbett.diskord.dsl.bot
 import com.jessecorbett.diskord.dsl.command
 import com.jessecorbett.diskord.dsl.commands
@@ -19,6 +18,8 @@ import events.Reactable
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
+import messageevents.AnimeRecommendationHandler
+import messageevents.MessageHandling
 import utils.PokemonFixedParser
 import java.util.Timer
 import kotlin.concurrent.schedule
@@ -60,6 +61,11 @@ fun main() = runBlocking {
         // Games
         var guessTheNumberGame = GuessTheNumberGame(0)
         var hangmanGame = HangmanGame()
+
+        // Message events
+        val arh = AnimeRecommendationHandler()
+
+        val messageEvents = setOf<MessageHandling>(arh)
 
         // Other events
         var reactTestEvent = ReactTestEvent(null)
@@ -241,6 +247,20 @@ fun main() = runBlocking {
 
             }
 
+            // Message events
+            command("animerec") {
+                val helpCheck = AnimeRecommendationCommand().executeCommand(this)
+                reply(helpCheck)
+
+
+                // Do not start flowchart when helping
+                if (helpCheck != AnimeRecommendationCommand().getDetailedHelp()) {
+                    reply(arh.getRootDisplayMessage())
+
+                }
+                delete()
+            }
+
 
             // Help
             command("help") {
@@ -384,7 +404,14 @@ fun main() = runBlocking {
                 message.delete()
             }
 
+            // Message handling events
+            for (messageHandler in messageEvents) {
+                messageHandler.onMessageCreated(message, this@bot)
+
+            }
         }
+
+
 
          // For reactions
          reactionAdded {
