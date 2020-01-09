@@ -112,11 +112,39 @@ class AnimeRecommendationHandler : MessageHandling {
 
 
         val hundredsOfEpisodes = Node("Pick yout poison:", arrayListOf("Pirates", "Ninjas", "Spirit Samurai", "Mages", "Magical Girls", "Mechas", "Unfinished Greatness", "THE classic"))
-        storyNotImportant.attach(hundredsOfEpisodes)
+        val aFew = Node("Setting?", arrayListOf("Trapped in a video game", "Fantasy", "Big city life"))
+
+        storyNotImportant.apply {
+            attach(hundredsOfEpisodes)
+            attach(aFew)
+        }
 
 
         val onePiece = HyperlinkLeafNode("One Piece", "https://en.wikipedia.org/wiki/One_Piece")
-        hundredsOfEpisodes.attach(onePiece)
+        val naruto = HyperlinkLeafNode("Naruto", "https://en.wikipedia.org/wiki/Naruto")
+        val bleach = HyperlinkLeafNode("Bleach", "https://en.wikipedia.org/wiki/Bleach_(TV_series)")
+        val fairyTail = HyperlinkLeafNode("Fairy Tail", "https://en.wikipedia.org/wiki/Fairy_Tail")
+        val prettyCure = HyperlinkLeafNode("Pretty Cure", "https://en.wikipedia.org/wiki/Pretty_Cure")
+        val gundam = HyperlinkLeafNode("Gundam", "https://en.wikipedia.org/wiki/Pretty_Cure")
+        val hunterXHunter = HyperlinkLeafNode("Hunter X Hunter (2011)", "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter_(2011_TV_series)")
+        val dragonBall = HyperlinkLeafNode("Dragon Ball", "https://en.wikipedia.org/wiki/Dragon_Ball")
+
+        hundredsOfEpisodes.apply {
+            attach(onePiece)
+            attach(naruto)
+            attach(bleach)
+            attach(fairyTail)
+            attach(prettyCure)
+            attach(gundam)
+            attach(hunterXHunter)
+            attach(dragonBall)
+        }
+
+
+        val trappedInAVideoGame = Node("Choose your MMO", arrayListOf("The dumb popular one", "The boring smart one"))
+        val fantasy = Node("Theme?", arrayListOf("Mankind's last stand", "Arabian nights (djinns)", "Dragons, adventure, and romance", "Medieval knights", "Anime Hogwarts", "Futuristic Hogwarts", "Spirit weapons"))
+
+        // TODO("Continue here")
 
 
         return root
