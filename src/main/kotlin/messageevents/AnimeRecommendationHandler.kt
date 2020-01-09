@@ -29,11 +29,9 @@ class AnimeRecommendationHandler : MessageHandling {
 
             // Parse possible number
             // Local function
-            suspend fun chooseOption(number : Int) {
-
-                // Subtract 1 as list is 0-indexed
+            suspend fun chooseOption(index : Int) {
                 // Let kotlin handle exceptions
-                val nextNode = currentNode.getChild(number-1)
+                val nextNode = currentNode.getChild(index)
 
                 // Display next question
                 sendMessage(nextNode.getDisplayMessage(), message.channelId, bot.clientStore)
@@ -52,27 +50,32 @@ class AnimeRecommendationHandler : MessageHandling {
 
             // Check if message is number
             if (possibleNumber != null) {
-                chooseOption(possibleNumber)
+                // User gives number as 1-indexed, not 0-indexed
+                // Need to subtract 1
+                chooseOption(possibleNumber-1)
 
             } else {
                 // Check if option is written as string
                 // Format options to non case sensitive
-                val formattedOptions = currentNode.options.onEach { it.toLowerCase() }
+                val options = currentNode.options
+                val formattedOptions = ArrayList<String>(options.size)
+                options.forEach { formattedOptions.add(it.toLowerCase()) }
 
-                // Check if option is present. This returns -1 if it is not
-                val indexIfPresent = formattedOptions.indexOf(content)
+                    // Check if option is present. This returns -1 if it is not
+                    val indexIfPresent = formattedOptions.indexOf(content)
 
-                // If option was found, pass option index
-                if (indexIfPresent != -1) {
-                    chooseOption(indexIfPresent)
-                }
+                    // If option was found, pass option index
+                    if (indexIfPresent != -1) {
+                        chooseOption(indexIfPresent)
+                    }
             }
-
-
         }
 
 
     }
+
+
+
 
     // Top 10 workarounds
     // #1

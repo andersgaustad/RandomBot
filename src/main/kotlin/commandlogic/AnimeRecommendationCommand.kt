@@ -3,7 +3,7 @@ package commandlogic
 import com.jessecorbett.diskord.api.model.Message
 import messageevents.AnimeRecommendationHandler
 
-class AnimeRecommendationCommand(val animeRecommendationHandler: AnimeRecommendationHandler) : Command() {
+class AnimeRecommendationCommand(private val animeRecommendationHandler: AnimeRecommendationHandler) : Command() {
     override val name: String
         get() = "animerec"
 
