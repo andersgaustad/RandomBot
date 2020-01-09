@@ -108,7 +108,12 @@ class AnimeRecommendationHandler : MessageHandling {
 
 
         val storyNotImportant = Node("How many episodes?", arrayListOf("Hundreds!", "A few"))
-        fights.attach(storyNotImportant)
+        val storyImportant = Node("Action or adventure?", arrayListOf("Road trip adventure", "Full blown action"))
+
+        fights.apply {
+            attach(storyNotImportant)
+            attach(storyNotImportant)
+        }
 
 
         val hundredsOfEpisodes = Node("Pick yout poison:", arrayListOf("Pirates", "Ninjas", "Spirit Samurai", "Mages", "Magical Girls", "Mechas", "Unfinished Greatness", "THE classic"))
@@ -120,14 +125,14 @@ class AnimeRecommendationHandler : MessageHandling {
         }
 
 
-        val onePiece = HyperlinkLeafNode("One Piece", "https://en.wikipedia.org/wiki/One_Piece")
-        val naruto = HyperlinkLeafNode("Naruto", "https://en.wikipedia.org/wiki/Naruto")
-        val bleach = HyperlinkLeafNode("Bleach", "https://en.wikipedia.org/wiki/Bleach_(TV_series)")
-        val fairyTail = HyperlinkLeafNode("Fairy Tail", "https://en.wikipedia.org/wiki/Fairy_Tail")
-        val prettyCure = HyperlinkLeafNode("Pretty Cure", "https://en.wikipedia.org/wiki/Pretty_Cure")
-        val gundam = HyperlinkLeafNode("Gundam", "https://en.wikipedia.org/wiki/Pretty_Cure")
-        val hunterXHunter = HyperlinkLeafNode("Hunter X Hunter (2011)", "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter_(2011_TV_series)")
-        val dragonBall = HyperlinkLeafNode("Dragon Ball", "https://en.wikipedia.org/wiki/Dragon_Ball")
+        val onePiece = HyperlinkLeafNode("One Piece", "https://myanimelist.net/anime/21/One_Piece")
+        val naruto = HyperlinkLeafNode("Naruto", "https://myanimelist.net/anime/20/Naruto")
+        val bleach = HyperlinkLeafNode("Bleach", "https://myanimelist.net/anime/269/Bleach")
+        val fairyTail = HyperlinkLeafNode("Fairy Tail", "https://myanimelist.net/anime/6702/Fairy_Tail")
+        val prettyCure = HyperlinkLeafNode("Pretty Cure", "https://myanimelist.net/anime/603/Futari_wa_Precure")
+        val gundam = HyperlinkLeafNode("Gundam", "https://en.wikipedia.org/wiki/Gundam") // Hmmm
+        val hunterXHunter = HyperlinkLeafNode("Hunter X Hunter (2011)", "https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011")
+        val dragonBall = HyperlinkLeafNode("Dragon Ball", "https://myanimelist.net/anime/223/Dragon_Ball")
 
         hundredsOfEpisodes.apply {
             attach(onePiece)
@@ -143,8 +148,71 @@ class AnimeRecommendationHandler : MessageHandling {
 
         val trappedInAVideoGame = Node("Choose your MMO", arrayListOf("The dumb popular one", "The boring smart one"))
         val fantasy = Node("Theme?", arrayListOf("Mankind's last stand", "Arabian nights (djinns)", "Dragons, adventure, and romance", "Medieval knights", "Anime Hogwarts", "Futuristic Hogwarts", "Spirit weapons"))
+        val bigCityLife = Node("What drives your plot?", arrayListOf("Gang wars", "X-Men schoolgirls", "Life in a spirit town", "Spirit hunting", "Demon hunting"))
 
-        // TODO("Continue here")
+        aFew.apply {
+            attach(trappedInAVideoGame)
+            attach(fantasy)
+            attach(bigCityLife)
+        }
+
+
+        val sao = HyperlinkLeafNode("Sword Art Online", "https://myanimelist.net/anime/11757/Sword_Art_Online")
+        val logHorizon = HyperlinkLeafNode("Log Horizon", "https://myanimelist.net/anime/17265/Log_Horizon")
+
+        trappedInAVideoGame.apply {
+            attach(sao)
+            attach(logHorizon)
+        }
+
+
+        val attackOnTitan = HyperlinkLeafNode("Attack on Titan", "https://myanimelist.net/anime/16498/Shingeki_no_Kyojin")
+        val magiLabyrinthOfMagic = HyperlinkLeafNode("Magi: The Labyrinth of Magic", "https://myanimelist.net/anime/14513/Magi__The_Labyrinth_of_Magic")
+        val akatsukiNoYona = HyperlinkLeafNode("Akatsuko no Yona", "https://myanimelist.net/anime/25013/Akatsuki_no_Yona")
+        val nanatsuNoTaizai = HyperlinkLeafNode("Nanatsu no Taizai", "https://myanimelist.net/anime/23755/Nanatsu_no_Taizai")
+        val littleWitchAcademica = HyperlinkLeafNode("Little Witch Academica", "https://myanimelist.net/anime/33489/Little_Witch_Academia_TV")
+        val mahoukaKoukounoRettousei = HyperlinkLeafNode("Mahouka Koukou no Rettousei", "https://myanimelist.net/anime/20785/Mahouka_Koukou_no_Rettousei")
+        val soulEater = HyperlinkLeafNode("Soul Eater", "https://myanimelist.net/anime/3588/Soul_Eater")
+
+        fantasy.apply {
+            attach(attackOnTitan)
+            attach(magiLabyrinthOfMagic)
+            attach(akatsukiNoYona)
+            attach(nanatsuNoTaizai)
+            attach(littleWitchAcademica)
+            attach(mahoukaKoukounoRettousei)
+            attach(soulEater)
+        }
+
+
+        val durarara = HyperlinkLeafNode("Durarara!!", "https://myanimelist.net/anime/6746/Durarara")
+        val aCertainScientificRailgun = HyperlinkLeafNode("A Certain Scientific Railgun", "https://myanimelist.net/anime/6213/Toaru_Kagaku_no_Railgun")
+        val yozakuraQuartet = HyperlinkLeafNode("Yozakura Quartet: Hana no Uta", "https://myanimelist.net/anime/18497/Yozakura_Quartet__Hana_no_Uta")
+        val noragami = HyperlinkLeafNode("Noragami", "https://myanimelist.net/anime/20507/Noragami")
+        val blueExorcist = HyperlinkLeafNode("Blue Exorcist", "https://myanimelist.net/anime/9919/Ao_no_Exorcist")
+
+        bigCityLife.apply {
+            attach(durarara)
+            attach(aCertainScientificRailgun)
+            attach(yozakuraQuartet)
+            attach(noragami)
+            attach(blueExorcist)
+        }
+
+
+        val roadTripAdventure = Node("Theme?", arrayListOf("Journey into manhood through the mecha genre", "Steampunk scientific magic", "Space opera jazz", "'30s in Chicago", "Talking (&) Swords", "Aerial combat", "Hip-hop", "Historical", "Spirited Away into a fantasy drama"))
+        val fullBlownAction = Node("Supernatural?", arrayListOf("Not really", "Superpowers", "Journey into manhood through the mecha genre", "Medieval fantasy", "Steampunk scientific magic", "Urban fantasy", "Martial arts", "Spirit Hunting", "Magical girls", "Science fiction", "Samurai"))
+
+        storyImportant.apply {
+            attach(roadTripAdventure)
+            attach(fullBlownAction)
+        }
+
+
+        //TODO Continue here
+
+
+
 
 
         return root
