@@ -25,6 +25,18 @@ open class Node(private val caption : String, val options : List<String>, privat
 
 }
 
-class HyperlinkLeafNode(val name: String, private val hyperlink : String) : Node(name, arrayListOf()) {
+class LeafNode(val name: String, private val hyperlink : String) : Node(name, arrayListOf()) {
     override fun getDisplayMessage() = name + "\n" + hyperlink
+}
+
+class WaypointNode(nodes: List<LeafNode>) : Node("I found multiple animes that might interest you\nChoose one of the following", getWaypointOptions(nodes)) {
+    fun attachLeafNodes(nodes: List<LeafNode>) = nodes.forEach { children.add(it) }
+}
+
+private fun getWaypointOptions(nodes: List<LeafNode>) : List<String> {
+    val names = ArrayList<String>(nodes.size)
+    nodes.forEach {
+        names.add(it.name)
+    }
+    return names
 }

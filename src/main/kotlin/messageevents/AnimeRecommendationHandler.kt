@@ -125,14 +125,14 @@ class AnimeRecommendationHandler : MessageHandling {
         }
 
 
-        val onePiece = HyperlinkLeafNode("One Piece", "https://myanimelist.net/anime/21/One_Piece")
-        val naruto = HyperlinkLeafNode("Naruto", "https://myanimelist.net/anime/20/Naruto")
-        val bleach = HyperlinkLeafNode("Bleach", "https://myanimelist.net/anime/269/Bleach")
-        val fairyTail = HyperlinkLeafNode("Fairy Tail", "https://myanimelist.net/anime/6702/Fairy_Tail")
-        val prettyCure = HyperlinkLeafNode("Pretty Cure", "https://myanimelist.net/anime/603/Futari_wa_Precure")
-        val gundam = HyperlinkLeafNode("Gundam", "https://en.wikipedia.org/wiki/Gundam") // Hmmm
-        val hunterXHunter = HyperlinkLeafNode("Hunter X Hunter (2011)", "https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011")
-        val dragonBall = HyperlinkLeafNode("Dragon Ball", "https://myanimelist.net/anime/223/Dragon_Ball")
+        val onePiece = LeafNode("One Piece", "https://myanimelist.net/anime/21/One_Piece")
+        val naruto = LeafNode("Naruto", "https://myanimelist.net/anime/20/Naruto")
+        val bleach = LeafNode("Bleach", "https://myanimelist.net/anime/269/Bleach")
+        val fairyTail = LeafNode("Fairy Tail", "https://myanimelist.net/anime/6702/Fairy_Tail")
+        val prettyCure = LeafNode("Pretty Cure", "https://myanimelist.net/anime/603/Futari_wa_Precure")
+        val gundam = LeafNode("Gundam", "https://en.wikipedia.org/wiki/Gundam") // Hmmm
+        val hunterXHunter = LeafNode("Hunter X Hunter (2011)", "https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011")
+        val dragonBall = LeafNode("Dragon Ball", "https://myanimelist.net/anime/223/Dragon_Ball")
 
         hundredsOfEpisodes.apply {
             attach(onePiece)
@@ -157,8 +157,8 @@ class AnimeRecommendationHandler : MessageHandling {
         }
 
 
-        val sao = HyperlinkLeafNode("Sword Art Online", "https://myanimelist.net/anime/11757/Sword_Art_Online")
-        val logHorizon = HyperlinkLeafNode("Log Horizon", "https://myanimelist.net/anime/17265/Log_Horizon")
+        val sao = LeafNode("Sword Art Online", "https://myanimelist.net/anime/11757/Sword_Art_Online")
+        val logHorizon = LeafNode("Log Horizon", "https://myanimelist.net/anime/17265/Log_Horizon")
 
         trappedInAVideoGame.apply {
             attach(sao)
@@ -166,13 +166,13 @@ class AnimeRecommendationHandler : MessageHandling {
         }
 
 
-        val attackOnTitan = HyperlinkLeafNode("Attack on Titan", "https://myanimelist.net/anime/16498/Shingeki_no_Kyojin")
-        val magiLabyrinthOfMagic = HyperlinkLeafNode("Magi: The Labyrinth of Magic", "https://myanimelist.net/anime/14513/Magi__The_Labyrinth_of_Magic")
-        val akatsukiNoYona = HyperlinkLeafNode("Akatsuko no Yona", "https://myanimelist.net/anime/25013/Akatsuki_no_Yona")
-        val nanatsuNoTaizai = HyperlinkLeafNode("Nanatsu no Taizai", "https://myanimelist.net/anime/23755/Nanatsu_no_Taizai")
-        val littleWitchAcademica = HyperlinkLeafNode("Little Witch Academica", "https://myanimelist.net/anime/33489/Little_Witch_Academia_TV")
-        val mahoukaKoukounoRettousei = HyperlinkLeafNode("Mahouka Koukou no Rettousei", "https://myanimelist.net/anime/20785/Mahouka_Koukou_no_Rettousei")
-        val soulEater = HyperlinkLeafNode("Soul Eater", "https://myanimelist.net/anime/3588/Soul_Eater")
+        val attackOnTitan = LeafNode("Attack on Titan", "https://myanimelist.net/anime/16498/Shingeki_no_Kyojin")
+        val magiLabyrinthOfMagic = LeafNode("Magi: The Labyrinth of Magic", "https://myanimelist.net/anime/14513/Magi__The_Labyrinth_of_Magic")
+        val akatsukiNoYona = LeafNode("Akatsuko no Yona", "https://myanimelist.net/anime/25013/Akatsuki_no_Yona")
+        val nanatsuNoTaizai = LeafNode("Nanatsu no Taizai", "https://myanimelist.net/anime/23755/Nanatsu_no_Taizai")
+        val littleWitchAcademica = LeafNode("Little Witch Academica", "https://myanimelist.net/anime/33489/Little_Witch_Academia_TV")
+        val mahoukaKoukounoRettousei = LeafNode("Mahouka Koukou no Rettousei", "https://myanimelist.net/anime/20785/Mahouka_Koukou_no_Rettousei")
+        val soulEater = LeafNode("Soul Eater", "https://myanimelist.net/anime/3588/Soul_Eater")
 
         fantasy.apply {
             attach(attackOnTitan)
@@ -185,11 +185,11 @@ class AnimeRecommendationHandler : MessageHandling {
         }
 
 
-        val durarara = HyperlinkLeafNode("Durarara!!", "https://myanimelist.net/anime/6746/Durarara")
-        val aCertainScientificRailgun = HyperlinkLeafNode("A Certain Scientific Railgun", "https://myanimelist.net/anime/6213/Toaru_Kagaku_no_Railgun")
-        val yozakuraQuartet = HyperlinkLeafNode("Yozakura Quartet: Hana no Uta", "https://myanimelist.net/anime/18497/Yozakura_Quartet__Hana_no_Uta")
-        val noragami = HyperlinkLeafNode("Noragami", "https://myanimelist.net/anime/20507/Noragami")
-        val blueExorcist = HyperlinkLeafNode("Blue Exorcist", "https://myanimelist.net/anime/9919/Ao_no_Exorcist")
+        val durarara = LeafNode("Durarara!!", "https://myanimelist.net/anime/6746/Durarara")
+        val aCertainScientificRailgun = LeafNode("A Certain Scientific Railgun", "https://myanimelist.net/anime/6213/Toaru_Kagaku_no_Railgun")
+        val yozakuraQuartet = LeafNode("Yozakura Quartet: Hana no Uta", "https://myanimelist.net/anime/18497/Yozakura_Quartet__Hana_no_Uta")
+        val noragami = LeafNode("Noragami", "https://myanimelist.net/anime/20507/Noragami")
+        val blueExorcist = LeafNode("Blue Exorcist", "https://myanimelist.net/anime/9919/Ao_no_Exorcist")
 
         bigCityLife.apply {
             attach(durarara)
