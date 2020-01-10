@@ -116,7 +116,7 @@ class AnimeRecommendationHandler : MessageHandling {
         }
 
 
-        val hundredsOfEpisodes = Node("Pick yout poison:", arrayListOf("Pirates", "Ninjas", "Spirit Samurai", "Mages", "Magical Girls", "Mechas", "Unfinished Greatness", "THE classic"))
+        val hundredsOfEpisodes = Node("Pick your poison:", arrayListOf("Pirates", "Ninjas", "Spirit Samurai", "Mages", "Magical Girls", "Mechas", "Unfinished Greatness", "THE classic"))
         val aFew = Node("Setting?", arrayListOf("Trapped in a video game", "Fantasy", "Big city life"))
 
         storyNotImportant.apply {
@@ -130,7 +130,7 @@ class AnimeRecommendationHandler : MessageHandling {
         val bleach = LeafNode("Bleach", "https://myanimelist.net/anime/269/Bleach")
         val fairyTail = LeafNode("Fairy Tail", "https://myanimelist.net/anime/6702/Fairy_Tail")
         val prettyCure = LeafNode("Pretty Cure", "https://myanimelist.net/anime/603/Futari_wa_Precure")
-        val gundam = LeafNode("Gundam", "https://en.wikipedia.org/wiki/Gundam") // Hmmm
+        val gundam = LeafNode("Gundam", "https://myanimelist.net/anime/80/Mobile_Suit_Gundam")
         val hunterXHunter = LeafNode("Hunter X Hunter (2011)", "https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011")
         val dragonBall = LeafNode("Dragon Ball", "https://myanimelist.net/anime/223/Dragon_Ball")
 
