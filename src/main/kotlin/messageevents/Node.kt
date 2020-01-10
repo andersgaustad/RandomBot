@@ -4,9 +4,9 @@ open class Node(private val caption : String, val options : List<String>, privat
 
     val children = ArrayList<Node>(options.size)
 
-    fun attach(child : Node) {
-        children.add(child)
-    }
+    fun attach(vararg nodes : Node) = nodes.forEach { children.add(it) }
+
+
 
     fun getChild(index : Int) = children[index]
 
