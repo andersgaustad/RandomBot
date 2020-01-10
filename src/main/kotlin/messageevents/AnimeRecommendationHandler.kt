@@ -209,7 +209,28 @@ class AnimeRecommendationHandler : MessageHandling {
         }
 
 
-        //TODO Continue here
+        val tengenToppaGurrenLagann = LeafNode("Tengen Toppa Gurren Lagann", "https://myanimelist.net/anime/2001/Tengen_Toppa_Gurren_Lagann")
+        val fmab = LeafNode("Full Metal Alchemist: Brotherhood", "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood")
+        val cowboyBebop = LeafNode("Cowboy Bebop", "https://myanimelist.net/anime/1/Cowboy_Bebop")
+        val baccano = LeafNode("Baccano!", "https://myanimelist.net/anime/2251/Baccano")
+        val katanagatari = LeafNode("Katanagatari", "https://myanimelist.net/anime/6594/Katanagatari")
+        val lastExile = LeafNode("Last Exile", "https://myanimelist.net/anime/97/Last_Exile")
+        val samuraiChamploo = LeafNode("Samurai Champloo", "https://myanimelist.net/anime/205/Samurai_Champloo")
+        val rurouniKenshin = LeafNode("Rurouni Kenshin", "https://myanimelist.net/anime/45/Rurouni_Kenshin__Meiji_Kenkaku_Romantan")
+
+        roadTripAdventure.apply {
+            attach(tengenToppaGurrenLagann)
+            attach(fmab)
+            attach(cowboyBebop)
+            attach(baccano)
+            attach(katanagatari)
+            attach(lastExile)
+            attach(samuraiChamploo)
+            attach(rurouniKenshin)
+        }
+
+        // TODO Continue here
+
 
 
 
