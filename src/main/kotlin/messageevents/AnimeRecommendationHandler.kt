@@ -62,7 +62,7 @@ class AnimeRecommendationHandler : MessageHandling {
                 options.forEach { formattedOptions.add(it.toLowerCase()) }
 
                     // Check if option is present. This returns -1 if it is not
-                    val indexIfPresent = formattedOptions.indexOf(content)
+                    val indexIfPresent = formattedOptions.indexOf(content.toLowerCase())
 
                     // If option was found, pass option index
                     if (indexIfPresent != -1) {
