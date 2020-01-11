@@ -110,19 +110,13 @@ class AnimeRecommendationHandler : MessageHandling {
         val storyNotImportant = Node("How many episodes?", arrayListOf("Hundreds!", "A few"))
         val storyImportant = Node("Action or adventure?", arrayListOf("Road trip adventure", "Full blown action"))
 
-        fights.apply {
-            attach(storyNotImportant)
-            attach(storyImportant)
-        }
+        fights.attach(storyNotImportant, storyImportant)
 
 
         val hundredsOfEpisodes = Node("Pick your poison:", arrayListOf("Pirates", "Ninjas", "Spirit Samurai", "Mages", "Magical Girls", "Mechas", "Unfinished Greatness", "THE classic"))
         val aFew = Node("Setting?", arrayListOf("Trapped in a video game", "Fantasy", "Big city life"))
 
-        storyNotImportant.apply {
-            attach(hundredsOfEpisodes)
-            attach(aFew)
-        }
+        storyNotImportant.attach(hundredsOfEpisodes, aFew)
 
 
         val onePiece = LeafNode("One Piece", "https://myanimelist.net/anime/21/One_Piece")
@@ -134,36 +128,20 @@ class AnimeRecommendationHandler : MessageHandling {
         val hunterXHunter = LeafNode("Hunter X Hunter (2011)", "https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011")
         val dragonBall = LeafNode("Dragon Ball", "https://myanimelist.net/anime/223/Dragon_Ball")
 
-        hundredsOfEpisodes.apply {
-            attach(onePiece)
-            attach(naruto)
-            attach(bleach)
-            attach(fairyTail)
-            attach(prettyCure)
-            attach(gundam)
-            attach(hunterXHunter)
-            attach(dragonBall)
-        }
+        hundredsOfEpisodes.attach(onePiece, naruto, bleach, fairyTail, prettyCure, gundam, hunterXHunter, dragonBall)
 
 
         val trappedInAVideoGame = Node("Choose your MMO", arrayListOf("The dumb popular one", "The boring smart one"))
         val fantasy = Node("Theme?", arrayListOf("Mankind's last stand", "Arabian nights (djinns)", "Dragons, adventure, and romance", "Medieval knights", "Anime Hogwarts", "Futuristic Hogwarts", "Spirit weapons"))
         val bigCityLife = Node("What drives your plot?", arrayListOf("Gang wars", "X-Men schoolgirls", "Life in a spirit town", "Spirit hunting", "Demon hunting"))
 
-        aFew.apply {
-            attach(trappedInAVideoGame)
-            attach(fantasy)
-            attach(bigCityLife)
-        }
+        aFew.attach(trappedInAVideoGame, fantasy, bigCityLife)
 
 
         val sao = LeafNode("Sword Art Online", "https://myanimelist.net/anime/11757/Sword_Art_Online")
         val logHorizon = LeafNode("Log Horizon", "https://myanimelist.net/anime/17265/Log_Horizon")
 
-        trappedInAVideoGame.apply {
-            attach(sao)
-            attach(logHorizon)
-        }
+        trappedInAVideoGame.attach(sao, logHorizon)
 
 
         val attackOnTitan = LeafNode("Attack on Titan", "https://myanimelist.net/anime/16498/Shingeki_no_Kyojin")
@@ -174,15 +152,7 @@ class AnimeRecommendationHandler : MessageHandling {
         val mahoukaKoukounoRettousei = LeafNode("Mahouka Koukou no Rettousei", "https://myanimelist.net/anime/20785/Mahouka_Koukou_no_Rettousei")
         val soulEater = LeafNode("Soul Eater", "https://myanimelist.net/anime/3588/Soul_Eater")
 
-        fantasy.apply {
-            attach(attackOnTitan)
-            attach(magiLabyrinthOfMagic)
-            attach(akatsukiNoYona)
-            attach(nanatsuNoTaizai)
-            attach(littleWitchAcademica)
-            attach(mahoukaKoukounoRettousei)
-            attach(soulEater)
-        }
+        fantasy.attach(attackOnTitan, magiLabyrinthOfMagic, akatsukiNoYona, nanatsuNoTaizai, littleWitchAcademica, mahoukaKoukounoRettousei, soulEater)
 
 
         val durarara = LeafNode("Durarara!!", "https://myanimelist.net/anime/6746/Durarara")
@@ -191,22 +161,13 @@ class AnimeRecommendationHandler : MessageHandling {
         val noragami = LeafNode("Noragami", "https://myanimelist.net/anime/20507/Noragami")
         val blueExorcist = LeafNode("Blue Exorcist", "https://myanimelist.net/anime/9919/Ao_no_Exorcist")
 
-        bigCityLife.apply {
-            attach(durarara)
-            attach(aCertainScientificRailgun)
-            attach(yozakuraQuartet)
-            attach(noragami)
-            attach(blueExorcist)
-        }
+        bigCityLife.attach(durarara, aCertainScientificRailgun, yozakuraQuartet, noragami, blueExorcist)
 
 
         val roadTripAdventure = Node("Theme?", arrayListOf("Journey into manhood through the mecha genre", "Steampunk scientific magic", "Space opera jazz", "'30s in Chicago", "Talking (&) Swords", "Aerial combat", "Hip-hop", "Historical", "Spirited Away into a fantasy drama"))
         val fullBlownAction = Node("Supernatural?", arrayListOf("Not really", "Superpowers", "Journey into manhood through the mecha genre", "Medieval fantasy", "Steampunk scientific magic", "Urban fantasy", "Martial arts", "Spirit Hunting", "Magical girls", "Science fiction", "Samurai"))
 
-        storyImportant.apply {
-            attach(roadTripAdventure)
-            attach(fullBlownAction)
-        }
+        storyImportant.attach(roadTripAdventure, fullBlownAction)
 
 
         val tengenToppaGurrenLagann = LeafNode("Tengen Toppa Gurren Lagann", "https://myanimelist.net/anime/2001/Tengen_Toppa_Gurren_Lagann")
@@ -218,16 +179,7 @@ class AnimeRecommendationHandler : MessageHandling {
         val samuraiChamploo = LeafNode("Samurai Champloo", "https://myanimelist.net/anime/205/Samurai_Champloo")
         val rurouniKenshin = LeafNode("Rurouni Kenshin", "https://myanimelist.net/anime/45/Rurouni_Kenshin__Meiji_Kenkaku_Romantan")
 
-        roadTripAdventure.apply {
-            attach(tengenToppaGurrenLagann)
-            attach(fmab)
-            attach(cowboyBebop)
-            attach(baccano)
-            attach(katanagatari)
-            attach(lastExile)
-            attach(samuraiChamploo)
-            attach(rurouniKenshin)
-        }
+        roadTripAdventure.attach(tengenToppaGurrenLagann, fmab, cowboyBebop, baccano, katanagatari, lastExile, samuraiChamploo, rurouniKenshin)
 
         // TODO Continue here
 
