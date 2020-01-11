@@ -112,7 +112,7 @@ class AnimeRecommendationHandler : MessageHandling {
 
         fights.apply {
             attach(storyNotImportant)
-            attach(storyNotImportant)
+            attach(storyImportant)
         }
 
 
