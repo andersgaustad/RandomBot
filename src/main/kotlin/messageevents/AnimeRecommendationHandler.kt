@@ -499,8 +499,7 @@ class ComedyTree : TreeCreating {
         ))
         // Beelzebub already created
 
-
-
+        return comedy
     }
 
 }
