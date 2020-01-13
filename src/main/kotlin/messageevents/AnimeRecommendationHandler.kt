@@ -83,7 +83,7 @@ class AnimeRecommendationHandler : MessageHandling {
 
     private val map = mutableMapOf<User, Node>()
 
-    private val root = setUpTree()
+    private val root = AnimeTree().createTree()
 
     fun beginAnimeRecommendation(user : User) : String {
         // Set user node to root
@@ -94,19 +94,25 @@ class AnimeRecommendationHandler : MessageHandling {
 
     fun getRootDisplayMessage() = root.getDisplayMessage()
 
-    private fun setUpTree() : Node {
-        // Root
-        val root = Node("I am looking for something...", arrayListOf("Dynamic", "Funny", "Calm", "Moving", "Mature", "Intense", "Scary"))
 
-        root.attach(ActionTree().createTree())
-
-        return root
-    }
 }
 
 // Tree data
 interface TreeCreating {
     fun createTree() : Node
+}
+
+class AnimeTree : TreeCreating {
+    override fun createTree(): Node {
+        // Root
+        val root = Node("I am looking for something...", arrayListOf("Dynamic", "Funny", "Calm", "Moving", "Mature", "Intense", "Scary"))
+
+        root.attach(ActionTree().createTree())
+
+
+        return root
+    }
+
 }
 
 class ActionTree : TreeCreating {
@@ -462,6 +468,10 @@ class ActionTree : TreeCreating {
         return actionAdventure
     }
 }
+
+
+
+
 
 
 
