@@ -33,10 +33,19 @@ class WaypointNode(nodes: List<LeafNode>) : Node("I found multiple animes that m
     fun attachLeafNodes(nodes: List<LeafNode>) = nodes.forEach { children.add(it) }
 }
 
-
+/*
 fun createWaypointNode(nodes: List<LeafNode>) : WaypointNode {
     val node = WaypointNode(nodes)
     node.attachLeafNodes(nodes)
+    return node
+}
+
+ */
+
+fun createWaypointNode(vararg nodes: LeafNode) : WaypointNode {
+    val nodeList = nodes.asList()
+    val node = WaypointNode(nodeList)
+    node.attachLeafNodes(nodeList)
     return node
 }
 

@@ -306,42 +306,39 @@ class ActionTree : TreeCreating {
 
 
         val notReallySupernaturalWayPoint = createWaypointNode(
-            arrayListOf(
-                LeafNode("Black Lagoon", "https://myanimelist.net/anime/889/Black_Lagoon"),
-                LeafNode("Phantom", "https://myanimelist.net/anime/5682/Phantom__Requiem_for_the_Phantom")
-            )
+            LeafNode("Black Lagoon", "https://myanimelist.net/anime/889/Black_Lagoon"),
+            LeafNode("Phantom", "https://myanimelist.net/anime/5682/Phantom__Requiem_for_the_Phantom")
+
         )
         val darkerThanBlack =
             LeafNode("Darker than Black", "https://myanimelist.net/anime/2025/Darker_than_Black__Kuro_no_Keiyakusha")
         // Tengen node already created
         val medievalFantasyWayPoint = createWaypointNode(
-            arrayListOf(
-                LeafNode(
+
+            LeafNode(
                     "Rage of Bahamut: Genesis",
                     "https://myanimelist.net/anime/21843/Shingeki_no_Bahamut__Genesis"
-                ),
-                LeafNode("Slayers", "https://myanimelist.net/anime/534/Slayers")
-            )
+            ),
+            LeafNode("Slayers", "https://myanimelist.net/anime/534/Slayers")
+
         )
         // fma node already created
         val urbanFantasyWayPoint = createWaypointNode(
-            arrayListOf(
-                LeafNode("Zetsuen no Tempest", "https://myanimelist.net/anime/14075/Zetsuen_no_Tempest"),
-                LeafNode("Hitman Reborn", "https://myanimelist.net/anime/1604/Katekyo_Hitman_Reborn"),
-                LeafNode("Shakugan no Shana", "https://myanimelist.net/anime/355/Shakugan_no_Shana")
-            )
+            LeafNode("Zetsuen no Tempest", "https://myanimelist.net/anime/14075/Zetsuen_no_Tempest"),
+            LeafNode("Hitman Reborn", "https://myanimelist.net/anime/1604/Katekyo_Hitman_Reborn"),
+            LeafNode("Shakugan no Shana", "https://myanimelist.net/anime/355/Shakugan_no_Shana")
+
         )
         val kenichi = LeafNode("Kenichi", "https://myanimelist.net/anime/1559/Shijou_Saikyou_no_Deshi_Kenichi")
         val yuYuHakusho = LeafNode("Yu Yu Hakusho", "https://myanimelist.net/anime/392/Yuu%E2%98%86Yuu%E2%98%86Hakusho")
         val magicalGirlsWayPoint = createWaypointNode(
-            arrayListOf(
-                LeafNode("Sailor Moon", "https://myanimelist.net/anime/530/Bishoujo_Senshi_Sailor_Moon"),
-                LeafNode("Cardcaptor Sakura", "https://myanimelist.net/anime/232/Cardcaptor_Sakura"),
-                LeafNode("Lyrical Nanoha", "https://myanimelist.net/anime/76/Mahou_Shoujo_Lyrical_Nanoha?q=lyrical%20n")
-            )
+            LeafNode("Sailor Moon", "https://myanimelist.net/anime/530/Bishoujo_Senshi_Sailor_Moon"),
+            LeafNode("Cardcaptor Sakura", "https://myanimelist.net/anime/232/Cardcaptor_Sakura"),
+            LeafNode("Lyrical Nanoha", "https://myanimelist.net/anime/76/Mahou_Shoujo_Lyrical_Nanoha?q=lyrical%20n")
+
         )
         val scienceFiction = Node("Type of scifi?", arrayListOf("Shootout", "Mecha"))
-        val samuraiWayPoint = createWaypointNode(arrayListOf(samuraiChamploo, rurouniKenshin))
+        val samuraiWayPoint = createWaypointNode(samuraiChamploo, rurouniKenshin)
 
         fullBlownAction.attach(
             notReallySupernaturalWayPoint,
@@ -487,16 +484,16 @@ class ComedyTree : TreeCreating {
         dailyLife.attach(school, work)
 
         val greatTeacherOnizuka = LeafNode("Great Teacher Onizuka", "https://myanimelist.net/anime/245/Great_Teacher_Onizuka")
-        val schoolOrTeachingWaypointNode = createWaypointNode(arrayListOf(
+        val schoolOrTeachingWaypointNode = createWaypointNode(
             LeafNode("Sayonara Zetsubou Sensei", "https://myanimelist.net/anime/2605/Sayonara_Zetsubou_Sensei"),
             greatTeacherOnizuka
-        ))
+        )
         val beelzebub = LeafNode("Beelzebub", "https://myanimelist.net/anime/9513/Beelzebub")
-        val delinquentsWaypointNode = createWaypointNode(arrayListOf(
+        val delinquentsWaypointNode = createWaypointNode(
             greatTeacherOnizuka,
             LeafNode("Cromartie High", "https://myanimelist.net/anime/114/Sakigake_Cromartie_Koukou"),
             beelzebub
-        ))
+        )
         // Beelzebub already created
 
         return comedy
