@@ -469,6 +469,42 @@ class ActionTree : TreeCreating {
     }
 }
 
+class ComedyTree : TreeCreating {
+    override fun createTree(): Node {
+        val comedy = Node("What kind of comedy?", arrayListOf("Daily life", "Romance comedy", "Parody"))
+
+        val dailyLife = Node("Setting?", arrayListOf("School", "Work"))
+        val lightHeartedOption = "Lighthearted casual comedy with some romance and supernatural stuff"
+        val romanceComedy = Node("Theme?", arrayListOf("For starters", "Anti-romance", "Drawing girly manga", "Meta-humor", "College-aged cast", "Girl-orineted (shoujo)", "Sitcom", "Harem", "Incest", "Gay couples", "Old classic", "Sports", "Everybody wins", lightHeartedOption, "Delusional supernerds", "Slice of life turned drama"))
+        val parody = Node("Making fun of...", arrayListOf("Anime cliches", "Action series", "Romance comedies", "Society"))
+
+        comedy.attach(dailyLife, romanceComedy, parody)
+
+
+        val school = Node("About?", arrayListOf("Teaching", "Delinquents", "nursing a demon baby", "*Ordinary* school life", "Discount fight club", "Boys being boys", "Dirty jokes", lightHeartedOption))
+        val work = Node("at...", arrayListOf("Animation studio", "Restaurant", "Disneyland", "McDonald's", "School"))
+
+        dailyLife.attach(school, work)
+
+        val greatTeacherOnizuka = LeafNode("Great Teacher Onizuka", "https://myanimelist.net/anime/245/Great_Teacher_Onizuka")
+        val schoolOrTeachingWaypointNode = createWaypointNode(arrayListOf(
+            LeafNode("Sayonara Zetsubou Sensei", "https://myanimelist.net/anime/2605/Sayonara_Zetsubou_Sensei"),
+            greatTeacherOnizuka
+        ))
+        val beelzebub = LeafNode("Beelzebub", "https://myanimelist.net/anime/9513/Beelzebub")
+        val delinquentsWaypointNode = createWaypointNode(arrayListOf(
+            greatTeacherOnizuka,
+            LeafNode("Cromartie High", "https://myanimelist.net/anime/114/Sakigake_Cromartie_Koukou"),
+            beelzebub
+        ))
+        // Beelzebub already created
+
+
+
+    }
+
+}
+
 
 
 
