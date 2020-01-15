@@ -4,7 +4,7 @@ open class Node(private val caption : String, val options : List<String>, privat
 
     val children = ArrayList<Node>(options.size)
 
-    fun attach(vararg nodes : Node) = nodes.forEach { children.add(it) }
+    open fun attach(vararg nodes : Node) = nodes.forEach { children.add(it) }
 
 
 
@@ -27,20 +27,14 @@ open class Node(private val caption : String, val options : List<String>, privat
 
 class LeafNode(val name: String, private val hyperlink : String) : Node(name, arrayListOf()) {
     override fun getDisplayMessage() = name + "\n" + hyperlink
+
+    override fun attach(vararg nodes : Node) = throw IllegalAccessException("Cannot attach more nodes to leaves!")
 }
 
 class WaypointNode(nodes: List<LeafNode>) : Node("I found multiple animes that might interest you\nChoose one of the following", getWaypointOptions(nodes)) {
     fun attachLeafNodes(nodes: List<LeafNode>) = nodes.forEach { children.add(it) }
 }
 
-/*
-fun createWaypointNode(nodes: List<LeafNode>) : WaypointNode {
-    val node = WaypointNode(nodes)
-    node.attachLeafNodes(nodes)
-    return node
-}
-
- */
 
 fun createWaypointNode(vararg nodes: LeafNode) : WaypointNode {
     val nodeList = nodes.asList()
