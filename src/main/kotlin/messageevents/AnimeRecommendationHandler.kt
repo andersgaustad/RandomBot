@@ -495,6 +495,72 @@ class ComedyTree : TreeCreating {
             beelzebub
         )
         // Beelzebub already created
+        val schoolLifeWaypointNode = createWaypointNode(
+            LeafNode("Nichijou", "https://myanimelist.net/anime/10165/Nichijou"),
+            LeafNode("Azumanga Daioh", "https://myanimelist.net/anime/66/Azumanga_Daioh"),
+            LeafNode("D-Frag!", "https://myanimelist.net/anime/20031/D-Frag")
+        )
+        val benTo = LeafNode("Ben-To", "https://myanimelist.net/anime/10396/Ben-To")
+        val dailyLifeOfHighschoolBoys = LeafNode("Daily Lives of High School Boys", "https://myanimelist.net/anime/11843/Danshi_Koukousei_no_Nichijou")
+        val seitokaiYakuindomo = LeafNode("Seitokai Yakuindomo", "https://myanimelist.net/anime/8675/Seitokai_Yakuindomo")
+        val longWordWaypointNode = createWaypointNode(
+            LeafNode("Yamada-kun and the Seven Witches", "https://myanimelist.net/anime/28677/Yamada-kun_to_7-nin_no_Majo_TV"),
+            LeafNode("Witch Craft Works", "https://myanimelist.net/anime/21085/Witch_Craft_Works")
+        )
+
+        school.attach(schoolOrTeachingWaypointNode, delinquentsWaypointNode, beelzebub, schoolLifeWaypointNode, benTo, dailyLifeOfHighschoolBoys, seitokaiYakuindomo, longWordWaypointNode)
+
+
+        val shirobako = LeafNode("Shirobako", "https://myanimelist.net/anime/25835/Shirobako")
+        val working = LeafNode("Working!", "https://myanimelist.net/anime/6956/Working")
+        val amagiBrilliantPark = LeafNode("Amagi Brilliant Park", "https://myanimelist.net/anime/22147/Amagi_Brilliant_Park")
+        val devilIsAPartTimer = LeafNode("The Devil is a Part-Timer", "https://myanimelist.net/anime/15809/Hataraku_Maou-sama")
+        // Teaching node already created
+
+        work.attach(shirobako, working, amagiBrilliantPark, devilIsAPartTimer)
+
+
+        val toradora = LeafNode("Toradora!", "https://myanimelist.net/anime/4224/Toradora")
+        val oregairu = LeafNode("Oregairu", "https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru")
+        val gekkanShoujoNozakikun = LeafNode("Gekkan Shoujo Nozaki-kun", "https://myanimelist.net/anime/23289/Gekkan_Shoujo_Nozaki-kun")
+        val saekano = LeafNode("Saekano", "https://myanimelist.net/anime/23277/Saenai_Heroine_no_Sodatekata")
+        val goldenTime = LeafNode("Golden Time", "https://myanimelist.net/anime/17895/Golden_Time")
+        val girlOriented = Node("Another theme?", arrayListOf("Playful love", "Reverse harem", "Breaking the loner", "Tall girl, short boy", "Weirdo girl, cool boy", "Idols", "Gentle giant", "'Too busy for romance'", "Fine arts students", "Life as a shrine deity"))
+        val schoolRumble = LeafNode("School Rumble", "https://myanimelist.net/anime/24/School_Rumble")
+        val nisekoi = LeafNode("Nisekoi", "https://myanimelist.net/anime/18897/Nisekoi")
+        val oreImo = LeafNode("OreImo", "https://myanimelist.net/anime/8769/Ore_no_Imouto_ga_Konnani_Kawaii_Wake_ga_Nai")
+        val gayCouples = Node("Boys or girls?", arrayListOf("Boys", "Girls"))
+        val maisonIkkoku = LeafNode("Maison Ikkoku", "https://myanimelist.net/anime/1453/Maison_Ikkoku")
+        val crossGame = LeafNode("Cross Game", "https://myanimelist.net/anime/5941/Cross_Game")
+        val amagamiSS = LeafNode("Amagami SS", "https://myanimelist.net/anime/8676/Amagami_SS")
+        // Long word option
+        val chuunibyou = LeafNode("Chuunibyou", "https://myanimelist.net/anime/14741/Chuunibyou_demo_Koi_ga_Shitai")
+        val kokoroConnect = LeafNode("Kokoro Connect", "https://myanimelist.net/anime/11887/Kokoro_Connect")
+
+        romanceComedy.attach(toradora, oregairu, gekkanShoujoNozakikun, saekano, goldenTime, girlOriented, schoolRumble, nisekoi, oreImo, gayCouples, maisonIkkoku, crossGame, amagamiSS, longWordWaypointNode, chuunibyou, kokoroConnect)
+
+
+        val maidSama = LeafNode("Maid Sama", "https://myanimelist.net/anime/7054/Kaichou_wa_Maid-sama")
+        val ouranKoukouHostClub = LeafNode("Ouran Koukou Host Club", "https://myanimelist.net/anime/853/Ouran_Koukou_Host_Club")
+        val wallflower = LeafNode("The Wallflower", "https://myanimelist.net/anime/1562/Yamato_Nadeshiko_Shichihenge%E2%99%A5")
+        val lovelyComplex = LeafNode("Lovely Complex", "https://myanimelist.net/anime/2034/Lovely%E2%98%85Complex")
+        val kimiNiTodoke = LeafNode("Kimi ni Todoke", "https://myanimelist.net/anime/6045/Kimi_ni_Todoke")
+        val skipBeat = LeafNode("Skip Beat", "https://myanimelist.net/anime/4722/Skip_Beat")
+        val oreMonogatari = LeafNode("Ore Monogatari", "https://myanimelist.net/anime/28297/Ore_Monogatari")
+        val mlm = LeafNode("My Little Monster", "https://myanimelist.net/anime/14227/Tonari_no_Kaibutsu-kun")
+        val honeyAndClover = LeafNode("Honey and Clover", "https://myanimelist.net/anime/16/Hachimitsu_to_Clover")
+        val kamisamaKiss = LeafNode("Kamisama Kiss", "https://myanimelist.net/anime/14713/Kamisama_Hajimemashita")
+
+        girlOriented.attach(maidSama, ouranKoukouHostClub, wallflower, lovelyComplex, kimiNiTodoke, skipBeat, oreMonogatari, mlm, honeyAndClover, kamisamaKiss)
+
+
+        val junjouRomantica = LeafNode("Junjou Romantica", "https://myanimelist.net/anime/3092/Junjou_Romantica")
+        val sakuraTrick = LeafNode("Sakura Trick", "https://myanimelist.net/anime/20047/Sakura_Trick")
+
+        gayCouples.attach(junjouRomantica, sakuraTrick)
+
+
+        // TODO Continue with parodies
 
         return comedy
     }
