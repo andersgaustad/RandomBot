@@ -110,8 +110,9 @@ class AnimeTree : TreeCreating {
 
         val action = ActionTree().createTree()
         val comedy = ComedyTree().createTree()
+        val sliceOfLife = SliceOfLifeTree().createTree()
 
-        root.attach(action, comedy)
+        root.attach(action, comedy, sliceOfLife)
 
 
         return root
@@ -581,6 +582,119 @@ class ComedyTree : TreeCreating {
 
 
         return comedy
+    }
+}
+
+class SliceOfLifeTree : TreeCreating {
+    override fun createTree(): Node {
+        val sliceOfLife = Node("'Calm', or 'calm before the storm'", arrayListOf("I want to chill", "I was born to feel"))
+
+        val chill = Node("With whom?", arrayListOf("Random people", "Cute girls doing cute things", "Jesus & Buddha"))
+        val cutePTSDOption = "Cute PTSD :thinking:"
+        val bornToFeel = Node("Feel how?", arrayListOf(cutePTSDOption, "Warm and bittersweet", "Heavy cringe", "I've got tissues"))
+
+        sliceOfLife.attach(chill, bornToFeel)
+
+
+        val chillWithRandos = Node("Setting?", arrayListOf("At work", "School friends drawing manga", "School mystery club", "Road trip adventure", "Adult women"))
+        val cuteGirls = Node("What's cute?", arrayListOf("Wannabe popstars", "Life away from the city", "Tank drifting", cutePTSDOption))
+        val saintOniisan = LeafNode("Saint Oniisan", "https://myanimelist.net/anime/15775/Saint%E2%98%86Oniisan")
+
+        chill.attach(chillWithRandos, cuteGirls, saintOniisan)
+
+
+        val chillAtWork = Node("Where?", arrayListOf("Idyllic Venice", "Life in a band", "Rural Japan", "Shopping Alley", "Spirit hunting", "Astronauts"))
+        val bakuman = LeafNode("Bakuman", "https://myanimelist.net/anime/7674/Bakuman")
+        val roadTrip = Node("Through", arrayListOf("Medieval Europe and its economy", "Rural Japan and spirit stuff", "Philosophy and a talking motorcycle"))
+        val princessJellyfish = LeafNode("Princess Jellyfish", "https://myanimelist.net/anime/8129/Kuragehime")
+
+        chillWithRandos.attach(chillAtWork, bakuman, roadTrip, princessJellyfish)
+
+
+        val aria = LeafNode("Aria ", "https://myanimelist.net/anime/477/Aria_The_Animation")
+        val beck = LeafNode("Beck", "https://myanimelist.net/anime/57/Beck")
+        val barakamon = LeafNode("Barakamon", "https://myanimelist.net/anime/22789/Barakamon")
+        val tamakoMarket = LeafNode("Tamako Market", "https://myanimelist.net/anime/16417/Tamako_Market")
+        val kyoukaiNoKanata = LeafNode("Kyoukai no Kanata", "https://myanimelist.net/anime/18153/Kyoukai_no_Kanata")
+        val spaceBrothers = LeafNode("Space Brothers", "https://myanimelist.net/anime/12431/Uchuu_Kyoudai")
+
+        chillAtWork.attach(aria, beck, barakamon, tamakoMarket, kyoukaiNoKanata, spaceBrothers)
+
+
+        val spiceandWolf = LeafNode("Spice & Wolf", "https://myanimelist.net/anime/2966/Ookami_to_Koushinryou")
+        val mushishi = LeafNode("Mushishi", "https://myanimelist.net/anime/457/Mushishi")
+        val kinosJourney = LeafNode("Kino's Journey", "https://myanimelist.net/anime/486/Kino_no_Tabi__The_Beautiful_World")
+
+        roadTrip.attach(spiceandWolf, mushishi, kinosJourney)
+
+
+        val popstars = Node("Pro or amateur?", arrayListOf("Big stage", "School life"))
+        val nonNonBiyori = LeafNode("Non Non Biyori", "https://myanimelist.net/anime/17549/Non_Non_Biyori")
+        val girlsAndPanzer = LeafNode("Girls & Panzer", "https://myanimelist.net/anime/14131/Girls___Panzer")
+        val ptsd = Node("Serving as...", arrayListOf("Magical girls", "Soldiers"))
+
+        cuteGirls.attach(popstars, nonNonBiyori, girlsAndPanzer, ptsd)
+
+
+        val bigStageWaypointNode = createWaypointNode(
+            LeafNode("The iDOLM@STER", "https://myanimelist.net/anime/10278/The_iDOLMSTER"),
+            LeafNode("Aikatsu!", "https://myanimelist.net/anime/15061/Aikatsu")
+        )
+        val schoolClubWaypointNode = createWaypointNode(
+            LeafNode("Love Live!", "https://myanimelist.net/anime/15051/Love_Live_School_Idol_Project"),
+            LeafNode("K-On!", "https://myanimelist.net/anime/5680/K-On")
+        )
+
+        popstars.attach(bigStageWaypointNode, schoolClubWaypointNode)
+
+
+        val yukiYunaIsAHero = LeafNode("Yuki Yuna is a Hero", "https://myanimelist.net/anime/25519/Yuuki_Yuuna_wa_Yuusha_de_Aru")
+        val soRaNoWoTo = LeafNode("So Ra No Wo To", "https://myanimelist.net/anime/6802/So_Ra_No_Wo_To")
+
+        ptsd.attach(yukiYunaIsAHero, soRaNoWoTo)
+
+
+        // ptsd node already created
+        val bittersweet = Node("Premise?", arrayListOf("Unexpected child", "Unexpected relocation", "Talent vs hard work"))
+        val cringe = Node("Who is 'the hero'?", arrayListOf("Awkward teenage girl", "Shut-in loser"))
+        val sad = Node("Feels?", arrayListOf("And laughs", "Overcoming grief", "Hardships of life and death"))
+
+        bornToFeel.attach(ptsd, bittersweet, cringe, sad)
+
+
+        val usagiDrop = LeafNode("Usagi Drop", "https://myanimelist.net/anime/10162/Usagi_Drop")
+        val hanasakuIroha = LeafNode("Hanasaku Iroha", "https://myanimelist.net/anime/9289/Hanasaku_Iroha")
+        val sakuraSouNoPetNaKanojo = LeafNode("Sakura-sou no Pet na Kanojo", "https://myanimelist.net/anime/13759/Sakura-sou_no_Pet_na_Kanojo")
+
+        bittersweet.attach(usagiDrop, hanasakuIroha, sakuraSouNoPetNaKanojo)
+
+
+        val wataMote = LeafNode("Watamote", "https://myanimelist.net/anime/16742/Watashi_ga_Motenai_no_wa_Dou_Kangaetemo_Omaera_ga_Warui")
+        val welcomeToTheNHK = LeafNode("Welcome to the NHK", "https://myanimelist.net/anime/1210/NHK_ni_Youkoso")
+
+        cringe.attach(wataMote, welcomeToTheNHK)
+
+
+        val angelBeats = LeafNode("Angel Beats!", "https://myanimelist.net/anime/6547/Angel_Beats")
+        val typeOfOvercomingGrief = Node("Induvidual development or group relationships?", arrayListOf("kids reuniting years after the death of a childhood friend", "Young pianist struggle after losing his mother"))
+        val hardships = Node("Are you patient?", arrayListOf("Nope", "Just make it short", "Bring it on"))
+
+        sad.attach(angelBeats, typeOfOvercomingGrief, hardships)
+
+
+        val yourLieInApril = LeafNode("Your Lie in April", "https://myanimelist.net/anime/23273/Shigatsu_wa_Kimi_no_Uso")
+        val anohana = LeafNode("AnoHana", "https://myanimelist.net/anime/9989/Ano_Hi_Mita_Hana_no_Namae_wo_Bokutachi_wa_Mada_Shiranai")
+
+        typeOfOvercomingGrief.attach(yourLieInApril, anohana)
+
+
+        val natsumesBookOfFriends = LeafNode("Natsume's Book of Friends", "https://myanimelist.net/anime/4081/Natsume_Yuujinchou")
+        val haibaneRenmei = LeafNode("Haibane Renmei", "https://myanimelist.net/anime/387/Haibane_Renmei")
+        val clannad = LeafNode("Clannad -> Clannad After Story", "https://myanimelist.net/anime/2167/Clannad\nhttps://myanimelist.net/anime/4181/Clannad__After_Story")
+
+        hardships.attach(natsumesBookOfFriends, haibaneRenmei, clannad)
+
+        return sliceOfLife
     }
 
 }
