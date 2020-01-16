@@ -107,7 +107,11 @@ class AnimeTree : TreeCreating {
         // Root
         val root = Node("I am looking for something...", arrayListOf("Dynamic", "Funny", "Calm", "Moving", "Mature", "Intense", "Scary"))
 
-        root.attach(ActionTree().createTree())
+
+        val action = ActionTree().createTree()
+        val comedy = ComedyTree().createTree()
+
+        root.attach(action, comedy)
 
 
         return root
@@ -560,7 +564,21 @@ class ComedyTree : TreeCreating {
         gayCouples.attach(junjouRomantica, sakuraTrick)
 
 
-        // TODO Continue with parodies
+        val animeClichesWaypointNode = createWaypointNode(
+            LeafNode("The Melancholy of Haruhi Suzumiya", "https://myanimelist.net/anime/849/Suzumiya_Haruhi_no_Yuuutsu"),
+            LeafNode("Lucky Star", "https://myanimelist.net/anime/1887/Lucky%E2%98%86Star"),
+            LeafNode("Binbougami ga!", "https://myanimelist.net/anime/13535/Binbougami_ga")
+        )
+        val gintama = LeafNode("Gintama","https://myanimelist.net/anime/918/Gintama")
+        val romanceComediesWaypointNode = createWaypointNode(
+            gekkanShoujoNozakikun,
+            saekano,
+            LeafNode("The World God Only Knows", "https://myanimelist.net/anime/8525/Kami_nomi_zo_Shiru_Sekai")
+        )
+        val humanityHasDeclined = LeafNode("Humanity Has Declined", "https://myanimelist.net/anime/10357/Jinrui_wa_Suitai_Shimashita")
+
+        parody.attach(animeClichesWaypointNode, gintama, romanceComediesWaypointNode, humanityHasDeclined)
+
 
         return comedy
     }
