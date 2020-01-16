@@ -111,8 +111,9 @@ class AnimeTree : TreeCreating {
         val action = ActionTree().createTree()
         val comedy = ComedyTree().createTree()
         val sliceOfLife = SliceOfLifeTree().createTree()
+        val drama = DramaTree().createTree()
 
-        root.attach(action, comedy, sliceOfLife)
+        root.attach(action, comedy, sliceOfLife, drama)
 
 
         return root
@@ -695,6 +696,99 @@ class SliceOfLifeTree : TreeCreating {
         hardships.attach(natsumesBookOfFriends, haibaneRenmei, clannad)
 
         return sliceOfLife
+    }
+
+}
+
+class DramaTree : TreeCreating {
+    override fun createTree(): Node {
+        val drama = Node("Genre?", arrayListOf("Romance", "Fantasy", "Post-apocalyptic rural dystopia", "Science fiction", "Time travel", "Psychological"))
+
+        val romance = Node("Theme?", arrayListOf("Mystery (supernatural)", "Fantasy", "1980 classic", "Comedy drama with musicians", "Swan lake magical girl", "Love triangle", "Incest", "Homosexuality", "Adult life struggle", "Realism"))
+        val fantasy = Node("Action-packed?", arrayListOf("Yes", "No"))
+        val shinsekaiYori = LeafNode("Shinsekai yori", "https://myanimelist.net/anime/13125/Shinsekai_yori")
+        val sciFi = Node("Type?", arrayListOf("Existential", "Realistic", "Action", "Space opera"))
+        val nowAndThen = LeafNode("Now and Then, Here and There", "https://myanimelist.net/anime/160/Ima_Soko_ni_Iru_Boku")
+        val cyberpunkOption = "Cyberpunk"
+        val romanceOption = "Romance"
+        val mysteryOption = "Mystery"
+        val psychological = Node("Theme?", arrayListOf(cyberpunkOption, romanceOption, mysteryOption, "Artsy wild ride", "Supernatural", "Game of souls", "Reflection on life choices"))
+
+        drama.attach(romance, fantasy, shinsekaiYori, sciFi, nowAndThen, psychological)
+
+
+        val bakemonogatari = LeafNode("Bakemonogatari", "https://myanimelist.net/anime/5081/Bakemonogatari")
+        val nagiNoAsukara = LeafNode("Nagi no Asukara", "https://myanimelist.net/anime/16067/Nagi_no_Asu_kara")
+        val roseOfVersailles = LeafNode("Rose of Versailles", "https://imgur.com/q9Xjv4p")
+        val musiciansWaypointNode = createWaypointNode(
+            LeafNode("Nodame Cantabile", "https://myanimelist.net/anime/1698/Nodame_Cantabile"),
+            LeafNode("Nana", "https://myanimelist.net/anime/877/Nana")
+        )
+        val princessTutu = LeafNode("Princess Tutu", "https://myanimelist.net/anime/721/Princess_Tutu")
+        val loveTriangleWaypointNode = createWaypointNode(
+            LeafNode("ef: A Tale of Melodies", "https://myanimelist.net/anime/4789/ef__A_Tale_of_Melodies"),
+            LeafNode("True Tears", "https://myanimelist.net/anime/2129/True_Tears"),
+            LeafNode("White Album 2", "https://myanimelist.net/anime/18245/White_Album_2"),
+            LeafNode("Touch", "https://myanimelist.net/anime/1065/Touch")
+        )
+        val koiKaze = LeafNode("Koi Kaze", "https://myanimelist.net/anime/634/Koi_Kaze")
+        val oniisamaE = LeafNode("Oniisama e", "https://myanimelist.net/anime/795/Oniisama_e")
+        val rec = LeafNode("Rec", "https://myanimelist.net/anime/710/Rec")
+        val akuNoHana = LeafNode("Aku no Hana", "https://myanimelist.net/anime/16201/Aku_no_Hana")
+
+        romance.attach(bakemonogatari, nagiNoAsukara, roseOfVersailles, musiciansWaypointNode, princessTutu, loveTriangleWaypointNode, koiKaze, oniisamaE, rec, akuNoHana)
+
+
+        val seireiNoMoribito = LeafNode("Seirei no Moribito", "https://myanimelist.net/anime/1827/Seirei_no_Moribito")
+        val beastPlayerErin = LeafNode("Beast Player Erin", "https://myanimelist.net/anime/5420/Kemono_no_Souja_Erin")
+
+        fantasy.attach(seireiNoMoribito, beastPlayerErin)
+
+
+        val existential = Node("Theme?", arrayListOf(cyberpunkOption, romanceOption, mysteryOption))
+        val planetes = LeafNode("Planetes", "https://myanimelist.net/anime/329/Planetes")
+        val wolfsRain = LeafNode("Wolf's Rain", "https://myanimelist.net/anime/202/Wolfs_Rain")
+        val spaceOpera = Node("How epic?", arrayListOf("Starfleet", "Starship"))
+
+        sciFi.attach(existential, planetes, wolfsRain, spaceOpera)
+
+
+        val cyberpunkWaypointNode = createWaypointNode(
+            LeafNode("Ghost in the Shell: Stand Alone Complex", "https://myanimelist.net/anime/467/Koukaku_Kidoutai__Stand_Alone_Complex"),
+            LeafNode("Technolyze", "https://myanimelist.net/anime/26/Texhnolyze")
+        )
+        val kaiba = LeafNode("Kaiba", "https://myanimelist.net/anime/3701/Kaiba")
+        val mysteryWaypointNode = createWaypointNode(
+            LeafNode("Ergo Proxy", "https://myanimelist.net/anime/790/Ergo_Proxy"),
+            LeafNode("Serial Experiments Lain", "https://myanimelist.net/anime/339/Serial_Experiments_Lain")
+        )
+
+        existential.attach(cyberpunkWaypointNode, kaiba, mysteryWaypointNode)
+
+
+        val legendOfTheGalacticHeroes = LeafNode("Legend of the Galactic Heroes", "https://myanimelist.net/anime/820/Ginga_Eiyuu_Densetsu")
+        val spaceBattleshipYamato2199 = LeafNode("Space Battleship Yamato 2199", "https://myanimelist.net/anime/12029/Uchuu_Senkan_Yamato_2199")
+
+        spaceOpera.attach(legendOfTheGalacticHeroes, spaceBattleshipYamato2199)
+
+
+        // Cyberpunk, romance, and mystery nodes already created
+        val wildRide = Node("Hop in:", arrayListOf("Gender-bending feminist classic", "Mystery overloaded with symbolism", "Lesbian Bear Storm"))
+        val xxxHOLIC = LeafNode("xxxHOLiC", "https://myanimelist.net/manga/10/xxxHOLiC")
+        val deathParade = LeafNode("Death Parade", "https://myanimelist.net/anime/28223/Death_Parade")
+        val tatamiGalaxy = LeafNode("Tatami Galaxy", "https://myanimelist.net/anime/7785/Yojouhan_Shinwa_Taikei")
+
+        psychological.attach(cyberpunkWaypointNode, kaiba, mysteryWaypointNode, wildRide, xxxHOLIC, deathParade, tatamiGalaxy)
+
+
+        val revolutionaryGirlUtena = LeafNode("Revolutionary Girl Utena", "https://myanimelist.net/anime/440/Shoujo_Kakumei_Utena")
+        val penguindrum = LeafNode("Mawaru Penguindrum", "https://myanimelist.net/anime/10721/Mawaru_Penguindrum")
+        val yuriKumaArashi = LeafNode("Yuri Kuma Arashi", "https://myanimelist.net/anime/26165/Yuri_Kuma_Arashi")
+
+        wildRide.attach(revolutionaryGirlUtena, penguindrum, yuriKumaArashi)
+
+
+        return drama
     }
 
 }
