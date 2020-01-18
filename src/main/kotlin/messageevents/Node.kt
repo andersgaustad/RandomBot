@@ -1,6 +1,8 @@
 package messageevents
 
 open class Node(private val caption : String, val options : List<String>) {
+    // Secondary constructor
+    constructor(caption: String, vararg options: String) : this(caption, options.toList())
 
     val children = ArrayList<Node>(options.size)
 
@@ -26,6 +28,8 @@ open class Node(private val caption : String, val options : List<String>) {
     fun isLeafNode() = children.isEmpty()
 
 }
+
+
 
 class LeafNode(val name: String, private val hyperlink : String) : Node(name, arrayListOf()) {
     override fun getDisplayMessage() = name + "\n" + hyperlink
