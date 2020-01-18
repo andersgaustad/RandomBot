@@ -677,7 +677,7 @@ class SliceOfLifeTree : TreeCreating {
 
 
         val angelBeats = LeafNode("Angel Beats!", "https://myanimelist.net/anime/6547/Angel_Beats")
-        val typeOfOvercomingGrief = Node("Induvidual development or group relationships?", arrayListOf("kids reuniting years after the death of a childhood friend", "Young pianist struggle after losing his mother"))
+        val typeOfOvercomingGrief = Node("Individual development or group relationships?", arrayListOf("Young pianist struggle after losing his mother", "Kids reuniting years after the death of a childhood friend"))
         val hardships = Node("Are you patient?", arrayListOf("Nope", "Just make it short", "Bring it on"))
 
         sad.attach(angelBeats, typeOfOvercomingGrief, hardships)
