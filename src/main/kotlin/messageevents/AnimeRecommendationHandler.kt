@@ -311,7 +311,7 @@ class ActionTree : TreeCreating {
         )
 
 
-        val notReallySupernaturalWayPoint = createWaypointNode(
+        val notReallySupernaturalWayPoint = createWayPointNode(
             LeafNode("Black Lagoon", "https://myanimelist.net/anime/889/Black_Lagoon"),
             LeafNode("Phantom", "https://myanimelist.net/anime/5682/Phantom__Requiem_for_the_Phantom")
 
@@ -319,7 +319,7 @@ class ActionTree : TreeCreating {
         val darkerThanBlack =
             LeafNode("Darker than Black", "https://myanimelist.net/anime/2025/Darker_than_Black__Kuro_no_Keiyakusha")
         // Tengen node already created
-        val medievalFantasyWayPoint = createWaypointNode(
+        val medievalFantasyWayPoint = createWayPointNode(
 
             LeafNode(
                     "Rage of Bahamut: Genesis",
@@ -329,7 +329,7 @@ class ActionTree : TreeCreating {
 
         )
         // fma node already created
-        val urbanFantasyWayPoint = createWaypointNode(
+        val urbanFantasyWayPoint = createWayPointNode(
             LeafNode("Zetsuen no Tempest", "https://myanimelist.net/anime/14075/Zetsuen_no_Tempest"),
             LeafNode("Hitman Reborn", "https://myanimelist.net/anime/1604/Katekyo_Hitman_Reborn"),
             LeafNode("Shakugan no Shana", "https://myanimelist.net/anime/355/Shakugan_no_Shana")
@@ -337,14 +337,14 @@ class ActionTree : TreeCreating {
         )
         val kenichi = LeafNode("Kenichi", "https://myanimelist.net/anime/1559/Shijou_Saikyou_no_Deshi_Kenichi")
         val yuYuHakusho = LeafNode("Yu Yu Hakusho", "https://myanimelist.net/anime/392/Yuu%E2%98%86Yuu%E2%98%86Hakusho")
-        val magicalGirlsWayPoint = createWaypointNode(
+        val magicalGirlsWayPoint = createWayPointNode(
             LeafNode("Sailor Moon", "https://myanimelist.net/anime/530/Bishoujo_Senshi_Sailor_Moon"),
             LeafNode("Cardcaptor Sakura", "https://myanimelist.net/anime/232/Cardcaptor_Sakura"),
             LeafNode("Lyrical Nanoha", "https://myanimelist.net/anime/76/Mahou_Shoujo_Lyrical_Nanoha?q=lyrical%20n")
 
         )
         val scienceFiction = Node("Type of scifi?", arrayListOf("Shootout", "Mecha"))
-        val samuraiWayPoint = createWaypointNode(samuraiChamploo, rurouniKenshin)
+        val samuraiWayPoint = createWayPointNode(samuraiChamploo, rurouniKenshin)
 
         fullBlownAction.attach(
             notReallySupernaturalWayPoint,
@@ -361,7 +361,7 @@ class ActionTree : TreeCreating {
         )
 
 
-        val shootOutWayPoint = WaypointNode(
+        val shootOutWayPoint = WayPointNode(
             arrayListOf(
                 LeafNode("Gungrave", "https://myanimelist.net/anime/267/Gungrave"),
                 LeafNode("Trigun", "https://myanimelist.net/anime/6/Trigun"),
@@ -490,18 +490,18 @@ class ComedyTree : TreeCreating {
         dailyLife.attach(school, work)
 
         val greatTeacherOnizuka = LeafNode("Great Teacher Onizuka", "https://myanimelist.net/anime/245/Great_Teacher_Onizuka")
-        val schoolOrTeachingWaypointNode = createWaypointNode(
+        val schoolOrTeachingWaypointNode = createWayPointNode(
             LeafNode("Sayonara Zetsubou Sensei", "https://myanimelist.net/anime/2605/Sayonara_Zetsubou_Sensei"),
             greatTeacherOnizuka
         )
         val beelzebub = LeafNode("Beelzebub", "https://myanimelist.net/anime/9513/Beelzebub")
-        val delinquentsWaypointNode = createWaypointNode(
+        val delinquentsWaypointNode = createWayPointNode(
             greatTeacherOnizuka,
             LeafNode("Cromartie High", "https://myanimelist.net/anime/114/Sakigake_Cromartie_Koukou"),
             beelzebub
         )
         // Beelzebub already created
-        val schoolLifeWaypointNode = createWaypointNode(
+        val schoolLifeWaypointNode = createWayPointNode(
             LeafNode("Nichijou", "https://myanimelist.net/anime/10165/Nichijou"),
             LeafNode("Azumanga Daioh", "https://myanimelist.net/anime/66/Azumanga_Daioh"),
             LeafNode("D-Frag!", "https://myanimelist.net/anime/20031/D-Frag")
@@ -509,7 +509,7 @@ class ComedyTree : TreeCreating {
         val benTo = LeafNode("Ben-To", "https://myanimelist.net/anime/10396/Ben-To")
         val dailyLifeOfHighschoolBoys = LeafNode("Daily Lives of High School Boys", "https://myanimelist.net/anime/11843/Danshi_Koukousei_no_Nichijou")
         val seitokaiYakuindomo = LeafNode("Seitokai Yakuindomo", "https://myanimelist.net/anime/8675/Seitokai_Yakuindomo")
-        val longWordWaypointNode = createWaypointNode(
+        val longWordWaypointNode = createWayPointNode(
             LeafNode("Yamada-kun and the Seven Witches", "https://myanimelist.net/anime/28677/Yamada-kun_to_7-nin_no_Majo_TV"),
             LeafNode("Witch Craft Works", "https://myanimelist.net/anime/21085/Witch_Craft_Works")
         )
@@ -566,13 +566,13 @@ class ComedyTree : TreeCreating {
         gayCouples.attach(junjouRomantica, sakuraTrick)
 
 
-        val animeClichesWaypointNode = createWaypointNode(
+        val animeClichesWaypointNode = createWayPointNode(
             LeafNode("The Melancholy of Haruhi Suzumiya", "https://myanimelist.net/anime/849/Suzumiya_Haruhi_no_Yuuutsu"),
             LeafNode("Lucky Star", "https://myanimelist.net/anime/1887/Lucky%E2%98%86Star"),
             LeafNode("Binbougami ga!", "https://myanimelist.net/anime/13535/Binbougami_ga")
         )
         val gintama = LeafNode("Gintama","https://myanimelist.net/anime/918/Gintama")
-        val romanceComediesWaypointNode = createWaypointNode(
+        val romanceComediesWaypointNode = createWayPointNode(
             gekkanShoujoNozakikun,
             saekano,
             LeafNode("The World God Only Knows", "https://myanimelist.net/anime/8525/Kami_nomi_zo_Shiru_Sekai")
@@ -637,11 +637,11 @@ class SliceOfLifeTree : TreeCreating {
         cuteGirls.attach(popstars, nonNonBiyori, girlsAndPanzer, ptsd)
 
 
-        val bigStageWaypointNode = createWaypointNode(
+        val bigStageWaypointNode = createWayPointNode(
             LeafNode("The iDOLM@STER", "https://myanimelist.net/anime/10278/The_iDOLMSTER"),
             LeafNode("Aikatsu!", "https://myanimelist.net/anime/15061/Aikatsu")
         )
-        val schoolClubWaypointNode = createWaypointNode(
+        val schoolClubWaypointNode = createWayPointNode(
             LeafNode("Love Live!", "https://myanimelist.net/anime/15051/Love_Live_School_Idol_Project"),
             LeafNode("K-On!", "https://myanimelist.net/anime/5680/K-On")
         )
@@ -720,12 +720,12 @@ class DramaTree : TreeCreating {
         val bakemonogatari = LeafNode("Bakemonogatari", "https://myanimelist.net/anime/5081/Bakemonogatari")
         val nagiNoAsukara = LeafNode("Nagi no Asukara", "https://myanimelist.net/anime/16067/Nagi_no_Asu_kara")
         val roseOfVersailles = LeafNode("Rose of Versailles", "https://imgur.com/q9Xjv4p")
-        val musiciansWaypointNode = createWaypointNode(
+        val musiciansWaypointNode = createWayPointNode(
             LeafNode("Nodame Cantabile", "https://myanimelist.net/anime/1698/Nodame_Cantabile"),
             LeafNode("Nana", "https://myanimelist.net/anime/877/Nana")
         )
         val princessTutu = LeafNode("Princess Tutu", "https://myanimelist.net/anime/721/Princess_Tutu")
-        val loveTriangleWaypointNode = createWaypointNode(
+        val loveTriangleWaypointNode = createWayPointNode(
             LeafNode("ef: A Tale of Melodies", "https://myanimelist.net/anime/4789/ef__A_Tale_of_Melodies"),
             LeafNode("True Tears", "https://myanimelist.net/anime/2129/True_Tears"),
             LeafNode("White Album 2", "https://myanimelist.net/anime/18245/White_Album_2"),
@@ -753,12 +753,12 @@ class DramaTree : TreeCreating {
         sciFi.attach(existential, planetes, wolfsRain, spaceOpera)
 
 
-        val cyberpunkWaypointNode = createWaypointNode(
+        val cyberpunkWaypointNode = createWayPointNode(
             LeafNode("Ghost in the Shell: Stand Alone Complex", "https://myanimelist.net/anime/467/Koukaku_Kidoutai__Stand_Alone_Complex"),
             LeafNode("Technolyze", "https://myanimelist.net/anime/26/Texhnolyze")
         )
         val kaiba = LeafNode("Kaiba", "https://myanimelist.net/anime/3701/Kaiba")
-        val mysteryWaypointNode = createWaypointNode(
+        val mysteryWaypointNode = createWayPointNode(
             LeafNode("Ergo Proxy", "https://myanimelist.net/anime/790/Ergo_Proxy"),
             LeafNode("Serial Experiments Lain", "https://myanimelist.net/anime/339/Serial_Experiments_Lain")
         )

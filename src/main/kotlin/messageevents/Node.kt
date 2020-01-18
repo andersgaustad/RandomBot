@@ -33,19 +33,19 @@ class LeafNode(val name: String, private val hyperlink : String) : Node(name, ar
     override fun attach(vararg nodes : Node) = throw IllegalAccessException("Cannot attach more nodes to leaves!")
 }
 
-class WaypointNode(nodes: List<LeafNode>) : Node("I found multiple animes that might interest you\nChoose one of the following", getWaypointOptions(nodes)) {
+class WayPointNode(nodes: List<LeafNode>) : Node("I found multiple animes that might interest you\nChoose one of the following", getWayPointOptions(nodes)) {
     fun attachLeafNodes(nodes: List<LeafNode>) = nodes.forEach { children.add(it) }
 }
 
 
-fun createWaypointNode(vararg nodes: LeafNode) : WaypointNode {
+fun createWayPointNode(vararg nodes: LeafNode) : WayPointNode {
     val nodeList = nodes.asList()
-    val node = WaypointNode(nodeList)
+    val node = WayPointNode(nodeList)
     node.attachLeafNodes(nodeList)
     return node
 }
 
-private fun getWaypointOptions(nodes: List<LeafNode>) : List<String> {
+private fun getWayPointOptions(nodes: List<LeafNode>) : List<String> {
     val names = ArrayList<String>(nodes.size)
     nodes.forEach {
         names.add(it.name)
