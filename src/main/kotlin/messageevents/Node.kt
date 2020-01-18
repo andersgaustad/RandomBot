@@ -1,6 +1,6 @@
 package messageevents
 
-open class Node(private val caption : String, val options : List<String>, private val bulletFormat : String = "- ") {
+open class Node(private val caption : String, val options : List<String>) {
 
     val children = ArrayList<Node>(options.size)
 
@@ -15,8 +15,10 @@ open class Node(private val caption : String, val options : List<String>, privat
     private fun getOptionDisplay() : String {
         val sb = StringBuilder()
         sb.append("```\n")
-        sb.append(options.joinToString("\n" + bulletFormat, bulletFormat))
-        sb.append("\n```")
+        options.forEachIndexed { index, s ->
+            sb.append("(${index+1}) $s\n")
+        }
+        sb.append("```")
 
         return sb.toString()
     }

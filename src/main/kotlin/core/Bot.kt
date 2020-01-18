@@ -403,7 +403,6 @@ fun main() = runBlocking {
 
             if (message.author.username in FRENCH_PEOPLE) {
                 message.react("\uD83C\uDDEB\uD83C\uDDF7")
-                //message.delete()
             }
 
             // Message handling events
