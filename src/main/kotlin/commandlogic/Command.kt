@@ -8,6 +8,7 @@ import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.parse
 import java.io.File
+import java.io.FileNotFoundException
 
 abstract class Command {
 
@@ -32,8 +33,8 @@ abstract class Command {
         val data = try {
             File(rootToJson).readText()
 
-        } catch (ioe: IOException) {
-            ioe.printStackTrace()
+        } catch (fnf: FileNotFoundException) {
+            fnf.printStackTrace()
             "Could not open file :frowning:"
 
         } catch (e: Exception) {
@@ -50,6 +51,7 @@ abstract class Command {
 
         sb.append(when(name) {
             // Add more when needed
+            "animerec" -> jsonparser.animerec
             "bacon" -> jsonparser.bacon
             "commander" -> jsonparser.commander
             "calculate" -> jsonparser.calculate

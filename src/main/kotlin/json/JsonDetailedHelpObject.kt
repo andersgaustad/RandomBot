@@ -3,7 +3,8 @@ package json
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class JsonDetailedHelpObject(val bacon : String,
+data class JsonDetailedHelpObject(val animerec : String,
+                                  val bacon : String,
                                   val commander : String,
                                   val calculate : String,
                                   val hangman : String,
