@@ -3,9 +3,8 @@ package messageevents
 import com.jessecorbett.diskord.api.model.Message
 import com.jessecorbett.diskord.api.model.User
 import com.jessecorbett.diskord.dsl.Bot
-import com.jessecorbett.diskord.util.ClientStore
-import com.jessecorbett.diskord.util.sendMessage
 import kotlinx.serialization.UnstableDefault
+import utils.sendMessage
 
 /**
 The purpose of this class is to recommend an anime to a user based on the user's answers to a series of question.
@@ -37,7 +36,7 @@ class AnimeRecommendationHandler : MessageHandling {
                 sendMessage(nextNode.getDisplayMessage(), message.channelId, bot.clientStore)
 
                 // Advance through tree if not final
-                if (!(nextNode is LeafNode)) {
+                if (nextNode !is LeafNode) {
                     map[user] = nextNode
 
                 } else {
@@ -75,11 +74,6 @@ class AnimeRecommendationHandler : MessageHandling {
     }
 
 
-
-
-    // Top 10 workarounds
-    // #1
-    private suspend fun sendMessage(text: String, channelId: String, clientStore: ClientStore) = clientStore.channels[channelId].sendMessage(text)
 
     private val map = mutableMapOf<User, Node>()
 
