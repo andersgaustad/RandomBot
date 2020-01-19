@@ -1,4 +1,5 @@
 {
+  "animerec": "Command for guiding a user though an anime flowchart\nFormat: !animerec\nRespond with one of the options or the index of it\nUse command to reset the recommendation.",
   "bacon" : "Command for fetching a random video from Bacon_'s youtube channel\nFormat: !bacon [tag (optional]\nIf a tag is added the parser will try to find a random video with that tag. Current supported tags are 'skyrim' and 'oblivion'.",
   "calculate" : "Command for calculating a simple espression\nFormat: !calculate [expression]\nThe bot can calculate simple arithmethic as well as some functions as sqrt(), sin(), cos(), and log().",
   "commander" : "Command for fetching a random legendary card that may be use for the Commander gamemode in the card game Magic: The Gathering\nFormat: !commander\nSome unofficial cards that are not legendary may appear from time to time. These are not officialy allowed as commanders, but may be used if all players agree\nCards that are banned may also appear when using this command",
