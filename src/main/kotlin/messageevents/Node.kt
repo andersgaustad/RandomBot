@@ -23,8 +23,6 @@ open class Node(private val caption : String, val options : List<String>) {
         return sb.toString()
     }
 
-    fun isLeafNode() = children.isEmpty()
-
 }
 
 

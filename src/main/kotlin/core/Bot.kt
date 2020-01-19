@@ -250,14 +250,13 @@ fun main() = runBlocking {
             // Message events
             command("animerec") {
                 val arc = AnimeRecommendationCommand(arh)
-                val helpCheck = arc.executeCommand(this)
-                reply(helpCheck)
+                val reply = arc.executeCommand(this)
+                reply(reply)
 
 
-                // Do not start flowchart when helping
-                if (helpCheck != arc.getDetailedHelp()) {
+                // Only start when this is used alone
+                if (this.words.size == 1) {
                     reply(arh.getRootDisplayMessage())
-
 
                 }
                 delete()
