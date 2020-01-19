@@ -112,8 +112,18 @@ class AnimeTree : TreeCreating {
         val comedy = ComedyTree().createTree()
         val sliceOfLife = SliceOfLifeTree().createTree()
         val drama = DramaTree().createTree()
+        val thrillerAndHorror = ThrillerHorrorTree().createTree()
 
-        root.attach(action, comedy, sliceOfLife, drama)
+
+        val solString = "Slice of life"
+
+        val solOrComedy = Node("$solString or comedy?", arrayListOf(solString, "Comedy"))
+        solOrComedy.attach(sliceOfLife, comedy)
+
+        val solOrDrama = Node("$solString or drama?", arrayListOf(solString, "Drama"))
+        solOrDrama.attach(sliceOfLife, drama)
+
+        root.attach(action, comedy, solOrComedy, solOrDrama, drama, thrillerAndHorror.children[0], thrillerAndHorror.children[1])
 
 
         return root
@@ -591,7 +601,7 @@ class SliceOfLifeTree : TreeCreating {
         val sliceOfLife = Node("'Calm', or 'calm before the storm'", arrayListOf("I want to chill", "I was born to feel"))
 
         val chill = Node("With whom?", arrayListOf("Random people", "Cute girls doing cute things", "Jesus & Buddha"))
-        val cutePTSDOption = "Cute PTSD :thinking:"
+        val cutePTSDOption = "Cute PTSD"
         val bornToFeel = Node("Feel how?", arrayListOf(cutePTSDOption, "Warm and bittersweet", "Heavy cringe", "I've got tissues"))
 
         sliceOfLife.attach(chill, bornToFeel)
@@ -789,6 +799,104 @@ class DramaTree : TreeCreating {
 
 
         return drama
+    }
+
+}
+
+class ThrillerHorrorTree : TreeCreating {
+    override fun createTree(): Node {
+        val thrillerAndHorror = Node("Tension: Graphic or implied", arrayListOf("Horror", "Thriller"))
+
+        val horror = Node("What's scary?", arrayListOf("Vampires", "Vampires with guns", "Aliens", "Mystery", "Sci-Fi", "Ghosts", "Superpowers", "War against the undead", "The Ring", "Demons", "People are"))
+        val thriller = Node("What kind of thriller", arrayListOf("Crime drama", "Science fiction", "Hunger games", "Gambling", "Proper drama", "I'm ready"))
+
+        thrillerAndHorror.attach(horror, thriller)
+
+
+        val vampiresWayPointNode = createWayPointNode(
+            LeafNode("Shiki", "https://myanimelist.net/anime/7724/Shiki"),
+            LeafNode("Blood+", "https://myanimelist.net/anime/150/Blood_")
+        )
+        val hellsingUltimate = LeafNode("Hellsing Ultimate", "https://myanimelist.net/anime/777/Hellsing_Ultimate")
+        val parasyte = LeafNode("Parasyte", "https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu")
+        val mysteryWayPointNode = createWayPointNode(
+            LeafNode("Another", "https://myanimelist.net/anime/11111/Another"),
+            LeafNode("Higurashi", "https://myanimelist.net/anime/934/Higurashi_no_Naku_Koro_ni")
+        )
+        val deadmanWonderland = LeafNode("Deadman Wonderland", "https://myanimelist.net/anime/6880/Deadman_Wonderland")
+        val ghostWayPointNode = createWayPointNode(
+            LeafNode("Ghost Hunt", "https://myanimelist.net/anime/1571/Ghost_Hunt"),
+            LeafNode("Dusk Maiden", "https://myanimelist.net/anime/12445/Tasogare_Otome_x_Amnesia")
+        )
+        val elfenLied = LeafNode("Elfen Lied", "https://myanimelist.net/anime/226/Elfen_Lied")
+        val tokyoGhoul = LeafNode("Tokyo Ghoul", "https://myanimelist.net/anime/22319/Tokyo_Ghoul")
+        val jigokuShoujo = LeafNode("Jigoku Shoujo", "https://myanimelist.net/anime/228/Jigoku_Shoujo")
+        val mononoke = LeafNode("Mononoke", "https://myanimelist.net/anime/2246/Mononoke")
+        val peopleAreScary = Node("Setting?", arrayListOf("Germany", "Dark fantasy"))
+
+        horror.attach(vampiresWayPointNode, hellsingUltimate, parasyte, mysteryWayPointNode, deadmanWonderland, ghostWayPointNode, elfenLied, tokyoGhoul, jigokuShoujo, mononoke, peopleAreScary)
+
+
+        val monster = LeafNode("Monster", "https://myanimelist.net/anime/19/Monster")
+        val berserk = LeafNode("Berserk\n(Read the manga)", "https://myanimelist.net/anime/32379/Berserk")
+
+        peopleAreScary.attach(monster, berserk)
+
+
+        val crimeDrama = Node("With", arrayListOf("Psychology of the psychopath", "Surreal investigation", "Grim Reaper", "Terrorists", "Unusual time composition"))
+        val scienceFiction = Node("Contemporary or futuristic?", arrayListOf("Time travel experiment", "Cyberpunk police"))
+        val hungerGames = Node("With the support of...", arrayListOf("Overly Attached Girlfriend 2.0 (with an axe)", "Bombs", "Legendary heroes"))
+        val gamblingWayPointNode = createWayPointNode(
+            LeafNode("Kaiji", "https://myanimelist.net/anime/3002/Gyakkyou_Burai_Kaiji__Ultimate_Survivor"),
+            LeafNode("Akagi", "https://myanimelist.net/anime/658/Touhai_Densetsu_Akagi__Yami_ni_Maiorita_Tensai")
+        )
+        val drama = Node("Premise", arrayListOf("Count of Monte Cristo", "Juvenile detention center in the 50's"))
+        val ready = Node("No you're not", arrayListOf("Mechas", "Magical Girls"))
+
+        thriller.attach(crimeDrama, scienceFiction, hungerGames, gamblingWayPointNode, drama, ready)
+
+
+        // Monster node already created
+        val paranoiaAgent = LeafNode("Paranoia Agent", "https://myanimelist.net/anime/323/Mousou_Dairinin")
+        val deathNote = LeafNode("Death Note", "https://myanimelist.net/anime/1535/Death_Note")
+        val terroists = Node("As?", arrayListOf("Protagonists", "Antagonists"))
+        val karaNoKyoukai = LeafNode("Kara no Kyoukai", "https://myanimelist.net/anime/2593/Kara_no_Kyoukai_1__Fukan_Fuukei")
+
+        crimeDrama.attach(monster, paranoiaAgent, deathNote, terroists, karaNoKyoukai)
+
+
+        val zankyouNoTerror = LeafNode("Zankyou no Terror", "https://myanimelist.net/anime/23283/Zankyou_no_Terror")
+        val higashiNoEden = LeafNode("Higashi no Eden", "https://myanimelist.net/anime/5630/Higashi_no_Eden")
+
+        terroists.attach(zankyouNoTerror, higashiNoEden)
+
+
+        val steinsGate = LeafNode("Steins;Gate", "https://myanimelist.net/anime/9253/Steins_Gate")
+        val psychoPass = LeafNode("Psycho-Pass", "https://myanimelist.net/anime/13601/Psycho-Pass")
+
+        scienceFiction.attach(steinsGate, psychoPass)
+
+
+        val miraiNikki = LeafNode("Mirai Nikki", "https://myanimelist.net/anime/10620/Mirai_Nikki")
+        val btooom = LeafNode("Btooom!", "https://myanimelist.net/anime/14345/Btooom")
+        val fateZero = LeafNode("Fate/Zero", "https://myanimelist.net/anime/10087/Fate_Zero")
+
+        hungerGames.attach(miraiNikki, btooom, fateZero)
+
+
+        val gankutsuou = LeafNode("Gankutsuou", "https://myanimelist.net/anime/239/Gankutsuou")
+        val rainbow = LeafNode("Rainbow", "https://myanimelist.net/anime/6114/Rainbow__Nisha_Rokubou_no_Shichinin")
+
+        drama.attach(gankutsuou, rainbow)
+
+
+        val nge = LeafNode("Neon Genesis Evangelion -> End of Evangelion", "https://myanimelist.net/anime/30/Neon_Genesis_Evangelion\nhttps://myanimelist.net/anime/32/Neon_Genesis_Evangelion__The_End_of_Evangelion")
+        val puellaMagiMadokaMagica = LeafNode("Puella Magi Madoka Magica", "https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka%E2%98%85Magica")
+
+        ready.attach(nge, puellaMagiMadokaMagica)
+
+
+        return thrillerAndHorror
     }
 
 }
