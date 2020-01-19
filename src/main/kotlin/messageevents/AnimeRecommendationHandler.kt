@@ -37,7 +37,7 @@ class AnimeRecommendationHandler : MessageHandling {
                 sendMessage(nextNode.getDisplayMessage(), message.channelId, bot.clientStore)
 
                 // Advance through tree if not final
-                if (!nextNode.isLeafNode()) {
+                if (!(nextNode is LeafNode)) {
                     map[user] = nextNode
 
                 } else {
@@ -93,6 +93,25 @@ class AnimeRecommendationHandler : MessageHandling {
     }
 
     fun getRootDisplayMessage() = root.getDisplayMessage()
+
+    fun getAllAnimes() : Set<LeafNode> {
+        // Recursive function diving to find all nodes
+        fun recursiveAddChildren(node: Node) : Set<LeafNode> {
+            return if (node is LeafNode) {
+                setOf(node)
+
+            } else {
+                val parent = mutableSetOf<LeafNode>()
+                node.children.forEach {
+                    parent.addAll(recursiveAddChildren(it))
+                }
+                parent.toSet()
+            }
+
+        }
+
+        return recursiveAddChildren(root)
+    }
 
 
 }
