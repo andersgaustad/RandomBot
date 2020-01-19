@@ -123,7 +123,7 @@ class AnimeTree : TreeCreating {
         val solOrDrama = Node("$solString or drama?", arrayListOf(solString, "Drama"))
         solOrDrama.attach(sliceOfLife, drama)
 
-        root.attach(action, comedy, solOrComedy, solOrDrama, drama, thrillerAndHorror.children[0], thrillerAndHorror.children[1])
+        root.attach(action, comedy, solOrComedy, solOrDrama, drama, thrillerAndHorror.children[1], thrillerAndHorror.children[0])
 
 
         return root
@@ -808,7 +808,7 @@ class ThrillerHorrorTree : TreeCreating {
         val thrillerAndHorror = Node("Tension: Graphic or implied", arrayListOf("Horror", "Thriller"))
 
         val horror = Node("What's scary?", arrayListOf("Vampires", "Vampires with guns", "Aliens", "Mystery", "Sci-Fi", "Ghosts", "Superpowers", "War against the undead", "The Ring", "Demons", "People are"))
-        val thriller = Node("What kind of thriller", arrayListOf("Crime drama", "Science fiction", "Hunger games", "Gambling", "Proper drama", "I'm ready"))
+        val thriller = Node("What kind of thriller?", arrayListOf("Crime drama", "Science fiction", "Hunger games", "Gambling", "Proper drama", "I'm ready"))
 
         thrillerAndHorror.attach(horror, thriller)
 

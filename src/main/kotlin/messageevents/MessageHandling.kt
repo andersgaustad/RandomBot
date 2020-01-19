@@ -1,3 +1,5 @@
+@file:Suppress("EXPERIMENTAL_API_USAGE")
+
 package messageevents
 
 import com.jessecorbett.diskord.api.model.Message

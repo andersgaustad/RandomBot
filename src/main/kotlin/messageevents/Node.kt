@@ -1,8 +1,6 @@
 package messageevents
 
 open class Node(private val caption : String, val options : List<String>) {
-    // Secondary constructor
-    constructor(caption: String, vararg options: String) : this(caption, options.toList())
 
     val children = ArrayList<Node>(options.size)
 
