@@ -1,7 +1,7 @@
 Commands for RandomBot:
 
 Command:    Alias:      Description                         Format:                 Ex:
-!animerec               Helps you choose an anime
+!animerec               Helps you choose an anime           !animerec ["random"]    !animerec random
 !bacon                  Get a link to one of Bacon_s videos !bacon [tag]            !bacon skyrim
 !calculate              Calculates an expression            !calculate [math]       !calculate 2*3+1
 !commander              Gets a random commander from MTG
