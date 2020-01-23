@@ -38,6 +38,8 @@ class Sudoku(val grid: Matrix<Int>, val solution: Matrix<Int>) {
         return sb.toString()
     }
 
+    fun isSolved() = grid == solution
+
 }
 
 class Matrix<T>(val x: Int, val y: Int, val array: Array<Array<T>>) {
@@ -77,6 +79,42 @@ class Matrix<T>(val x: Int, val y: Int, val array: Array<Array<T>>) {
                 operation.invoke(rowIndex, columnIndex, t)
             }
         }
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (other is Matrix<*>) {
+            val myRowDimensions = array.size
+            val myColumnDimensions = array[0].size
+
+            val otherArray = other.array
+            val otherRowDimensions = otherArray.size
+            val otherColumnDimensions = otherArray[0].size
+
+            if (myRowDimensions == otherRowDimensions && myColumnDimensions == otherColumnDimensions) {
+                forEachIndexed { x, y, _ ->
+                    val myElement = this[x, y]
+                    val otherElement = other[x, y]
+
+                    if (myElement != otherElement) {
+                        return false
+                    }
+                }
+                return true
+
+            } else {
+                return super.equals(other)
+            }
+
+        } else {
+            return super.equals(other)
+        }
+    }
+
+    override fun hashCode(): Int {
+        var result = x
+        result = 31 * result + y
+        result = 31 * result + array.contentDeepHashCode()
+        return result
     }
 
 }
@@ -125,7 +163,7 @@ fun createSudokuGame(n: Int, cluesToRemove: Int) : Sudoku {
 }
 
 fun createBaseBoard(dimensions: Int) : Matrix<Int> {
-    val gridSolution = Matrix<Int>(dimensions, dimensions) { _, _ -> 0 } // Magic
+    val gridSolution = Matrix(dimensions, dimensions) { _, _ -> 0 } // Magic
 
     var placed = 0
     while (placed < 18) {
@@ -203,7 +241,7 @@ fun solve(grid: Matrix<Int>) : Matrix<Int>? {
             // Depth first search
             for (i in 1..9) {
                 val array = grid.array
-                val newBoard = Matrix<Int>(array.size, array.size, array)
+                val newBoard = Matrix(array.size, array.size, array)
                 newBoard[x, y] = i
 
                 if (isValidPlacement(grid, x, y)) {
