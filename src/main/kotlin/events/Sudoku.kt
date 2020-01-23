@@ -1,6 +1,7 @@
 package events
 
 import java.util.concurrent.ThreadLocalRandom
+import kotlin.math.pow
 import kotlin.math.sqrt
 
 class Sudoku(val grid: Matrix<Int>, val solution: Matrix<Int>) {
@@ -81,17 +82,46 @@ class Matrix<T>(val x: Int, val y: Int, val array: Array<Array<T>>) {
 }
 
 fun createSudokuGame(n: Int, cluesToRemove: Int) : Sudoku {
-    val dimensions = n*n
+    val dimensions = n.toDouble().pow(2.0).toInt()
 
     // Place random numbers (17 are required for unique solution
-
-
     do {
-        // Get base thet may or may not have a solution
-        val base = createBaseBoard()
+        // Get base that may or may not have a solution
+        val base = createBaseBoard(dimensions)
 
+        // If no solution, this is null
+        val solution = solve(base)
 
-    }
+        val hasSolution = solution != null
+
+        if (hasSolution) {
+            val array = solution!!.array
+            val playerBoard = Matrix(array.size, array.size, array)
+
+            for (i in 0 until cluesToRemove) {
+                do {
+                    val randomX = ThreadLocalRandom.current().nextInt(dimensions)
+                    val randomY = ThreadLocalRandom.current().nextInt(dimensions)
+
+                    val value = playerBoard[randomX, randomY]
+
+                    val retry = value == 0
+
+                    if (!retry) {
+                        playerBoard[randomX, randomY] = 0
+
+                    }
+                } while (retry)
+            }
+
+            if (hasSolution) {
+                return Sudoku(playerBoard, solution)
+            }
+
+        }
+
+    } while (true)
+
 }
 
 fun createBaseBoard(dimensions: Int) : Matrix<Int> {
@@ -112,64 +142,6 @@ fun createBaseBoard(dimensions: Int) : Matrix<Int> {
     return gridSolution
 }
 
-fun solve(grid: Matrix<Int>) : Matrix<Int>? {
-    // Check if grid is solved
-    grid.forEachIndexed { x, y, t ->
-        // Check if valid, return null if not
-        fun validLine(index: Int, isRow: Boolean) : Boolean {
-            val array = Array(grid.array.size) {
-                if (isRow) {
-                    grid.array[it][index]
-
-                } else {
-                    grid.array[index][it]
-                }
-            }
-
-            return noDuplicates(array)
-
-        }
-
-
-        fun isValidRow(rowIndex: Int) = validLine(rowIndex, true)
-
-        fun isValidColumn(columnIndex: Int) = validLine(columnIndex, false)
-
-        fun isValidBox(rowIndex: Int, columnIndex: Int) : Boolean {
-            val n = sqrt(grid.array.size.toDouble()).toInt()
-
-            val xShift = (rowIndex % n) * n
-            val yShift = (columnIndex % n) * n
-
-            val array = IntArray(grid.array.size)
-
-            for (i in 0 until n) {
-                for( j in 0 until n) {
-                    array[i*n + j] = grid[i + xShift, j + yShift]
-                }
-            }
-
-            return noDuplicates(array.toTypedArray())
-        }
-
-        // End of local functions
-
-        // Check constraints
-        if (isValidRow(x) && isValidColumn(y) && isValidBox(x, y)) {
-
-            // If t == 0 it is not solved yet
-            if (t == 0) {
-                // Depth first search
-                // TODO Continue
-
-            }
-
-        } else {
-            return null
-        }
-    }
-}
-
 fun noDuplicates(arrayOfElements : Array<Int>) : Boolean {
     val discovered = mutableSetOf<Int>()
 
@@ -185,4 +157,70 @@ fun noDuplicates(arrayOfElements : Array<Int>) : Boolean {
     // if loop completes, no duplicates are found
     return true
 }
+
+fun isValidPlacement(grid: Matrix<Int>, rowIndex: Int, columnIndex: Int) = isValidRow(grid, rowIndex) && isValidColumn(grid, columnIndex) && isValidBox(grid, rowIndex, columnIndex)
+
+fun validLine(grid: Matrix<Int>, index: Int, isRow: Boolean) : Boolean {
+    val array = Array(grid.array.size) {
+        if (isRow) {
+            grid.array[it][index]
+
+        } else {
+            grid.array[index][it]
+        }
+    }
+
+    return noDuplicates(array)
+
+}
+
+fun isValidRow(grid: Matrix<Int>, rowIndex: Int) = validLine(grid, rowIndex, true)
+
+fun isValidColumn(grid: Matrix<Int>, columnIndex: Int) = validLine(grid, columnIndex, false)
+
+fun isValidBox(grid: Matrix<Int>, rowIndex: Int, columnIndex: Int) : Boolean {
+    val n = sqrt(grid.array.size.toDouble()).toInt()
+
+    val xShift = (rowIndex % n) * n
+    val yShift = (columnIndex % n) * n
+
+    val array = IntArray(grid.array.size)
+
+    for (i in 0 until n) {
+        for( j in 0 until n) {
+            array[i*n + j] = grid[i + xShift, j + yShift]
+        }
+    }
+
+    return noDuplicates(array.toTypedArray())
+}
+
+fun solve(grid: Matrix<Int>) : Matrix<Int>? {
+    // Check if grid is solved
+    grid.forEachIndexed { x, y, t ->
+        // If t == 0 it is not solved yet
+        if (t == 0) {
+            // Depth first search
+            for (i in 1..9) {
+                val array = grid.array
+                val newBoard = Matrix<Int>(array.size, array.size, array)
+                newBoard[x, y] = i
+
+                if (isValidPlacement(grid, x, y)) {
+                    return solve(newBoard)
+                }
+
+            }
+
+            // If current board has no solutions, return null
+            return null
+
+        }
+    }
+
+    // If iterating through all spaces results in no empty spaces we have found a final solution
+    return grid
+}
+
+
 
