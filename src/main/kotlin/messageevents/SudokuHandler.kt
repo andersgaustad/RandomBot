@@ -7,6 +7,7 @@ import events.Sudoku
 import events.createSudokuGame
 import kotlinx.serialization.UnstableDefault
 import utils.deleteMessage
+import utils.react
 import utils.sendMessage
 
 @Suppress("EXPERIMENTAL_API_USAGE")
@@ -63,6 +64,18 @@ class SudokuHandler : MessageHandling {
         } else {
             false
         }
+    }
+
+    private suspend fun reactOnInput(message: Message, bot: Bot, correctGuess: Boolean) {
+        val reaction = if (correctGuess) {
+            ":white_check_mark:"
+
+        } else {
+            ":x:"
+
+        }
+
+        react(reaction, message.id, message.channelId, bot.clientStore)
     }
 
 }
