@@ -51,7 +51,14 @@ class SudokuHandler : MessageHandling {
             val currentUserFieldValue = userGrid[rowIndex, columnIndex]
             val correctValue = solution[rowIndex, columnIndex]
 
-            currentUserFieldValue != 0 && correctValue == input
+            // If space is empty and guess is correct, update value and return true
+            if (currentUserFieldValue != 0 && correctValue == input) {
+                userGrid[rowIndex, columnIndex] = input
+                true
+
+            } else {
+                false
+            }
 
         } else {
             false
