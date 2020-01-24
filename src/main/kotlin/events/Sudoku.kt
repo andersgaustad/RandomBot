@@ -259,6 +259,3 @@ fun solve(grid: Matrix<Int>) : Matrix<Int>? {
     // If iterating through all spaces results in no empty spaces we have found a final solution
     return grid
 }
-
-
-
