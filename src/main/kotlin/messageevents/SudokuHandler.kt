@@ -3,6 +3,7 @@ package messageevents
 import com.jessecorbett.diskord.api.model.Message
 import com.jessecorbett.diskord.api.model.User
 import com.jessecorbett.diskord.dsl.Bot
+import com.jessecorbett.diskord.util.ClientStore
 import events.Sudoku
 import events.createSudokuGame
 import kotlinx.serialization.UnstableDefault
@@ -19,13 +20,13 @@ class SudokuHandler : MessageHandling {
 
     }
 
-    suspend fun createSudokuBoard(message: Message, difficultyFactor: Int, bot: Bot) {
+    suspend fun createSudokuBoard(message: Message, difficultyFactor: Int, clientStore: ClientStore) {
         val user = message.author
         val cluesToRemove = 10 + 9 * difficultyFactor // Might tweak this later (For difficulties 1-5?)
 
         val sudoku = createSudokuGame(3, cluesToRemove)
         val boardString = "Board of ${user.username}:\n$sudoku"
-        val sudokuBoard = sendMessage(boardString, message.channelId, bot.clientStore)
+        val sudokuBoard = sendMessage(boardString, message.channelId, clientStore)
         map[user] = SudokuDataObject(sudoku, sudokuBoard)
     }
 
@@ -66,7 +67,7 @@ class SudokuHandler : MessageHandling {
         }
     }
 
-    private suspend fun reactOnInput(message: Message, bot: Bot, correctGuess: Boolean) {
+    private suspend fun reactOnInput(message: Message, clientStore: ClientStore, correctGuess: Boolean) {
         val reaction = if (correctGuess) {
             ":white_check_mark:"
 
@@ -75,7 +76,7 @@ class SudokuHandler : MessageHandling {
 
         }
 
-        react(reaction, message.id, message.channelId, bot.clientStore)
+        react(reaction, message.id, message.channelId, clientStore)
     }
 
 }
