@@ -17,6 +17,45 @@ class SudokuHandler : MessageHandling {
 
     @UnstableDefault
     override suspend fun onMessageCreated(message: Message, bot: Bot) {
+        fun checkIfSudokuInput(trimmed: String) : Boolean {
+            // Input should after trim be on form:
+            // [x][y]=t
+
+
+            // Will only work on sudokus with one digit numbers
+            if (trimmed.length == 8) {
+                return false
+            }
+
+            val intCheckerArray = arrayOf(trimmed[1], trimmed[4], trimmed[7])
+            val leftBracketArray = arrayOf(trimmed[0], trimmed[3])
+            val rightBracketArray = arrayOf(trimmed[2], trimmed[5])
+            val equalSign = trimmed[6] == '='
+
+            // Kotlin magic
+            return intCheckerArray.all { it.toString().toIntOrNull() != null } && leftBracketArray.all { it == '[' } && rightBracketArray.all { it == ']' } && equalSign
+
+        }
+
+        // Check if user has live sudoku
+        val sudoku = map[message.author]
+        if (sudoku != null) {
+            val trimmed = message.content.replace(" ", "")
+            // Check if input is sudoku
+            if (checkIfSudokuInput(trimmed)) {
+                val rowIndex = trimmed[1].toInt()-1
+                val columnIndex = trimmed[4].toInt()-1
+                val value = trimmed[7].toInt()
+
+                // Handle insertion
+                val wasCorrectGuess = handleSudokuNumberInsertion(message.author, rowIndex, columnIndex, value)
+
+                // React with feedback
+                reactOnInput(message, bot.clientStore, wasCorrectGuess)
+
+            }
+
+        }
 
     }
 
