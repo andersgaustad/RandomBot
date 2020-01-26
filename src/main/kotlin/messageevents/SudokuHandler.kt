@@ -13,7 +13,7 @@ import utils.sendMessage
 
 @Suppress("EXPERIMENTAL_API_USAGE")
 class SudokuHandler : MessageHandling {
-    private val map = mutableMapOf<User, SudokuDataObject>()
+    val map = mutableMapOf<User, SudokuDataObject>()
 
     @UnstableDefault
     override suspend fun onMessageCreated(message: Message, bot: Bot) {
@@ -38,8 +38,9 @@ class SudokuHandler : MessageHandling {
         }
 
         // Check if user has live sudoku
-        val sudoku = map[message.author]
-        if (sudoku != null) {
+        val user = message.author
+        val sudokuData = map[user]
+        if (sudokuData != null) {
             val trimmed = message.content.replace(" ", "")
             // Check if input is sudoku
             if (checkIfSudokuInput(trimmed)) {
@@ -52,6 +53,13 @@ class SudokuHandler : MessageHandling {
 
                 // React with feedback
                 reactOnInput(message, bot.clientStore, wasCorrectGuess)
+
+                // Should also check if sudoku now is solved
+                if (sudokuData.sudoku.isSolved()) {
+                    sendMessage("Sudoku solved!", message.id, bot.clientStore)
+                    // Flush user data from map
+                    map.remove(message.author)
+                }
 
             }
 
@@ -69,14 +77,14 @@ class SudokuHandler : MessageHandling {
         map[user] = SudokuDataObject(sudoku, sudokuBoard)
     }
 
-    suspend fun repostSudokuBoard(message: Message, bot: Bot) {
+    suspend fun repostSudokuBoard(message: Message, clientStore: ClientStore) {
         val user = message.author
         val sudokuData = map[user]
 
         if (sudokuData != null) {
-            val resentSudoku = sendMessage(sudokuData.sudoku.toString(), message.channelId, bot.clientStore)
+            val resentSudoku = sendMessage(sudokuData.sudoku.toString(), message.channelId, clientStore)
             if (sudokuData.sudokuBoard != null) {
-                deleteMessage(sudokuData.sudokuBoard!!.id, message.channelId, bot.clientStore)
+                deleteMessage(sudokuData.sudokuBoard!!.id, message.channelId, clientStore)
                 sudokuData.sudokuBoard = resentSudoku // This should work as sudokuboard is mutable
             }
         }

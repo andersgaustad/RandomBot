@@ -117,6 +117,8 @@ class Matrix<T>(val x: Int, val y: Int, val array: Array<Array<T>>) {
         return result
     }
 
+
+
 }
 
 fun createSudokuGame(n: Int, cluesToRemove: Int) : Sudoku {

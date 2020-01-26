@@ -20,6 +20,7 @@ import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
 import messageevents.AnimeRecommendationHandler
 import messageevents.MessageHandling
+import messageevents.SudokuHandler
 import utils.PokemonFixedParser
 import java.util.Timer
 import kotlin.concurrent.schedule
@@ -63,9 +64,10 @@ fun main() = runBlocking {
         var hangmanGame = HangmanGame()
 
         // Message events
-        val arh = AnimeRecommendationHandler()
+        val animeRecommendationHandler = AnimeRecommendationHandler()
+        val sudokuHandler = SudokuHandler()
 
-        val messageEvents = setOf<MessageHandling>(arh)
+        val messageEvents = setOf(animeRecommendationHandler, sudokuHandler)
 
         // Other events
         var reactTestEvent = ReactTestEvent(null)
@@ -249,17 +251,33 @@ fun main() = runBlocking {
 
             // Message events
             command("animerec") {
-                val arc = AnimeRecommendationCommand(arh)
+                val arc = AnimeRecommendationCommand(animeRecommendationHandler)
                 val reply = arc.executeCommand(this)
                 reply(reply)
 
 
                 // Only start when this is used alone
                 if (this.words.size == 1) {
-                    reply(arh.getRootDisplayMessage())
+                    reply(animeRecommendationHandler.getRootDisplayMessage())
 
                 }
                 delete()
+            }
+
+            command("sudoku") {
+                val sudokuCommand = SudokuCommand(sudokuHandler, clientStore)
+                val sudokuFeedback = sudokuCommand.executeCommand(this)
+
+                if (sudokuFeedback == "") {
+                    // This happens for invalid strings and help command
+                    reply(sudokuFeedback)
+
+                } else {
+                    // Else, this is a command which does not return anything
+                    sudokuCommand.parseSuspendingCommand(this)
+
+                }
+
             }
 
 
