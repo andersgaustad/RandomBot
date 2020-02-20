@@ -270,11 +270,12 @@ fun main() = runBlocking {
 
                 if (sudokuFeedback == "") {
                     // This happens for invalid strings and help command
-                    reply(sudokuFeedback)
+                    sudokuCommand.parseSuspendingCommand(this)
+
 
                 } else {
                     // Else, this is a command which does not return anything
-                    sudokuCommand.parseSuspendingCommand(this)
+                    reply(sudokuFeedback)
 
                 }
 
