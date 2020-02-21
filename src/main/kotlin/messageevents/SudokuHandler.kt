@@ -24,7 +24,7 @@ class SudokuHandler : MessageHandling {
 
 
             // Will only work on sudokus with one digit numbers
-            if (trimmed.length == 8) {
+            if (trimmed.length != 8) {
                 return false
             }
 
@@ -45,9 +45,9 @@ class SudokuHandler : MessageHandling {
             val trimmed = message.content.replace(" ", "")
             // Check if input is sudoku
             if (checkIfSudokuInput(trimmed)) {
-                val rowIndex = trimmed[1].toInt()-1
-                val columnIndex = trimmed[4].toInt()-1
-                val value = trimmed[7].toInt()
+                val rowIndex = trimmed[1].toString().toInt()-1
+                val columnIndex = trimmed[4].toString().toInt()-1
+                val value = trimmed[7].toString().toInt()
 
                 // Handle insertion
                 val wasCorrectGuess = handleSudokuNumberInsertion(message.author, rowIndex, columnIndex, value)
@@ -98,25 +98,30 @@ class SudokuHandler : MessageHandling {
 
     fun handleSudokuNumberInsertion(user: User, rowIndex: Int, columnIndex: Int, input: Int) : Boolean {
         val sudokuData = map[user]
+        try {
+            return if (sudokuData != null) {
+                val userGrid = sudokuData.sudoku.grid
+                val solution = sudokuData.sudoku.solution
+                val currentUserFieldValue = userGrid[rowIndex, columnIndex]
+                val correctValue = solution[rowIndex, columnIndex]
 
-        return if (sudokuData != null) {
-            val userGrid = sudokuData.sudoku.grid
-            val solution = sudokuData.sudoku.solution
-            val currentUserFieldValue = userGrid[rowIndex, columnIndex]
-            val correctValue = solution[rowIndex, columnIndex]
+                // If space is empty and guess is correct, update value and return true
+                if (currentUserFieldValue != 0 && correctValue == input) {
+                    userGrid[rowIndex, columnIndex] = input
+                    true
 
-            // If space is empty and guess is correct, update value and return true
-            if (currentUserFieldValue != 0 && correctValue == input) {
-                userGrid[rowIndex, columnIndex] = input
-                true
+                } else {
+                    false
+                }
 
             } else {
                 false
             }
 
-        } else {
-            false
+        } catch(e: Exception) {
+            return false
         }
+
     }
 
     private suspend fun reactOnInput(message: Message, clientStore: ClientStore, correctGuess: Boolean) {
