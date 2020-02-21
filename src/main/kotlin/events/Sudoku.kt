@@ -212,10 +212,10 @@ fun isValidPlacement(grid: Matrix<Int>, rowIndex: Int, columnIndex: Int) = isVal
 fun getLine(grid: Matrix<Int>, index: Int, isRow: Boolean) : Array<Int> {
     return Array(grid.array.size) {
         if (isRow) {
-            grid.array[it][index]
+            grid.array[index][it]
 
         } else {
-            grid.array[index][it]
+            grid.array[it][index]
         }
     }
 }
@@ -270,7 +270,12 @@ fun solve(grid: Matrix<Int>) : Matrix<Int>? {
 
                 if (isValidPlacement(newBoard, x, y)) {
                     // Only return when not null
-                    solve(newBoard).let { return it }
+                    val subsolution = solve(newBoard)
+                    if (subsolution != null) {
+                        return subsolution
+                    }
+
+                    //solve(newBoard).let { return it }
                 }
 
             }
@@ -280,6 +285,8 @@ fun solve(grid: Matrix<Int>) : Matrix<Int>? {
 
         }
     }
+
+
 
     // If iterating through all spaces results in no empty spaces we have found a final solution
     return grid
