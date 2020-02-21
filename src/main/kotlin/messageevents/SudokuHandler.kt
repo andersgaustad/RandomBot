@@ -4,6 +4,7 @@ import com.jessecorbett.diskord.api.model.Message
 import com.jessecorbett.diskord.api.model.User
 import com.jessecorbett.diskord.dsl.Bot
 import com.jessecorbett.diskord.util.ClientStore
+import com.jessecorbett.diskord.util.mention
 import events.Sudoku
 import events.createSudokuGame
 import kotlinx.serialization.UnstableDefault
@@ -69,6 +70,10 @@ class SudokuHandler : MessageHandling {
 
     suspend fun createSudokuBoard(message: Message, difficultyFactor: Int, clientStore: ClientStore) {
         val user = message.author
+
+        // Give feedback; sudoku creation may take some time
+        sendMessage("Creating sudoku for ${user.mention} with difficulity $difficultyFactor, please wait", message.channelId, clientStore)
+
         val cluesToRemove = 10 + 9 * difficultyFactor // Might tweak this later (For difficulties 1-5?)
 
         val sudoku = createSudokuGame(3, cluesToRemove)
