@@ -7,7 +7,8 @@ import kotlin.math.sqrt
 class Sudoku(val grid: Matrix<Int>, val solution: Matrix<Int>) {
     override fun toString(): String {
         val sb = StringBuilder()
-        val special = sqrt(grid.array.size.toDouble()).toInt()
+        val size = grid.array.size
+        val special = sqrt(size.toDouble()).toInt()
 
 
         fun shouldInsertVerticalBorder(index: Int) = (index % (special) == special-1) && index != grid.array.size-1
@@ -17,24 +18,37 @@ class Sudoku(val grid: Matrix<Int>, val solution: Matrix<Int>) {
 
         fun createHorizontalBorder() : String {
             val horizontalSb = StringBuilder()
-            for (i: Int in 0 until special) {
-                for (j : Int in 0 until special) {
+            for (i in 0..special) {
+                for (j in 0 until special) {
                     horizontalSb.append("-")
                 }
                 horizontalSb.append("+")
             }
-            return horizontalSb.toString().substring(0, special-1)
+
+            // including borders, size + 2 should be correct (aka without extra +)
+            return horizontalSb.toString().substring(0, size+2)
         }
 
+
+        sb.append("```")
         grid.forEachIndexed { x, y, t ->
-            sb.append(t.toString())
+            if (t == 0) {
+                sb.append(" ")
+
+            } else {
+                sb.append(t.toString())
+            }
+
             when {
-                shouldInsertHorizontalBorder(x, y) -> sb.append(createHorizontalBorder())
+                shouldInsertHorizontalBorder(x, y) -> sb.append("\n${createHorizontalBorder()}")
                 shouldInsertVerticalBorder(y) -> sb.append("|")
-                else -> sb.append(t.toString())
+            }
+            if (y == grid.array.lastIndex) {
+                sb.append("\n")
             }
         }
 
+        sb.append("```")
         return sb.toString()
     }
 
@@ -285,8 +299,6 @@ fun solve(grid: Matrix<Int>) : Matrix<Int>? {
 
         }
     }
-
-
 
     // If iterating through all spaces results in no empty spaces we have found a final solution
     return grid
