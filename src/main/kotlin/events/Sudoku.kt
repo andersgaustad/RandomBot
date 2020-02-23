@@ -52,7 +52,16 @@ class Sudoku(val grid: Matrix<Int>, val solution: Matrix<Int>) {
         return sb.toString()
     }
 
-    fun isSolved() = grid == solution
+    fun isSolved() : Boolean {
+        // Check if there are any unfilled slots left
+        grid.forEach {
+            if (it == 0) {
+                return false
+            }
+        }
+
+        return true;
+    }
 
 }
 
@@ -94,6 +103,7 @@ class Matrix<T>(val x: Int, val y: Int, val array: Array<Array<T>>) {
             }
         }
     }
+
 
     override fun equals(other: Any?): Boolean {
         if (other is Matrix<*>) {
@@ -139,6 +149,7 @@ fun createSudokuGame(n: Int, cluesToRemove: Int) : Sudoku {
     val dimensions = n.toDouble().pow(2).toInt()
 
     // Place random numbers (17 are required for unique solution
+    var triesBeforeSudokuIsCreated = 0;
     do {
         // Get base that may or may not have a solution
         val base = createBaseBoard(dimensions)
@@ -147,10 +158,12 @@ fun createSudokuGame(n: Int, cluesToRemove: Int) : Sudoku {
         val solution = solve(base)
 
         val hasSolution = solution != null
+        triesBeforeSudokuIsCreated++;
 
         if (hasSolution) {
             val array = solution!!.array
-            val playerBoard = Matrix(array.size, array.size, array)
+            // Create a copy of sudoku
+            val playerBoard = Matrix(array.size, array.size) { x, y -> solution[x, y]}
 
             for (i in 0 until cluesToRemove) {
                 do {

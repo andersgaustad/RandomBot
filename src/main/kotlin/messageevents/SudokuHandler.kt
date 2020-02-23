@@ -55,6 +55,11 @@ class SudokuHandler : MessageHandling {
                 // React with feedback
                 reactOnInput(message, bot.clientStore, wasCorrectGuess)
 
+                // If correct, repost sudoku
+                if (wasCorrectGuess) {
+                    repostSudokuBoard(message, bot.clientStore)
+                }
+
                 // Should also check if sudoku now is solved
                 if (sudokuData.sudoku.isSolved()) {
                     sendMessage("Sudoku solved!", message.id, bot.clientStore)
@@ -106,7 +111,7 @@ class SudokuHandler : MessageHandling {
                 val correctValue = solution[rowIndex, columnIndex]
 
                 // If space is empty and guess is correct, update value and return true
-                if (currentUserFieldValue != 0 && correctValue == input) {
+                if (correctValue == input) {
                     userGrid[rowIndex, columnIndex] = input
                     true
 
@@ -126,10 +131,12 @@ class SudokuHandler : MessageHandling {
 
     private suspend fun reactOnInput(message: Message, clientStore: ClientStore, correctGuess: Boolean) {
         val reaction = if (correctGuess) {
-            ":white_check_mark:"
+            // White check mark
+            "✅"
 
         } else {
-            ":x:"
+            // Red cross
+            "❌"
 
         }
 

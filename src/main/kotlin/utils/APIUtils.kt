@@ -1,5 +1,6 @@
 package utils
 
+import com.jessecorbett.diskord.api.model.Emoji
 import com.jessecorbett.diskord.util.ClientStore
 import com.jessecorbett.diskord.util.sendMessage
 
@@ -8,3 +9,5 @@ suspend fun sendMessage(text: String, channelId: String, clientStore: ClientStor
 suspend fun deleteMessage(messageId: String, channelId: String, clientStore: ClientStore) = clientStore.channels[channelId].deleteMessage(messageId)
 
 suspend fun react(reaction: String, messageId: String, channelId: String, clientStore: ClientStore) = clientStore.channels[channelId].addMessageReaction(messageId, reaction)
+
+suspend fun react(reaction: Emoji, messageId: String, channelId: String, clientStore: ClientStore) = clientStore.channels[channelId].addMessageReaction(messageId, reaction)
