@@ -149,7 +149,7 @@ fun createSudokuGame(n: Int, cluesToRemove: Int) : Sudoku {
     val dimensions = n.toDouble().pow(2).toInt()
 
     // Place random numbers (17 are required for unique solution
-    var triesBeforeSudokuIsCreated = 0;
+    var debugTriesBeforeSudokuIsCreated = 0;
     do {
         // Get base that may or may not have a solution
         val base = createBaseBoard(dimensions)
@@ -158,7 +158,7 @@ fun createSudokuGame(n: Int, cluesToRemove: Int) : Sudoku {
         val solution = solve(base)
 
         val hasSolution = solution != null
-        triesBeforeSudokuIsCreated++;
+        debugTriesBeforeSudokuIsCreated++;
 
         if (hasSolution) {
             val array = solution!!.array
@@ -198,20 +198,15 @@ fun createBaseBoard(dimensions: Int) : Matrix<Int> {
     while (placed < 18) {
         val r = ThreadLocalRandom.current().nextInt(0, dimensions-1)
         val c = ThreadLocalRandom.current().nextInt(0, dimensions-1)
-        val t = ThreadLocalRandom.current().nextInt(1, dimensions)
-
+        
         if (gridSolution[r, c] == 0) {
-            gridSolution[r, c] = t
-            val debugBool = isValidPlacement(gridSolution, r, c)
-            if (isValidPlacement(gridSolution, r, c)) {
-                placed++
+            // Check which elements can be placed here
+            val candidates = getPossiblePlacements(gridSolution, r, c)
+            if (candidates.isNotEmpty()) {
+                gridSolution[r, c] = candidates.random()
+                placed++;
 
-            } else {
-                gridSolution[r, c] = 0
             }
-
-
-
         }
     }
 
@@ -262,6 +257,31 @@ fun getBox(grid: Matrix<Int>, rowIndex: Int, columnIndex: Int) : Array<Int> {
     }
 
     return array.toTypedArray()
+}
+
+fun getPossiblePlacements(grid: Matrix<Int>, rowIndex: Int, columnIndex: Int) : Array<Int> {
+    val possibleNumbers = (Array(9) {it + 1}).toMutableSet()
+
+    val foundNumbers = mutableSetOf<Int>()
+
+    val allRelevantNumbers = arrayOf(getLine(grid, rowIndex, true), getLine(grid, columnIndex, false), getBox(grid, rowIndex, columnIndex))
+
+    // Add all the current numbers in each row, column, and box
+    // This represent numbers that the field *cannot* hold
+    for (collectionOfNumbers in allRelevantNumbers) {
+        foundNumbers.addAll(collectionOfNumbers.toSet())
+
+    }
+
+    // We now have a set of numbers the field cannot be
+    // Remove each number the field cannot be from the set of possible numbers
+    for (number in foundNumbers.toSet()) {
+        possibleNumbers.remove(number)
+    }
+
+    // We now have a set of possible candidates. It may be empty if the sudoku is unsolveable
+    return possibleNumbers.toTypedArray()
+
 }
 
 
