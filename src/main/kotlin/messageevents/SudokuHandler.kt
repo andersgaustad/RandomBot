@@ -8,6 +8,7 @@ import com.jessecorbett.diskord.util.mention
 import events.Sudoku
 import events.createSudokuGame
 import kotlinx.serialization.UnstableDefault
+import utils.EmojiCompanion
 import utils.deleteMessage
 import utils.react
 import utils.sendMessage
@@ -132,11 +133,11 @@ class SudokuHandler : MessageHandling {
     private suspend fun reactOnInput(message: Message, clientStore: ClientStore, correctGuess: Boolean) {
         val reaction = if (correctGuess) {
             // White check mark
-            "✅"
+            EmojiCompanion.white_check_mark
 
         } else {
             // Red cross
-            "❌"
+            EmojiCompanion.x
 
         }
 

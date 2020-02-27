@@ -5,5 +5,7 @@ class EmojiCompanion {
         const val fire = "🔥"
         const val french_flag = "\uD83C\uDDEB\uD83C\uDDF7"
         const val robot = "\uD83E\uDD16"
+        const val white_check_mark = "✅"
+        const val x = "❌"
     }
 }

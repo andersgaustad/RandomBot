@@ -4,6 +4,8 @@ import com.jessecorbett.diskord.api.model.Message
 import com.jessecorbett.diskord.util.ClientStore
 import com.jessecorbett.diskord.util.words
 import messageevents.SudokuHandler
+import utils.EmojiCompanion
+import utils.react
 
 class SudokuCommand(private val sudokuHandler: SudokuHandler, private val clientStore: ClientStore) : Command() {
     override val name: String
@@ -26,7 +28,7 @@ class SudokuCommand(private val sudokuHandler: SudokuHandler, private val client
 
             } else if (secondArgument == "reset") {
                 sudokuHandler.map.remove(message.author)
-
+                react(EmojiCompanion.white_check_mark, message.id, message.channelId, clientStore)
 
             }
 
