@@ -25,7 +25,8 @@ class SudokuCommand(private val sudokuHandler: SudokuHandler, private val client
                 sudokuHandler.createSudokuBoard(message, difficulityIfPresent, clientStore)
 
             } else if (secondArgument == "reset") {
-                sudokuHandler.createSudokuBoard(message, defaultDifficulity, clientStore)
+                sudokuHandler.map.remove(message.author)
+
 
             }
 
