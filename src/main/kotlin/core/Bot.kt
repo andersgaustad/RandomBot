@@ -20,6 +20,7 @@ import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.UnstableDefault
 import messageevents.AnimeRecommendationHandler
 import messageevents.MessageHandling
+import utils.EmojiCompanion
 import utils.PokemonFixedParser
 import java.util.Timer
 import kotlin.concurrent.schedule
@@ -212,7 +213,7 @@ fun main() = runBlocking {
                         // Set up react event
                         val root = reply(ReactTestCommand().executeCommand(this))
                         reactTestEvent = ReactTestEvent(root)
-                        root.react("\uD83D\uDD25")
+                        root.react(EmojiCompanion.fire)
 
                         // Add to listeners
                         reactionAddListeners.add(reactTestEvent)
@@ -333,7 +334,7 @@ fun main() = runBlocking {
             if (message.usersMentioned.isNotEmpty()) {
                 if (message.usersMentioned.any {user -> user.isBot}) {
                     // React with robot emoji
-                    message.react("\uD83E\uDD16")
+                    message.react(EmojiCompanion.robot)
                 }
 
             }
@@ -395,13 +396,13 @@ fun main() = runBlocking {
                     }
 
                     if (username == COOL_KID_NAME) {
-                        message.react("🔥")
+                        message.react(EmojiCompanion.fire)
                     }
                 }
             }
 
             if (message.author.username in FRENCH_PEOPLE) {
-                message.react("\uD83C\uDDEB\uD83C\uDDF7")
+                message.react(EmojiCompanion.french_flag)
             }
 
             // Message handling events
